@@ -1,23 +1,18 @@
-import { ADD_ARTICLE, DATA_LOADED } from "../constants/action-types";
+import { GET_LATLNG } from "../constants/action-types";
 
 const initialState = {
-  articles: [],
-  remoteArticles: []
+  latlng: []
 };
 
-function rootReducer(state = initialState, action) {
-  if (action.type === ADD_ARTICLE) {
-    return Object.assign({}, state, {
-      articles: state.articles.concat(action.payload)
-    });
-  }
-
-  if (action.type === DATA_LOADED) {
-    return Object.assign({}, state, {
-      remoteArticles: state.remoteArticles.concat(action.payload)
-    });
-  }
-  return state;
+function latlngReducer(state = initialState, action) {
+    switch(action.type) {
+        case GET_LATLNG:
+            return Object.assign({}, state, {
+                latlng: state.latlng.concat(action.payload)
+            })
+        default:
+            return state
+    }
 }
 
-export default rootReducer;
+export default latlngReducer
