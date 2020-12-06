@@ -23,7 +23,14 @@ export const LeafMap = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               {stateMarker.markers.map(el => (
-                <Marker position={[el.latitude, el.longitude]}/>
+                <Marker position={[el.latitude, el.longitude]}>
+                    <Popup>
+                        <p>Scientific Name: {el.scientific_name}</p>
+                        <p>Native: {el.native}</p>
+                        <p>Condition: {el.condition}</p>
+                        <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
+                    </Popup>
+                </Marker>
               ))}
             </MapContainer>
         );

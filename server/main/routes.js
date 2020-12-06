@@ -16,7 +16,7 @@ router.get('/api/get/cities', (req,res,next) => {
 
 // Get coordinates
 router.get('/api/get/markers', (req,res,next) => {
-	pool.query(`select distinct latitude, longitude from public.standard_dataset limit 100`,
+	pool.query(`select * from public.standard_dataset limit 100`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
