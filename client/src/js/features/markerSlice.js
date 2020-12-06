@@ -2,9 +2,9 @@ import { createSlice,createSelector,PayloadAction,createAsyncThunk } from "@redu
 import axios from 'axios';
 
 // CREATE Thunk
-export const getCoordinates = createAsyncThunk("coordinates/getCoordinates", async (_, thunkAPI) => {
+export const getMarkers = createAsyncThunk("markers/getMarkers", async (_, thunkAPI) => {
     try {
-        const response = await axios.get("/api/get/coordinates");
+        const response = await axios.get("/api/get/markers");
         return await response.data;
     } catch (error) {
          return thunkAPI.rejectWithValue({ error: error.message });
@@ -12,24 +12,24 @@ export const getCoordinates = createAsyncThunk("coordinates/getCoordinates", asy
 });
 
 // CREATE SLICE
-const coordinateSlice = createSlice({
-  name: "coordinates",
+const markerSlice = createSlice({
+  name: "markers",
   initialState: {
-    coordinates: [],
+    markers: [],
     loading: "loading",
     error: "",
   },
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getCoordinates.pending, (state) => {
-        state.coordinates = [];
+    builder.addCase(getMarkers.pending, (state) => {
+        state.markers = [];
         state.loading = "loading";
     });
-    builder.addCase(getCoordinates.fulfilled, (state, { payload }) => {
-        state.coordinates = payload;
+    builder.addCase(getMarkers.fulfilled, (state, { payload }) => {
+        state.markers = payload;
         state.loading = "loaded";
     });
-    builder.addCase(getCoordinates.rejected,(state, action) => {
+    builder.addCase(getMarkers.rejected,(state, action) => {
         state.loading = "error";
         state.error = action.error.message;
     });
@@ -37,11 +37,11 @@ const coordinateSlice = createSlice({
 });
 
 
-export const selectCoordinates = createSelector(
+export const selectMarkers = createSelector(
   (state) => ({
-     coordinateSlice: state.coordinates,
+     markerSlice: state.markers,
      loading: state.loading,
   }), (state) =>  state
 );
 
-export default coordinateSlice
+export default markerSlice

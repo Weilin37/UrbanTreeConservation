@@ -4,7 +4,8 @@ import {
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import coordinateSlice from "../features/coordinateSlice";
+import markerSlice from "../features/markerSlice";
+import mapSlice from "../features/mapSlice";
 
 
 const middleware = [
@@ -13,7 +14,8 @@ const middleware = [
 ];
 
 const rootReducer = combineReducers({
-    coordinate: coordinateSlice.reducer
+    marker: markerSlice.reducer,
+    map: mapSlice.reducer,
 });
 
 // CREATE STORE

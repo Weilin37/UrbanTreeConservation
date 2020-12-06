@@ -1,37 +1,35 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { Map, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { Map, MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { Icon } from "leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch } from "react-redux";
-import { getCoordinates,selectCoordinates } from "../features/coordinateSlice";
-import axios from 'axios';
-
+import { getMarkers, selectMarkers } from "../features/markerSlice";
 
 export const LeafMap = () => {
-    const state = useSelector(state => state.coordinate);
+    //marker state
+    const stateMarker = useSelector(state => state.marker);
     const dispatch = useDispatch();
-    useEffect(() => {dispatch(getCoordinates());}, [dispatch]);
+    useEffect(() => {dispatch(getMarkers());}, [dispatch]);
 
-    console.log(state.coordinates[0]);
+    // map state
+    const stateMap = useSelector(state => state.map)
 
-    if (state.coordinates.length > 0) {
+    if (stateMarker.markers.length > 0) {
         return (
-            <MapContainer center={[37.8, -96]} zoom={5} scrollWheelZoom={true}>
+            <MapContainer center={stateMap.center} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[state.coordinates[0].latitude, state.coordinates[0].longitude]}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
+              {stateMarker.markers.map(el => (
+                <Marker position={[el.latitude, el.longitude]}/>
+              ))}
             </MapContainer>
         );
     } else {
         return (
-            <MapContainer center={[37.8, -96]} zoom={5} scrollWheelZoom={true}>
+            <MapContainer center={stateMap.center} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
