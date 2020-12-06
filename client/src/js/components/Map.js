@@ -1,24 +1,37 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { connect } from "react-redux";
 import { Map, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 import "../../css/app.css";
-import { get_latlng } from "../actions/index";
+import { useSelector, useDispatch } from "react-redux";
+import { getCoordinates,selectCoordinates } from "../features/coordinateSlice";
+import axios from 'axios';
 
 
-export class LeafMap extends Component {
-    constructor(props) {
-        super(props);
-    }
+export const LeafMap = () => {
+    const state = useSelector(state => state.coordinate);
+    const dispatch = useDispatch();
+    useEffect(() => {dispatch(getCoordinates());}, [dispatch]);
 
-    componentDidMount() {
-        this.props.get_latlng();
-    }
+    console.log(state.coordinates[0]);
 
-    render() {
+    if (state.coordinates.length > 0) {
         return (
-            <MapContainer center={[37.8, -96]} zoom={5} scrollWheelZoom={false}>
+            <MapContainer center={[37.8, -96]} zoom={5} scrollWheelZoom={true}>
+              <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[state.coordinates[0].latitude, state.coordinates[0].longitude]}>
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+            </Marker>
+            </MapContainer>
+        );
+    } else {
+        return (
+            <MapContainer center={[37.8, -96]} zoom={5} scrollWheelZoom={true}>
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -26,12 +39,5 @@ export class LeafMap extends Component {
             </MapContainer>
         );
     }
-}
 
-function mapStateToProps(state) {
-  return {
-    latlng: state
-  };
 }
-
-export default connect(mapStateToProps, {get_latlng })(LeafMap);

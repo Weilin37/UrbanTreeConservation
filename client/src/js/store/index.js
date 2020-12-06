@@ -1,14 +1,25 @@
 // src/js/store/index.js
-import { createStore, applyMiddleware, compose } from "redux";
-import latlngReducer from "../reducers/index";
-import { forbiddenWordsMiddleware } from "../middleware";
-import thunk from "redux-thunk";
+import {
+  configureStore,
+  getDefaultMiddleware,
+} from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import coordinateSlice from "../features/coordinateSlice";
 
-const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
-  latlngReducer,
-  storeEnhancers(applyMiddleware(forbiddenWordsMiddleware, thunk))
-);
+const middleware = [
+  ...getDefaultMiddleware(),
+  /*YOUR CUSTOM MIDDLEWARES HERE*/
+];
+
+const rootReducer = combineReducers({
+    coordinate: coordinateSlice.reducer
+});
+
+// CREATE STORE
+const store = configureStore({
+  reducer: rootReducer,
+  middleware,
+});
 
 export default store;
