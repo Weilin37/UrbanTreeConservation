@@ -2,9 +2,9 @@ import { createSlice,createSelector,PayloadAction,createAsyncThunk } from "@redu
 import axios from 'axios';
 
 // CREATE Thunk
-export const getMarkers = createAsyncThunk("markers/getMarkers", async (_, thunkAPI) => {
+export const getMarkers = createAsyncThunk("markers/getMarkers", async (endpoint, thunkAPI) => {
     try {
-        const response = await axios.get("/api/get/markers");
+        const response = await axios.get(endpoint);
         return await response.data;
     } catch (error) {
          return thunkAPI.rejectWithValue({ error: error.message });
@@ -16,10 +16,15 @@ const markerSlice = createSlice({
   name: "markers",
   initialState: {
     markers: [],
+    markerType: "cities",
+    endpoint: "/api/get/cities",
     loading: "loading",
     error: "",
   },
-  reducers: {},
+  reducers: {
+    setMarkerType: (state, action) => {state.markerType = action.payload},
+    setEndpoint: (state, action) => {state.endpoint = action.payload},
+  },
   extraReducers: (builder) => {
     builder.addCase(getMarkers.pending, (state) => {
         state.markers = [];
@@ -36,11 +41,14 @@ const markerSlice = createSlice({
   }
 });
 
+export const { setMarkerType, setEndpoint } = markerSlice.actions;
 
 export const selectMarkers = createSelector(
   (state) => ({
      markerSlice: state.markers,
      loading: state.loading,
+     markerType: state.markerType,
+     endpoint: state.endpoint
   }), (state) =>  state
 );
 

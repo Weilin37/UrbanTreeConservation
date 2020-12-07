@@ -8,7 +8,7 @@ router.get('/api/hello', (req, res) => {
 
 // Get all cities
 router.get('/api/get/cities', (req,res,next) => {
-	pool.query(`select distinct city, state from public.standard_dataset`,
+	pool.query(`select city, state, avg(cast(latitude as float)) as latitude, avg(cast(longitude as float))as longitude, count(latitude) as num_trees from public.standard_dataset where latitude is not null and longitude is not null group by city, state`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
@@ -16,7 +16,7 @@ router.get('/api/get/cities', (req,res,next) => {
 
 // Get coordinates
 router.get('/api/get/markers', (req,res,next) => {
-	pool.query(`select * from public.standard_dataset limit 100`,
+	pool.query(`select * from public.standard_dataset where latitude is not null and longitude is not null limit 100`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
