@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
-import { Map, MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from "react-leaflet";
-import { Icon } from "leaflet";
+import React, { useEffect } from "react";
+import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import "../../css/app.css";
-import { useSelector, useDispatch } from "react-redux";
-import { getMarkers, selectMarkers, setMarkerType, setEndpoint } from "../features/markerSlice";
-import { setLatNE, setLngNE, setLatSW, setLngSW, setZoom } from "../features/mapSlice";
+import { useSelector, useDispatch, batch } from "react-redux";
+import { getMarkers, setEndpoint } from "../features/markerSlice";
+import { setLatNE, setLngNE, setLatSW, setLngSW, setZoom, setLat, setLng } from "../features/mapSlice";
 
 export const LeafMap = () => {
     const dispatch = useDispatch();
 
     //marker state
     const stateMarker = useSelector(state => state.marker);
-    useEffect(() => {dispatch(getMarkers(stateMarker.endpoint));}, [dispatch]);
+    useEffect(() => {
+        dispatch(getMarkers(stateMarker.endpoint));
+    }, [stateMarker.endpoint]);
 
     // map state
     const stateMap = useSelector(state => state.map);
@@ -20,10 +20,9 @@ export const LeafMap = () => {
 
     // Custom map components
     const GetMarkers = () => {
-        const map = useMap();
         const markerType = stateMarker.markerType;
 
-        if (markerType == "cities"){
+        if (markerType === "cities"){
             return stateMarker.markers.map((el, i) => (
               <Marker
                 key={i}
@@ -36,7 +35,7 @@ export const LeafMap = () => {
                 </Popup>
               </Marker>
             ));
-        } else if (markerType == "trees") {
+        } else if (markerType === "trees") {
             return stateMarker.markers.map((el, i) => (
               <Marker
                 key={i}
@@ -53,37 +52,46 @@ export const LeafMap = () => {
         }
     };
 
-    // Set marker state based on map properties
-    function SetMarkerState() {
-        const zoom = stateMap.zoom
-
-        if (zoom < 10) {
-            {dispatch(setMarkerType("cities"))}
-            {dispatch(setEndpoint("/api/get/cities"))}
-        } else {
-            {dispatch(setMarkerType("trees"))}
-            {dispatch(setEndpoint("/api/get/markers"))}
-        }
-        return null
-    }
-
     // get map properties
     function GetMapProperties() {
-        const map = useMap()
-        useMapEvent('moveend', () => {
-            const bounds = map.getBounds();
-            const latNE = bounds['_northEast'].lat
-            const lngNE = bounds['_northEast'].lng
-            const latSW = bounds['_southWest'].lat
-            const lngSW = bounds['_southWest'].lng
-            {
-                dispatch(setZoom(map.getZoom()));
-                dispatch(setLatNE(latNE));
-                dispatch(setLngNE(lngNE));
-                dispatch(setLatSW(latSW));
-                dispatch(setLngSW(lngSW));
+        const map = useMap();
+
+        useMapEvents({
+            dragend: () => {
+                const bounds = map.getBounds();
+                const latNE = bounds['_northEast'].lat
+                const lngNE = bounds['_northEast'].lng
+                const latSW = bounds['_southWest'].lat
+                const lngSW = bounds['_southWest'].lng
+                batch(() => {
+                    dispatch(setLat(map.getCenter().lat))
+                    dispatch(setLng(map.getCenter().lng))
+                    dispatch(setLatNE(latNE));
+                    dispatch(setLngNE(lngNE));
+                    dispatch(setLatSW(latSW));
+                    dispatch(setLngSW(lngSW));
+                });
+            },
+            zoomend: () => {
+                {
+                    const zoom = map.getZoom();
+                    batch(() => {
+                        dispatch(setZoom(zoom));
+                        dispatch(setLat(map.getCenter().lat));
+                        dispatch(setLng(map.getCenter().lng));
+                        if (zoom < 10) {
+                            dispatch(setEndpoint("cities"))
+                        } else {
+                            dispatch(setEndpoint("trees"))
+                        }
+                    });
+                }
             }
-        })
+        });
+
+        useEffect(() => {
+            map.setView([stateMap.lat, stateMap.lng], stateMap.zoom);
+        }, [stateMap.lat, stateMap.lng, stateMap.zoom]);
       return null
     }
 
@@ -92,7 +100,6 @@ export const LeafMap = () => {
         return (
             <MapContainer center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <GetMapProperties />
-              <SetMarkerState />
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -103,7 +110,6 @@ export const LeafMap = () => {
     } else {
         return (
             <MapContainer center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
-              <SetMarkerState />
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

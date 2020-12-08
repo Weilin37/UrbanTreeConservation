@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
 import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
+import { getSearch, setSearch } from "../features/mapSlice";
+import { useDispatch, batch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -46,9 +46,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SearchBar = props => {
+const SearchBar = ({ map }) => {
 
+    // classes
     const classes = useStyles();
+    const dispatch = useDispatch();
+
+    function keyPress(e) {
+        if(e.keyCode === 13){
+            if (e.target.value !== "") {
+                batch(() => {
+                    dispatch(getSearch(e.target.value))
+                    dispatch(setSearch(e.target.value))
+                })
+            }
+        }
+    }
 
     return (
         <div className={classes.search}>
@@ -61,6 +74,7 @@ const SearchBar = props => {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
+              onKeyDown={keyPress}
               inputProps={{ 'aria-label': 'search' }}
             />
         </div>

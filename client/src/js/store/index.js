@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
 });
 
 // CREATE STORE
-const store = configureStore({
+export const store = configureStore({
   reducer: rootReducer,
   middleware,
 });

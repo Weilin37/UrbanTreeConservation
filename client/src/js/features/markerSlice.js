@@ -1,4 +1,4 @@
-import { createSlice,createSelector,PayloadAction,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice,createSelector,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 // CREATE Thunk
@@ -23,7 +23,14 @@ const markerSlice = createSlice({
   },
   reducers: {
     setMarkerType: (state, action) => {state.markerType = action.payload},
-    setEndpoint: (state, action) => {state.endpoint = action.payload},
+    setEndpoint: (state, action) => {
+        state.markerType = action.payload;
+        if (action.payload === "cities") {
+            state.endpoint = "/api/get/cities"
+        } else if (action.payload === "trees") {
+            state.endpoint = "/api/get/markers"
+        }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getMarkers.pending, (state) => {

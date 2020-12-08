@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 const App = () => (
   <Grid container justify="center" alignItems="center" spacing={2} >
     <NavBar />
-    <Grid align="center" xs={12} spacing={1} style={{height:'50%'}}>
+    <Grid item align="center" xs={12} >
         <LeafMap />
     </Grid>
   </Grid>
