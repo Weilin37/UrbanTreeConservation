@@ -18,23 +18,31 @@ export const getSearch = createAsyncThunk("search/getSearch", async (location, t
 const mapSlice = createSlice({
   name: "map",
   initialState: {
-    latNE: null,
-    lngNE: null,
-    latSW: null,
-    lngSW: null,
+    latBnd: null,
+    lngBnd: null,
+    previous_lat: 37.8,
+    previous_lng: -96,
     zoom: 3,
+    previous_zoom: 3,
     lat: 37.8,
     lng: -96,
     search: ""
   },
   reducers: {
-    setLatNE: (state, action) => {state.latNE = action.payload},
-    setLngNE: (state, action) => {state.lngNE = action.payload},
-    setLatSW: (state, action) => {state.latSW = action.payload},
-    setLngSW: (state, action) => {state.lngSW = action.payload},
-    setZoom: (state, action) => {state.zoom = action.payload},
-    setLat: (state, action) => {state.lat = action.payload},
-    setLng: (state, action) => {state.lng = action.payload},
+    setLatBnd: (state, action) => {state.latBnd = action.payload},
+    setLngBnd: (state, action) => {state.lngBnd = action.payload},
+    setZoom: (state, action) => {
+        state.previous_zoom = state.zoom
+        state.zoom = action.payload
+    },
+    setLat: (state, action) => {
+        state.previous_lat = state.lat
+        state.lat = action.payload
+    },
+    setLng: (state, action) => {
+        state.previous_lng = state.lng
+        state.lng = action.payload
+    },
     setSearch: (state, action) => {state.search = action.payload},
   },
   extraReducers: (builder) => {
@@ -44,9 +52,15 @@ const mapSlice = createSlice({
     builder.addCase(getSearch.fulfilled, (state, { payload }) => {
         const lat = payload.results[0].geometry.lat
         const lng = payload.results[0].geometry.lng
+
+        state.previous_lat = state.lat
+        state.previous_lng = state.lng
         state.lat = lat;
         state.lng = lng;
+
         state.loading = "loaded";
+
+        state.previous_zoom = state.zoom
         state.zoom = 10;
     });
     builder.addCase(getSearch.rejected,(state, action) => {
@@ -56,6 +70,6 @@ const mapSlice = createSlice({
   }
 });
 
-export const { setLatNE, setLngNE, setLatSW, setLngSW, setZoom, setLat, setLng, setSearch } = mapSlice.actions;
+export const { setLatBnd, setLngBnd, setZoom, setLat, setLng, setSearch } = mapSlice.actions;
 
 export default mapSlice

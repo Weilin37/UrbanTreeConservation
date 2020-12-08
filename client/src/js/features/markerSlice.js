@@ -2,10 +2,19 @@ import { createSlice,createSelector,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 // CREATE Thunk
-export const getMarkers = createAsyncThunk("markers/getMarkers", async (endpoint, thunkAPI) => {
+export const getCities = createAsyncThunk("markers/getCities", async (endpoint, thunkAPI) => {
     try {
         const response = await axios.get(endpoint);
-        return await response.data;
+        return response.data;
+    } catch (error) {
+         return thunkAPI.rejectWithValue({ error: error.message });
+    }
+});
+
+export const getTrees = createAsyncThunk("markers/getTrees", async (endpoint, thunkAPI) => {
+    try {
+        const response = await axios.get(endpoint);
+        return response.data;
     } catch (error) {
          return thunkAPI.rejectWithValue({ error: error.message });
     }
@@ -15,35 +24,40 @@ export const getMarkers = createAsyncThunk("markers/getMarkers", async (endpoint
 const markerSlice = createSlice({
   name: "markers",
   initialState: {
-    markers: [],
+    cities: [],
+    trees: [],
     markerType: "cities",
     endpoint: "/api/get/cities",
-    loading: "loading",
-    error: "",
   },
   reducers: {
     setMarkerType: (state, action) => {state.markerType = action.payload},
     setEndpoint: (state, action) => {
-        state.markerType = action.payload;
-        if (action.payload === "cities") {
+        state.markerType = action.payload.type;
+        if (action.payload.type === "cities") {
             state.endpoint = "/api/get/cities"
-        } else if (action.payload === "trees") {
-            state.endpoint = "/api/get/markers"
+        } else if (action.payload.type === "trees") {
+            state.endpoint = "/api/get/trees?lat="+action.payload.lat+"&lng="+action.payload.lng+"&latbnd="+action.payload.latbnd+"&lngbnd="+action.payload.lngbnd+"&limit="+action.payload.limit
         }
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getMarkers.pending, (state) => {
-        state.markers = [];
-        state.loading = "loading";
+    builder.addCase(getCities.pending, (state) => {
+        state.cities = [];
     });
-    builder.addCase(getMarkers.fulfilled, (state, { payload }) => {
-        state.markers = payload;
-        state.loading = "loaded";
+    builder.addCase(getCities.fulfilled, (state, { payload }) => {
+        state.cities = payload;
     });
-    builder.addCase(getMarkers.rejected,(state, action) => {
+    builder.addCase(getCities.rejected,(state, action) => {
         state.loading = "error";
-        state.error = action.error.message;
+    });
+    builder.addCase(getTrees.pending, (state) => {
+        state.trees = [];
+    });
+    builder.addCase(getTrees.fulfilled, (state, { payload }) => {
+        state.trees = payload;
+    });
+    builder.addCase(getTrees.rejected,(state, action) => {
+        state.loading = "error";
     });
   }
 });
@@ -52,8 +66,8 @@ export const { setMarkerType, setEndpoint } = markerSlice.actions;
 
 export const selectMarkers = createSelector(
   (state) => ({
-     markerSlice: state.markers,
-     loading: state.loading,
+     stateCity: state.cities,
+     stateTrees: state.trees,
      markerType: state.markerType,
      endpoint: state.endpoint
   }), (state) =>  state

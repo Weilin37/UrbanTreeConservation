@@ -8,23 +8,27 @@ router.get('/api/hello', (req, res) => {
 
 // Get all cities
 router.get('/api/get/cities', (req,res,next) => {
-	pool.query(`select city, state, avg(cast(latitude as float)) as latitude, avg(cast(longitude as float))as longitude, count(latitude) as num_trees from public.standard_dataset where latitude is not null and longitude is not null group by city, state`,
+	pool.query(`select city,
+	    state,
+	    avg(latitude) as latitude,
+	    avg(longitude)as longitude,
+	    count(latitude) as num_trees
+	    from public.standard_dataset
+	    group by city, state`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
-		})
+    })
 })
 
 // Get coordinates
-router.get('/api/get/markers', (req,res,next) => {
-	pool.query(`select * from public.standard_dataset where latitude is not null and longitude is not null limit 100`,
-		(q_err, q_res) => {
-			res.json(q_res.rows)
-		})
-})
-
-// Get search latlng
-router.get('/api/get/search', (req,res,next) => {
-	pool.query(`select * from public.standard_dataset where latitude is not null and longitude is not null limit 100`,
+router.get('/api/get/trees', (req,res,next) => {
+	pool.query(`select * from public.standard_dataset
+	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
+	    earth_distance(
+            ll_to_earth(${req.query.lat}, ${req.query.lng}),
+            ll_to_earth(${req.query.latbnd}, ${req.query.lngbnd})
+        )
+	    ) @> ll_to_earth(latitude, longitude) limit ${req.query.limit}`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
