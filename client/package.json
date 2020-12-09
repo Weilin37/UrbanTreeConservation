@@ -20,6 +20,7 @@
     "react-simple-maps": "^2.3.0",
     "react-toolkit": "^2.0.0-alpha.3",
     "redux": "^4.0.5",
+    "victory": "^35.4.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
