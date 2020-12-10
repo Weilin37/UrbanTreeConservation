@@ -19,47 +19,27 @@ const mapSlice = createSlice({
   name: "map",
   initialState: {
     zoom: 3,
-    previous_zoom: 3,
-    latBndNE: null,
-    lngBndNE: null,
-    latBndSW: null,
-    lngBndSW: null,
-    searchLatNE: null,
-    searchLngNE: null,
-    searchLatSW: null,
-    searchLngSW: null,
+    searchLatNE: 0,
+    searchLngNE: 0,
+    searchLatSW: 0,
+    searchLngSW: 0,
     lat: 37.8,
     lng: -96,
-    previous_lat: 37.8,
-    previous_lng: -96,
     search: "",
-    previous_search: "",
   },
   reducers: {
-    setLatBndNE: (state, action) => {state.latBndNE = action.payload},
-    setLngBndNE: (state, action) => {state.lngBndNE = action.payload},
-    setLatBndSW: (state, action) => {state.latBndSW = action.payload},
-    setLngBndSW: (state, action) => {state.lngBndSW = action.payload},
-    setSearchLatNE: (state, action) => {state.searchLatNE = action.payload},
-    setSearchLngNE: (state, action) => {state.searchLngNE = action.payload},
-    setSearchLatSW: (state, action) => {state.searchLatSW = action.payload},
-    setSearchLngSW: (state, action) => {state.searchLngSW = action.payload},
-    setZoom: (state, action) => {
-        state.previous_zoom = state.zoom
-        state.zoom = action.payload
+    setSearchBounds: (state, action) => {
+        state.searchLatNE = action.payload.latNE;
+        state.searchLngNE = action.payload.lngNE;
+        state.searchLatSW = action.payload.latSW;
+        state.searchLngSW = action.payload.lngSW;
     },
-    setLat: (state, action) => {
-        state.previous_lat = state.lat
-        state.lat = action.payload
+    setZoom: (state, action) => {state.zoom = action.payload},
+    setCenter: (state, action) => {
+        state.lat = action.payload.lat;
+        state.lng = action.payload.lng;
     },
-    setLng: (state, action) => {
-        state.previous_lng = state.lng
-        state.lng = action.payload
-    },
-    setSearch: (state, action) => {
-        state.previous_search = state.search
-        state.search = action.payload
-    },
+    setSearch: (state, action) => {state.search = action.payload},
   },
   extraReducers: (builder) => {
     builder.addCase(getSearch.pending, (state) => {
@@ -69,14 +49,11 @@ const mapSlice = createSlice({
         const lat = payload.results[0].geometry.lat
         const lng = payload.results[0].geometry.lng
 
-        state.previous_lat = state.lat
-        state.previous_lng = state.lng
         state.lat = lat;
         state.lng = lng;
 
         state.loading = "loaded";
 
-        state.previous_zoom = state.zoom
         state.zoom = 11;
     });
     builder.addCase(getSearch.rejected,(state, action) => {
@@ -87,17 +64,9 @@ const mapSlice = createSlice({
 });
 
 export const {
-    setLatBndNE,
-    setLngBndNE,
-    setLatBndSW,
-    setLngBndSW,
-    setSearchLatNE,
-    setSearchLngNE,
-    setSearchLatSW,
-    setSearchLngSW,
+    setSearchBounds,
     setZoom,
-    setLat,
-    setLng,
+    setCenter,
     setSearch
 } = mapSlice.actions;
 

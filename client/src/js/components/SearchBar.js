@@ -2,6 +2,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { getSearch, setSearch } from "../features/mapSlice";
+import { setMarkerType } from "../features/markerSlice";
 import { useDispatch, batch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -58,6 +59,7 @@ const SearchBar = () => {
                 batch(() => {
                     dispatch(getSearch(e.target.value));
                     dispatch(setSearch(e.target.value));
+                    dispatch(setMarkerType("clusters"))
                 });
             }
         }
