@@ -1,16 +1,24 @@
 import React, { useEffect } from "react";
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
+import { Map, Marker, Popup, TileLayer, Circle, Rectangle } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
 import { getCities, getTrees, setEndpoint } from "../features/markerSlice";
-import { setLatBnd, setLngBnd, setZoom, setLat, setLng } from "../features/mapSlice";
+import {setLatBndNE,
+        setLngBndNE,
+        setLatBndSW,
+        setLngBndSW,
+        setSearchLatNE,
+        setSearchLngNE,
+        setSearchLatSW,
+        setSearchLngSW,
+        setZoom,
+        setLat,
+        setLng
+        } from "../features/mapSlice";
+import MarkerClusterGroup from "react-leaflet-markercluster";
 
 export const LeafMap = () => {
     const dispatch = useDispatch();
-
-    function calculate_distance(pointx1, pointy1, pointx2, pointy2) {
-        return Math.sqrt(Math.pow((pointx1-pointx2),2)+Math.pow((pointy1-pointy2),2));
-    }
 
     //marker state
     const stateMarker = useSelector(state => state.marker);
@@ -23,12 +31,80 @@ export const LeafMap = () => {
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch(getTrees(stateMarker.endpoint));
+        if (stateMarker.markerType === "trees") {
+           dispatch(getTrees(stateMarker.endpoint));
+        }
     }, [stateMarker.endpoint]);
 
+    function handleMoveend(e) {
+        const map = e.target;
+        const zoom = map.getZoom();
+        const bounds = map.getBounds();
+        const latBndNE = bounds['_northEast'].lat
+        const lngBndNE = bounds['_northEast'].lng
+        const latBndSW = bounds['_southWest'].lat
+        const lngBndSW = bounds['_southWest'].lng
+        const lat = map.getCenter().lat;
+        const lng = map.getCenter().lng;
 
+        batch(() => {
+            dispatch(setZoom(zoom));
+            dispatch(setLat(lat))
+            dispatch(setLng(lng))
+            dispatch(setLatBndNE(latBndNE));
+            dispatch(setLngBndNE(lngBndNE));
+            dispatch(setLatBndSW(latBndSW));
+            dispatch(setLngBndSW(lngBndSW));
+            if (zoom < 11) {
+                dispatch(setEndpoint({type:"cities"}));
+                dispatch(setSearchLatNE(null));
+                dispatch(setSearchLngNE(null));
+                dispatch(setSearchLatSW(null));
+                dispatch(setSearchLngSW(null));
+            }
+        });
+
+        if (zoom < 11) {
+            return;
+        }
+
+        //console.log(stateMap.searchLatNE)
+        if (stateMap.searchLatNE !== null) {
+            if (lat > stateMap.searchLatNE || lat < stateMap.searchLatSW || lng > stateMap.searchLngNE || lng < stateMap.searchLngSW) {
+                if (zoom < 16) {
+                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latBndNE, lngbnd:lngBndNE, limit:1000}))
+                } else {
+                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latBndNE, lngbnd:lngBndNE, limit:100000}))
+                }
+            } else {
+                return;
+            }
+        } else {
+            if (zoom < 16 && zoom >= 11) {
+                dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latBndNE, lngbnd:lngBndNE, limit:1000}))
+            } else {
+                dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latBndNE, lngbnd:lngBndNE, limit:100000}))
+            }
+        }
+        batch(() => {
+            dispatch(setSearchLatNE(latBndNE));
+            dispatch(setSearchLngNE(lngBndNE));
+            dispatch(setSearchLatSW(latBndSW));
+            dispatch(setSearchLngSW(lngBndSW));
+        });
+
+    }
 
     // Custom map components
+    const DrawBounds = () => {
+        //const fillGreen = { color: 'green', fillColor: null, fillOpacity: 0 }
+        if (stateMarker.markerType === "trees") {
+            return <Rectangle attributes={{ stroke: 'red' }} bounds={[[stateMap.searchLatNE, stateMap.searchLngNE],[stateMap.searchLatSW, stateMap.searchLngSW]]} />
+        } else {
+            return null
+        }
+
+    }
     const GetMarkers = () => {
         const markerType = stateMarker.markerType;
 
@@ -46,104 +122,59 @@ export const LeafMap = () => {
               </Marker>
             ));
         } else if (markerType === "trees") {
-            return stateMarker.trees.map((el, i) => (
-              <Marker
-                key={i}
-                position={[el.latitude, el.longitude]}
-              >
-                <Popup>
-                    <p>City: {el.city}</p>
-                    <p>State: {el.state}</p>
-                    <p>Scientific Name: {el.scientific_name}</p>
-                    <p>Native: {el.native}</p>
-                    <p>Condition: {el.condition}</p>
-                    <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
-                </Popup>
-              </Marker>
-            ));
+            const zoom = stateMap.zoom;
+            if (zoom <= 16 && zoom >= 11) {
+                return (
+                <MarkerClusterGroup>
+                    {stateMarker.trees.map((el, i) => (
+                      <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
+                        <Popup>
+                            <p>City: {el.city}</p>
+                            <p>State: {el.state}</p>
+                            <p>Scientific Name: {el.scientific_name}</p>
+                            <p>Native: {el.native}</p>
+                            <p>Condition: {el.condition}</p>
+                            <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
+                        </Popup>
+                      </Circle>
+                    ))}
+                </MarkerClusterGroup>
+                )
+            } else if (zoom > 16) {
+                return stateMarker.trees.map((el, i) => (
+                  <Circle center={[el.latitude, el.longitude]} radius={5} color={"green"}>
+                    <Popup>
+                        <p>City: {el.city}</p>
+                        <p>State: {el.state}</p>
+                        <p>Scientific Name: {el.scientific_name}</p>
+                        <p>Native: {el.native}</p>
+                        <p>Condition: {el.condition}</p>
+                        <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
+                    </Popup>
+                  </Circle>
+                ))
+            }
         }
     };
-
-    // get map properties
-    function GetMapProperties() {
-        const map = useMap();
-
-        useMapEvents({
-            dragend: () => {
-
-                const radius = calculate_distance(stateMap.lat, stateMap.lng, stateMap.latBnd, stateMap.lngBnd)
-                const distance_change = calculate_distance(stateMap.lat, stateMap.lng, stateMap.previous_lat, stateMap.previous_lng)
-
-                const bounds = map.getBounds();
-                const latBnd = bounds['_northEast'].lat
-                const lngBnd = bounds['_northEast'].lng
-                const zoom = map.getZoom();
-                const lat = map.getCenter().lat;
-                const lng = map.getCenter().lng;
-                batch(() => {
-                    dispatch(setLat(map.getCenter().lat))
-                    dispatch(setLng(map.getCenter().lng))
-                    dispatch(setLatBnd(latBnd));
-                    dispatch(setLngBnd(lngBnd));
-                    dispatch(setZoom(stateMap.zoom))
-                    if (zoom >= 10 && (Math.abs(distance_change) / radius) > 0.5) {
-                        dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latBnd, lngbnd:lngBnd, limit:500}))
-                    }
-                });
-            },
-            zoomend: () => {
-                {
-                    const bounds = map.getBounds();
-                    const latBnd = bounds['_northEast'].lat
-                    const lngBnd = bounds['_northEast'].lng
-                    const zoom = map.getZoom();
-                    const lat = map.getCenter().lat;
-                    const lng = map.getCenter().lng;
-                    batch(() => {
-                        dispatch(setZoom(zoom));
-                        dispatch(setLat(lat));
-                        dispatch(setLng(lng));
-                        dispatch(setLatBnd(latBnd));
-                        dispatch(setLngBnd(lngBnd));
-                        if (zoom < 10) {
-                            dispatch(setEndpoint({type:"cities"}))
-                        } else if (zoom < 16 && zoom >= 10) {
-                            dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latBnd, lngbnd:lngBnd, limit:500}))
-                        } else {
-                            dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latBnd, lngbnd:lngBnd, limit:500}))
-                        }
-
-                    });
-                }
-            }
-        });
-
-        useEffect(() => {
-            map.setView([stateMap.lat, stateMap.lng], stateMap.zoom);
-        }, [stateMap.lat, stateMap.lng, stateMap.zoom]);
-      return null
-    }
 
     // render component
     if (stateMarker.cities.length > 0) {
         return (
-            <MapContainer preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
-              <GetMapProperties />
+            <Map onMoveend={handleMoveend} preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />
               <GetMarkers />
-            </MapContainer>
+              <DrawBounds />
+            </Map>
         );
     } else {
         return (
-            <MapContainer center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
+            <Map center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />
-            </MapContainer>
+            </Map>
         );
     }
 

@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SearchBar = ({ map }) => {
+const SearchBar = () => {
 
     // classes
     const classes = useStyles();
@@ -56,9 +56,9 @@ const SearchBar = ({ map }) => {
         if(e.keyCode === 13){
             if (e.target.value !== "") {
                 batch(() => {
-                    dispatch(getSearch(e.target.value))
-                    dispatch(setSearch(e.target.value))
-                })
+                    dispatch(getSearch(e.target.value));
+                    dispatch(setSearch(e.target.value));
+                });
             }
         }
     }
