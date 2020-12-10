@@ -59,7 +59,7 @@ const SearchBar = () => {
                 batch(() => {
                     dispatch(getSearch(e.target.value));
                     dispatch(setSearch(e.target.value));
-                    dispatch(setMarkerType("clusters"))
+                    dispatch(setMarkerType("clusters"));
                 });
             }
         }

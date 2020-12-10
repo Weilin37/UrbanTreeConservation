@@ -8,7 +8,7 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 
 export const LeafMap = () => {
     // Parameters
-    const clusterZoom = 11;
+    const clusterZoom = 10;
     const treeZoom = 16;
 
     const dispatch = useDispatch();
@@ -58,7 +58,7 @@ export const LeafMap = () => {
                     dispatch(setMarkerType("clusters"));
                     dispatch(setCenter({lat:lat, lng:lng}));
                     dispatch(setZoom(zoom));
-                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latNE, lngbnd:lngNE, limit:5000}));
+                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latNE, lngbnd:lngNE, limit:10000}));
                     dispatch(setSearchBounds({latNE:latNE, lngNE:lngNE, latSW:latSW, lngSW:lngSW}));
                 });
             }

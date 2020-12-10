@@ -54,7 +54,7 @@ const mapSlice = createSlice({
 
         state.loading = "loaded";
 
-        state.zoom = 11;
+        state.zoom = 10;
     });
     builder.addCase(getSearch.rejected,(state, action) => {
         state.loading = "error";
