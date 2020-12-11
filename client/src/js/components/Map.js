@@ -30,6 +30,10 @@ export const LeafMap = () => {
         }
     }, [stateMarker.endpoint]);
 
+    function toRadian(degree) {
+        return degree*Math.PI/180;
+    }
+
     function getDistance(origin, destination) {
         // return distance in meters
         var lon1 = toRadian(origin[1]),
