@@ -47,8 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SearchBar = () => {
-
+const SearchBar = ( {test}) => {
     // classes
     const classes = useStyles();
     const dispatch = useDispatch();

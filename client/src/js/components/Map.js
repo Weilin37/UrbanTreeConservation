@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import RescanMarkers from "./RescanMarkers";
+import DrawBounds from "./DrawBounds";
 import { Map, Marker, Popup, TileLayer, Circle } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
-import { getCities, getTrees, setEndpoint, clearTrees } from "../features/markerSlice";
+import { getCities, getTrees, setEndpoint, clearTrees, setScan, setRadius } from "../features/markerSlice";
 import { setSearchBounds, setZoom, setCenter } from "../features/mapSlice";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
@@ -25,7 +26,8 @@ export const LeafMap = () => {
     }, [dispatch]);
 
     useEffect(() => {
-        if (stateMap.zoom >= clusterZoom) {
+        if (stateMap.zoom >= clusterZoom && stateMarker.scan_status === "scanning") {
+            console.log("api")
            dispatch(getTrees(stateMarker.endpoint));
         }
     }, [stateMarker.endpoint]);
@@ -59,48 +61,39 @@ export const LeafMap = () => {
         const bounds = map.getBounds();
         const latNE = bounds['_northEast'].lat
         const lngNE = bounds['_northEast'].lng
-        const latSW = bounds['_southWest'].lat
-        const lngSW = bounds['_southWest'].lng
-        const outOfBounds = (lat > stateMap.searchLatNE || lat < stateMap.searchLatSW || lng > stateMap.searchLngNE || lng < stateMap.searchLngSW)
+        const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]))
+        const distance_from_center = getDistance([lat, lng],[stateMap.previous_lat,stateMap.previous_lng])
+        const outOfBounds = (distance_from_center > stateMarker.radius)
 
         if (zoom < clusterZoom) {
             batch(() => {
+               console.log("cities")
                dispatch(clearTrees());
+               dispatch(setScan("waiting"));
+               dispatch(setRadius(0));
                dispatch(setCenter({lat:lat, lng:lng}));
                dispatch(setZoom(zoom));
-               dispatch(setSearchBounds({latNE:0, lngNE:0, latSW:0, lngSW:0}));
+               dispatch(setSearchBounds({latNE:0, lngNE:0}));
                dispatch(setEndpoint({type:"cities"}))
             });
         }
         else {
             if (outOfBounds) {
+                console.log("outofbounds")
                 batch(() => {
                     dispatch(clearTrees());
+                    dispatch(setRadius(radius));
+                    dispatch(setScan("scanning"));
                     dispatch(setCenter({lat:lat, lng:lng}));
                     dispatch(setZoom(zoom));
-                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latNE, lngbnd:lngNE, limit:5000}));
-                    dispatch(setSearchBounds({latNE:latNE, lngNE:lngNE, latSW:latSW, lngSW:lngSW}));
+                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, radius:radius, limit:5000}));
+                    dispatch(setSearchBounds({latNE:latNE, lngNE:lngNE}));
                 });
             }
         }
 
     }
 
-    // Custom map components
-    const DrawBounds = () => {
-        //const fillGreen = { color: 'green', fillColor: null, fillOpacity: 0 }
-        if (stateMap.zoom >= clusterZoom) {
-            return <Circle
-                    weight={1}
-                    opacity={0.5}
-                    fill={false}
-                    center={[stateMap.lat, stateMap.lng]}
-                    radius={0.5*getDistance([stateMap.searchLatNE, stateMap.searchLngNE],[stateMap.lat, stateMap.lng])} />
-        } else {
-            return null
-        }
-
-    }
     const GetMarkers = () => {
         const zoom = stateMap.zoom;
 

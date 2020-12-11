@@ -19,22 +19,22 @@ const mapSlice = createSlice({
   name: "map",
   initialState: {
     zoom: 3,
-    searchLatNE: 0,
-    searchLngNE: 0,
-    searchLatSW: 0,
-    searchLngSW: 0,
+    searchLatNE: 37.8,
+    searchLngNE: -96,
     lat: 37.8,
     lng: -96,
+    previous_lat: 37.8,
+    previous_lng: -96,
   },
   reducers: {
     setSearchBounds: (state, action) => {
         state.searchLatNE = action.payload.latNE;
         state.searchLngNE = action.payload.lngNE;
-        state.searchLatSW = action.payload.latSW;
-        state.searchLngSW = action.payload.lngSW;
     },
     setZoom: (state, action) => {state.zoom = action.payload},
     setCenter: (state, action) => {
+        state.previous_lat = state.lat;
+        state.previous_lng = state.lng;
         state.lat = action.payload.lat;
         state.lng = action.payload.lng;
     },
@@ -46,6 +46,9 @@ const mapSlice = createSlice({
     builder.addCase(getSearch.fulfilled, (state, { payload }) => {
         const lat = payload.results[0].geometry.lat
         const lng = payload.results[0].geometry.lng
+
+        state.previous_lat = state.lat;
+        state.previous_lng = state.lng;
 
         state.lat = lat;
         state.lng = lng;

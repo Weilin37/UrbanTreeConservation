@@ -27,18 +27,20 @@ const markerSlice = createSlice({
     cities: [],
     trees: [],
     endpoint: "/api/get/cities",
+    scan_status: "waiting",
+    radius: 0
   },
   reducers: {
     setEndpoint: (state, action) => {
         if (action.payload.type === "cities") {
             state.endpoint = "/api/get/cities"
         } else if (action.payload.type === "trees") {
-            state.endpoint = "/api/get/trees?lat="+action.payload.lat+"&lng="+action.payload.lng+"&latbnd="+action.payload.latbnd+"&lngbnd="+action.payload.lngbnd+"&limit="+action.payload.limit
+            state.endpoint = "/api/get/trees?lat="+action.payload.lat+"&lng="+action.payload.lng+"&radius="+action.payload.radius+"&limit="+action.payload.limit
         }
     },
-    clearTrees: (state) => {
-        state.trees = [];
-    },
+    clearTrees: (state) => {state.trees = [];},
+    setScan: (state, action) => {state.scan_status = action.payload;},
+    setRadius: (state, action) => {state.radius = action.payload;},
   },
   extraReducers: (builder) => {
     builder.addCase(getCities.pending, (state) => {
@@ -55,13 +57,15 @@ const markerSlice = createSlice({
     });
     builder.addCase(getTrees.fulfilled, (state, { payload }) => {
         state.trees = payload;
+        state.scan_status = "waiting"
     });
     builder.addCase(getTrees.rejected,(state, action) => {
         state.loading = "error";
+        state.scan_status = "waiting"
     });
   }
 });
 
-export const { setEndpoint, clearTrees } = markerSlice.actions;
+export const { setEndpoint, clearTrees, setScan, setRadius } = markerSlice.actions;
 
 export default markerSlice
