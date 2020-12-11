@@ -117,7 +117,7 @@ export const LeafMap = () => {
             ));
         } else if (zoom < treeZoom && zoom >= clusterZoom) {
                 return (
-                <MarkerClusterGroup>
+                <MarkerClusterGroup disableClusteringAtZoom={treeZoom} spiderfyOnMaxZoom={false}>
                     {stateMarker.trees.map((el, i) => (
                       <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
                         <Popup>
@@ -134,7 +134,7 @@ export const LeafMap = () => {
                 )
         } else if (zoom >= treeZoom ) {
             return stateMarker.trees.map((el, i) => (
-              <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
+              <Circle key={i} center={[el.latitude, el.longitude]} radius={10} color={"green"}>
                 <Popup>
                     <p>City: {el.city}</p>
                     <p>State: {el.state}</p>
