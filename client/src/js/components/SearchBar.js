@@ -2,7 +2,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { getSearch } from "../features/mapSlice";
-import { clearTrees } from "../features/markerSlice";
+import { clearTrees, setViewStatus } from "../features/markerSlice";
 import { useDispatch, batch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,6 +57,7 @@ const SearchBar = ( {test}) => {
             if (e.target.value !== "") {
                 batch(() => {
                     dispatch(clearTrees());
+                    dispatch(setViewStatus("cluster"))
                     dispatch(getSearch(e.target.value));
                 });
             }

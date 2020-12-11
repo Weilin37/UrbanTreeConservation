@@ -6,9 +6,9 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 const GetMarkers = () => {
     const stateMarker = useSelector(state => state.marker);
     const { map } = useLeaflet();
-    const zoom = map._zoom;
+    const zoom = map.getZoom();
 
-    if (zoom < stateMarker.clusterZoom){
+    if (stateMarker.view_status == "cities"){
         return stateMarker.cities.map((el, i) => (
           <Marker
             key={i}
@@ -21,8 +21,8 @@ const GetMarkers = () => {
             </Popup>
           </Marker>
         ));
-    } else  {
-            return (
+    } else if (stateMarker.view_status == "cluster")  {
+        return (
             <MarkerClusterGroup disableClusteringAtZoom={stateMarker.treeZoom} spiderfyOnMaxZoom={false}>
                 {stateMarker.trees.map((el, i) => (
                   <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
@@ -37,7 +37,7 @@ const GetMarkers = () => {
                   </Circle>
                 ))}
             </MarkerClusterGroup>
-            )
+        )
     }
 };
 

@@ -28,9 +28,12 @@ const markerSlice = createSlice({
     trees: [],
     endpoint: "/api/get/cities",
     scan_status: "waiting",
-    radius: 0,
+    scan_radius: 0,
+    scan_lat: 37.8,
+    scan_lng: -96,
     clusterZoom: 10,
     treeZoom: 16,
+    view_status: "cities",
   },
   reducers: {
     setEndpoint: (state, action) => {
@@ -42,7 +45,13 @@ const markerSlice = createSlice({
     },
     clearTrees: (state) => {state.trees = [];},
     setScan: (state, action) => {state.scan_status = action.payload;},
-    setRadius: (state, action) => {state.radius = action.payload;},
+    setViewStatus: (state, action) => {state.view_status = action.payload;},
+    setScanRadius: (state, action) => {state.scan_radius = action.payload;},
+    setScanCenter: (state, action) => {
+        state.scan_lat = action.payload.lat;
+        state.scan_lng = action.payload.lng;
+    },
+    setScanLng: (state, action) => {state.scan_lng = action.payload;},
   },
   extraReducers: (builder) => {
     builder.addCase(getCities.pending, (state) => {
@@ -68,6 +77,6 @@ const markerSlice = createSlice({
   }
 });
 
-export const { setEndpoint, clearTrees, setScan, setRadius } = markerSlice.actions;
+export const { setEndpoint, setViewStatus, clearTrees, setScan, setScanRadius, setScanCenter } = markerSlice.actions;
 
 export default markerSlice
