@@ -26,21 +26,18 @@ const markerSlice = createSlice({
   initialState: {
     cities: [],
     trees: [],
-    markerType: "cities",
-    previousMarkerType: "cities",
     endpoint: "/api/get/cities",
   },
   reducers: {
-    setMarkerType: (state, action) => {
-        state.previousMarkerType = state.markerType;
-        state.markerType = action.payload;
-    },
     setEndpoint: (state, action) => {
         if (action.payload.type === "cities") {
             state.endpoint = "/api/get/cities"
         } else if (action.payload.type === "trees") {
             state.endpoint = "/api/get/trees?lat="+action.payload.lat+"&lng="+action.payload.lng+"&latbnd="+action.payload.latbnd+"&lngbnd="+action.payload.lngbnd+"&limit="+action.payload.limit
         }
+    },
+    clearTrees: (state) => {
+        state.trees = [];
     },
   },
   extraReducers: (builder) => {
@@ -65,6 +62,6 @@ const markerSlice = createSlice({
   }
 });
 
-export const { setMarkerType, setEndpoint } = markerSlice.actions;
+export const { setEndpoint, clearTrees } = markerSlice.actions;
 
 export default markerSlice

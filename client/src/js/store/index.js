@@ -9,7 +9,7 @@ import mapSlice from "../features/mapSlice";
 
 
 const middleware = [
-  ...getDefaultMiddleware(),
+  ...getDefaultMiddleware({immutableCheck: false}),
   /*YOUR CUSTOM MIDDLEWARES HERE*/
 ];
 

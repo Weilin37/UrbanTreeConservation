@@ -25,7 +25,6 @@ const mapSlice = createSlice({
     searchLngSW: 0,
     lat: 37.8,
     lng: -96,
-    search: "",
   },
   reducers: {
     setSearchBounds: (state, action) => {
@@ -39,7 +38,6 @@ const mapSlice = createSlice({
         state.lat = action.payload.lat;
         state.lng = action.payload.lng;
     },
-    setSearch: (state, action) => {state.search = action.payload},
   },
   extraReducers: (builder) => {
     builder.addCase(getSearch.pending, (state) => {

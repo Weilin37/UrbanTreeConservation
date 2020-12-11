@@ -24,10 +24,10 @@ router.get('/api/get/cities', (req,res,next) => {
 router.get('/api/get/trees', (req,res,next) => {
 	pool.query(`select * from public.standard_dataset
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
-	    earth_distance(
+	    (earth_distance(
             ll_to_earth(${req.query.lat}, ${req.query.lng}),
             ll_to_earth(${req.query.latbnd}, ${req.query.lngbnd})
-        )
+        )*0.5)
 	    ) @> ll_to_earth(latitude, longitude) limit ${req.query.limit}`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)

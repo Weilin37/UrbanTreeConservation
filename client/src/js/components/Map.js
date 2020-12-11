@@ -3,7 +3,7 @@ import RescanMarkers from "./RescanMarkers";
 import { Map, Marker, Popup, TileLayer, Circle, Rectangle } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
-import { getCities, setMarkerType, getTrees, setEndpoint } from "../features/markerSlice";
+import { getCities, getTrees, setEndpoint, clearTrees } from "../features/markerSlice";
 import { setSearchBounds, setZoom, setCenter } from "../features/mapSlice";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
@@ -25,7 +25,7 @@ export const LeafMap = () => {
     }, [dispatch]);
 
     useEffect(() => {
-        if (stateMarker.markerType === "trees" || stateMarker.markerType === "clusters") {
+        if (stateMap.zoom >= clusterZoom) {
            dispatch(getTrees(stateMarker.endpoint));
         }
     }, [stateMarker.endpoint]);
@@ -65,7 +65,7 @@ export const LeafMap = () => {
 
         if (zoom < clusterZoom) {
             batch(() => {
-               dispatch(setMarkerType("cities"));
+               dispatch(clearTrees());
                dispatch(setCenter({lat:lat, lng:lng}));
                dispatch(setZoom(zoom));
                dispatch(setSearchBounds({latNE:0, lngNE:0, latSW:0, lngSW:0}));
@@ -73,13 +73,12 @@ export const LeafMap = () => {
             });
         }
         else {
-            console.log("test1")
             if (outOfBounds) {
                 batch(() => {
-                    dispatch(setMarkerType("clusters"));
+                    dispatch(clearTrees());
                     dispatch(setCenter({lat:lat, lng:lng}));
                     dispatch(setZoom(zoom));
-                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latNE, lngbnd:lngNE, limit:10000}));
+                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, latbnd:latNE, lngbnd:lngNE, limit:5000}));
                     dispatch(setSearchBounds({latNE:latNE, lngNE:lngNE, latSW:latSW, lngSW:lngSW}));
                 });
             }
@@ -91,7 +90,10 @@ export const LeafMap = () => {
     const DrawBounds = () => {
         //const fillGreen = { color: 'green', fillColor: null, fillOpacity: 0 }
         if (stateMap.zoom >= clusterZoom) {
-            return <Rectangle opacity={0.01} bounds={[[stateMap.searchLatNE, stateMap.searchLngNE],[stateMap.searchLatSW, stateMap.searchLngSW]]} />
+            return <Circle
+                    fill={false}
+                    center={[stateMap.lat, stateMap.lng]}
+                    radius={0.5*getDistance([stateMap.searchLatNE, stateMap.searchLngNE],[stateMap.lat, stateMap.lng])} />
         } else {
             return null
         }
@@ -153,6 +155,7 @@ export const LeafMap = () => {
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />
+              <DrawBounds />
               <GetMarkers />
               <RescanMarkers />
             </Map>
