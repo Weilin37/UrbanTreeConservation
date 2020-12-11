@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import RescanMarkers from "./RescanMarkers";
-import { Map, Marker, Popup, TileLayer, Circle, Rectangle } from "react-leaflet";
+import { Map, Marker, Popup, TileLayer, Circle } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
 import { getCities, getTrees, setEndpoint, clearTrees } from "../features/markerSlice";
@@ -91,6 +91,8 @@ export const LeafMap = () => {
         //const fillGreen = { color: 'green', fillColor: null, fillOpacity: 0 }
         if (stateMap.zoom >= clusterZoom) {
             return <Circle
+                    weight={1}
+                    opacity={0.5}
                     fill={false}
                     center={[stateMap.lat, stateMap.lng]}
                     radius={0.5*getDistance([stateMap.searchLatNE, stateMap.searchLngNE],[stateMap.lat, stateMap.lng])} />
