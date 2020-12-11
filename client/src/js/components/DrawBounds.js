@@ -3,17 +3,20 @@ import { useLeaflet, Circle } from "react-leaflet";
 
 // Custom map components
 const DrawBounds = () => {
-    const stateMap = useSelector(state => state.map);
     const stateMarker = useSelector(state => state.marker);
     const { map } = useLeaflet();
+    const zoom = map._zoom;
+    const center = map._lastCenter;
+    const lat = center.lat;
+    const lng = center.lng;
     console.log(map);
 
-    if (stateMap.zoom >= 10) {
+    if (zoom >= stateMarker.clusterZoom) {
         return <Circle
                 weight={1}
                 opacity={0.5}
                 fill={false}
-                center={[stateMap.lat, stateMap.lng]}
+                center={[lat, lng]}
                 radius={stateMarker.radius} />
     } else {
         return null

@@ -28,7 +28,9 @@ const markerSlice = createSlice({
     trees: [],
     endpoint: "/api/get/cities",
     scan_status: "waiting",
-    radius: 0
+    radius: 0,
+    clusterZoom: 10,
+    treeZoom: 16,
   },
   reducers: {
     setEndpoint: (state, action) => {

@@ -1,24 +1,22 @@
 import React, { useEffect } from "react";
 import RescanMarkers from "./RescanMarkers";
 import DrawBounds from "./DrawBounds";
-import { Map, Marker, Popup, TileLayer, Circle } from "react-leaflet";
+import GetMarkers from "./GetMarkers";
+import { Map, TileLayer } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
 import { getCities, getTrees, setEndpoint, clearTrees, setScan, setRadius } from "../features/markerSlice";
 import { setSearchBounds, setZoom, setCenter } from "../features/mapSlice";
-import MarkerClusterGroup from "react-leaflet-markercluster";
 
 export const LeafMap = () => {
-    // Parameters
-    const clusterZoom = 10;
-    const treeZoom = 16;
-
     const dispatch = useDispatch();
 
-    //marker state
+    // state
     const stateMarker = useSelector(state => state.marker);
-    // map state
     const stateMap = useSelector(state => state.map);
+
+    const clusterZoom = stateMarker.clusterZoom;
+    const treeZoom = stateMarker.treeZoom;
 
     // Effects
     useEffect(() => {
@@ -93,55 +91,6 @@ export const LeafMap = () => {
         }
 
     }
-
-    const GetMarkers = () => {
-        const zoom = stateMap.zoom;
-
-        if (zoom < clusterZoom){
-            return stateMarker.cities.map((el, i) => (
-              <Marker
-                key={i}
-                position={[el.latitude, el.longitude]}
-              >
-                <Popup>
-                    <p>City: {el.city}</p>
-                    <p>State: {el.state}</p>
-                    <p>Number of Trees: {el.num_trees}</p>
-                </Popup>
-              </Marker>
-            ));
-        } else if (zoom < treeZoom && zoom >= clusterZoom) {
-                return (
-                <MarkerClusterGroup disableClusteringAtZoom={treeZoom} spiderfyOnMaxZoom={false}>
-                    {stateMarker.trees.map((el, i) => (
-                      <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
-                        <Popup>
-                            <p>City: {el.city}</p>
-                            <p>State: {el.state}</p>
-                            <p>Scientific Name: {el.scientific_name}</p>
-                            <p>Native: {el.native}</p>
-                            <p>Condition: {el.condition}</p>
-                            <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
-                        </Popup>
-                      </Circle>
-                    ))}
-                </MarkerClusterGroup>
-                )
-        } else if (zoom >= treeZoom ) {
-            return stateMarker.trees.map((el, i) => (
-              <Circle key={i} center={[el.latitude, el.longitude]} radius={10} color={"green"}>
-                <Popup>
-                    <p>City: {el.city}</p>
-                    <p>State: {el.state}</p>
-                    <p>Scientific Name: {el.scientific_name}</p>
-                    <p>Native: {el.native}</p>
-                    <p>Condition: {el.condition}</p>
-                    <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
-                </Popup>
-              </Circle>
-            ))
-        }
-    };
 
     // render component
     if (stateMarker.cities.length > 0) {
