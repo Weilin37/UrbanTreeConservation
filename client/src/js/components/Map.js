@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import RescanMarkers from "./RescanMarkers";
 import { Map, Marker, Popup, TileLayer, Circle, Rectangle } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
@@ -28,6 +29,22 @@ export const LeafMap = () => {
            dispatch(getTrees(stateMarker.endpoint));
         }
     }, [stateMarker.endpoint]);
+
+    function getDistance(origin, destination) {
+        // return distance in meters
+        var lon1 = toRadian(origin[1]),
+            lat1 = toRadian(origin[0]),
+            lon2 = toRadian(destination[1]),
+            lat2 = toRadian(destination[0]);
+
+        var deltaLat = lat2 - lat1;
+        var deltaLon = lon2 - lon1;
+
+        var a = Math.pow(Math.sin(deltaLat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(deltaLon/2), 2);
+        var c = 2 * Math.asin(Math.sqrt(a));
+        var EARTH_RADIUS = 6371;
+        return c * EARTH_RADIUS * 1000;
+    }
 
     function handlemoveend(e) {
         const map = e.target;
@@ -128,11 +145,12 @@ export const LeafMap = () => {
     // render component
     if (stateMarker.cities.length > 0) {
         return (
-            <Map  onmoveend={handlemoveend} preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
+            <Map onmoveend={handlemoveend} preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />
               <GetMarkers />
+              <RescanMarkers />
             </Map>
         );
     } else {
@@ -141,6 +159,7 @@ export const LeafMap = () => {
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />
+              <RescanMarkers />
             </Map>
         );
     }
