@@ -30,6 +30,10 @@ export const LeafMap = () => {
         }
     }, [stateMarker.endpoint]);
 
+    function createEndpoint(lat, lng, radius, limit) {
+        return "/api/get/trees?lat="+lat+"&lng="+lng+"&radius="+radius+"&limit="+limit
+    }
+
     function toRadian(degree) {
         return degree*Math.PI/180;
     }
