@@ -31,6 +31,7 @@ const markerSlice = createSlice({
     scan_radius: 0,
     scan_lat: 37.8,
     scan_lng: -96,
+    scan_zoom: 3,
     clusterZoom: 10,
     treeZoom: 16,
     view_status: "cities",
@@ -44,9 +45,10 @@ const markerSlice = createSlice({
         }
     },
     clearTrees: (state) => {state.trees = [];},
-    setScan: (state, action) => {state.scan_status = action.payload;},
+    setScanStatus: (state, action) => {state.scan_status = action.payload;},
     setViewStatus: (state, action) => {state.view_status = action.payload;},
     setScanRadius: (state, action) => {state.scan_radius = action.payload;},
+    setScanZoom: (state, action) => {state.scan_zoom = action.payload;},
     setScanCenter: (state, action) => {
         state.scan_lat = action.payload.lat;
         state.scan_lng = action.payload.lng;
@@ -77,6 +79,6 @@ const markerSlice = createSlice({
   }
 });
 
-export const { setEndpoint, setViewStatus, clearTrees, setScan, setScanRadius, setScanCenter } = markerSlice.actions;
+export const { setEndpoint, setViewStatus, clearTrees, setScanStatus, setScanRadius, setScanCenter, setScanZoom } = markerSlice.actions;
 
 export default markerSlice

@@ -1,14 +1,12 @@
 import { useSelector } from "react-redux";
-import { useLeaflet, Circle } from "react-leaflet";
+import { Circle } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 const GetMarkers = () => {
     const stateMarker = useSelector(state => state.marker);
-    const { map } = useLeaflet();
-    const zoom = map.getZoom();
 
-    if (stateMarker.view_status == "cities"){
+    if (stateMarker.view_status === "cities"){
         return stateMarker.cities.map((el, i) => (
           <Marker
             key={i}
@@ -21,7 +19,7 @@ const GetMarkers = () => {
             </Popup>
           </Marker>
         ));
-    } else if (stateMarker.view_status == "cluster")  {
+    } else if (stateMarker.view_status === "cluster")  {
         return (
             <MarkerClusterGroup disableClusteringAtZoom={stateMarker.treeZoom} spiderfyOnMaxZoom={false}>
                 {stateMarker.trees.map((el, i) => (
