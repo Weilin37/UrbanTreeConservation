@@ -15,7 +15,7 @@ const DrawBounds = () => {
                 weight={1}
                 opacity={0.5}
                 fill={false}
-                center={[lat, lng]}
+                center={[stateMarker.scan_lat, stateMarker.scan_lng]}
                 radius={stateMarker.scan_radius} />
     } else {
         return null

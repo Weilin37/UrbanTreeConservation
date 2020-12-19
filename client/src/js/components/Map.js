@@ -6,7 +6,7 @@ import { Map, TileLayer } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
 import { getCities, getTrees, setEndpoint, setViewStatus, clearTrees, setScan, setScanRadius, setScanCenter } from "../features/markerSlice";
-import { setZoom, setCenter } from "../features/mapSlice";
+import { setZoom, setCenter, setSearch } from "../features/mapSlice";
 
 export const LeafMap = () => {
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export const LeafMap = () => {
 
     useEffect(() => {
         if (stateMarker.scan_status === "scanning") {
-            console.log("api")
+           console.log("api")
            dispatch(getTrees(stateMarker.endpoint));
         }
     }, [stateMarker.endpoint]);
@@ -75,7 +75,18 @@ export const LeafMap = () => {
         else {
             console.log("cluster trigger")
             dispatch(setViewStatus("cluster"));
-            if (outOfBounds) {
+            if (stateMap.search == "searching") {
+                console.log("searching");
+                batch(() => {
+                    dispatch(clearTrees());
+                    dispatch(setScanRadius(radius));
+                    dispatch(setScanCenter({lat:lat, lng:lng}));
+                    dispatch(setSearch("waiting"))
+                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, radius:radius, limit:1000}));
+                    dispatch(setScan("scanning"));
+                });
+            }
+            /*if (outOfBounds) {
                 console.log("outofbounds")
                 batch(() => {
                     dispatch(clearTrees());
@@ -84,7 +95,7 @@ export const LeafMap = () => {
                     dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, radius:radius, limit:1000}));
                     dispatch(setScan("scanning"));
                 });
-            }
+            }*/
         }
 
     }
