@@ -19,7 +19,6 @@ const FreeDrawCustom = () => {
           e.latLngs,
           'Polygons:',
         );
-        dispatch(setDrawModeButton(false));
     };
 
     function handleModeChange(e) {
@@ -32,7 +31,6 @@ const FreeDrawCustom = () => {
             });
         }*/
     };
-
 
     return (
         <Freedraw

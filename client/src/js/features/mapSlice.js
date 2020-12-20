@@ -29,14 +29,7 @@ const mapSlice = createSlice({
   reducers: {
     setZoom: (state, action) => {state.zoom = action.payload},
     setDrawMode: (state, action) => {state.draw_mode = action.payload},
-    setDrawModeButton: (state, action) => {
-        state.draw_mode_button = action.payload
-        if (action.payload === true) {
-            state.draw_mode = ALL;
-        } else {
-            state.draw_mode = EDIT;
-        }
-    },
+    setDrawModeButton: (state, action) => {state.draw_mode_button = action.payload},
     setSearch: (state, action) => {state.search = action.payload},
     setCenter: (state, action) => {
         state.lat = action.payload.lat;

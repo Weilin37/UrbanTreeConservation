@@ -26,7 +26,6 @@ export const LeafMap = () => {
 
     useEffect(() => {
         if (stateMarker.scan_status === "scanning" && stateMarker.scan_zoom >= stateMarker.clusterZoom) {
-           console.log("api")
            dispatch(getTrees(stateMarker.endpoint));
         }
     }, [stateMarker.endpoint]);
@@ -63,15 +62,11 @@ export const LeafMap = () => {
         const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
 
         if (zoom < clusterZoom) {
-            batch(() => {
-               dispatch(setViewStatus("cities"));
-            });
+           dispatch(setViewStatus("cities"));
         }
         else {
-            console.log("cluster trigger")
             dispatch(setViewStatus("cluster"));
             if (stateMap.search === "searching") {
-                console.log("searching");
                 batch(() => {
                     dispatch(clearTrees());
                     dispatch(setScanRadius(radius));
