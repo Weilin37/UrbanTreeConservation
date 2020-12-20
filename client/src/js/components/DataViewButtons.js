@@ -19,11 +19,23 @@ const DataViewButtons = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
+    function setGlobal() {
+        dispatch(setViewStatus("global"));
+    }
+
+    function setCity() {
+        dispatch(setViewStatus("city"));
+    }
+
+    function setFreeDraw() {
+        dispatch(setViewStatus("freedraw"));
+    }
+
     return (
         <ButtonGroup className={classes.dataViewMargin} variant="contained" color="primary" aria-label="contained primary button group">
-            <Button>Global</Button>
-            <Button>City</Button>
-            <Button>FreeDraw</Button>
+            <Button onClick={setGlobal}>Global</Button>
+            <Button onClick={setCity}>City</Button>
+            <Button onClick={setFreeDraw}>FreeDraw</Button>
         </ButtonGroup>
     );
 }
