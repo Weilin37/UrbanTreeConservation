@@ -34,7 +34,7 @@ router.get('/api/get/trees', (req,res,next) => {
 // Get trees in polygon
 router.get('/api/get/polygon', (req,res,next) => {
 	pool.query(`select * from public.standard_dataset
-	    where ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON(('+${req.query.polygons+'))'),geom)`,
+	    where ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON(('+${req.query.polygons}+'))'),geom)`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
