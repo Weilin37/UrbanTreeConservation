@@ -2,7 +2,7 @@ import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 // CREATE Thunk
-export const getCities = createAsyncThunk("markers/getCities", async (endpoint, thunkAPI) => {
+export const getGlobal = createAsyncThunk("markers/getGlobal", async (endpoint, thunkAPI) => {
     try {
         const response = await axios.get(endpoint);
         return response.data;
@@ -11,7 +11,16 @@ export const getCities = createAsyncThunk("markers/getCities", async (endpoint, 
     }
 });
 
-export const getTrees = createAsyncThunk("markers/getTrees", async (endpoint, thunkAPI) => {
+export const getCity = createAsyncThunk("markers/getCity", async (endpoint, thunkAPI) => {
+    try {
+        const response = await axios.get(endpoint);
+        return response.data;
+    } catch (error) {
+         return thunkAPI.rejectWithValue({ error: error.message });
+    }
+});
+
+export const getFreeDraw = createAsyncThunk("markers/getFreeDraw", async (endpoint, thunkAPI) => {
     try {
         const response = await axios.get(endpoint);
         return response.data;
@@ -24,9 +33,10 @@ export const getTrees = createAsyncThunk("markers/getTrees", async (endpoint, th
 const markerSlice = createSlice({
   name: "markers",
   initialState: {
-    cities: [],
-    trees: [],
-    endpoint: "/api/get/cities",
+    global: [],
+    city: [],
+    freedraw: [],
+    endpoint: "/api/get/global",
     scan_status: "waiting",
     scan_radius: 0,
     scan_lat: 37.8,
@@ -34,17 +44,19 @@ const markerSlice = createSlice({
     scan_zoom: 3,
     clusterZoom: 10,
     treeZoom: 16,
-    view_status: "cities",
+    view_status: "global",
   },
   reducers: {
     setEndpoint: (state, action) => {
-        if (action.payload.type === "cities") {
-            state.endpoint = "/api/get/cities"
-        } else if (action.payload.type === "trees") {
-            state.endpoint = "/api/get/trees?lat="+action.payload.lat+"&lng="+action.payload.lng+"&radius="+action.payload.radius+"&limit="+action.payload.limit
+        if (action.payload.type === "global") {
+            state.endpoint = "/api/get/global"
+        } else if (action.payload.type === "city") {
+            state.endpoint = "/api/get/city?lat="+action.payload.lat+"&lng="+action.payload.lng+"&radius="+action.payload.radius+"&limit="+action.payload.limit
+        } else if (action.payload.type === "freedraw") {
+            state.endpoint = "/api/get/freedraw?polygons="+action.payload.polygons;
         }
     },
-    clearTrees: (state) => {state.trees = [];},
+    clearCity: (state) => {state.city = [];},
     setScanStatus: (state, action) => {state.scan_status = action.payload;},
     setViewStatus: (state, action) => {state.view_status = action.payload;},
     setScanRadius: (state, action) => {state.scan_radius = action.payload;},
@@ -56,29 +68,43 @@ const markerSlice = createSlice({
     setScanLng: (state, action) => {state.scan_lng = action.payload;},
   },
   extraReducers: (builder) => {
-    builder.addCase(getCities.pending, (state) => {
-        state.cities = [];
+    // global
+    builder.addCase(getGlobal.pending, (state) => {
+        state.global = [];
     });
-    builder.addCase(getCities.fulfilled, (state, { payload }) => {
-        state.cities = payload;
+    builder.addCase(getGlobal.fulfilled, (state, { payload }) => {
+        state.global = payload;
     });
-    builder.addCase(getCities.rejected,(state, action) => {
+    builder.addCase(getGlobal.rejected,(state, action) => {
         state.loading = "error";
     });
-    builder.addCase(getTrees.pending, (state) => {
-        state.trees = [];
+    // city
+    builder.addCase(getCity.pending, (state) => {
+        state.city = [];
     });
-    builder.addCase(getTrees.fulfilled, (state, { payload }) => {
-        state.trees = payload;
+    builder.addCase(getCity.fulfilled, (state, { payload }) => {
+        state.city = payload;
         state.scan_status = "waiting"
     });
-    builder.addCase(getTrees.rejected,(state, action) => {
+    builder.addCase(getCity.rejected,(state, action) => {
+        state.loading = "error";
+        state.scan_status = "waiting"
+    });
+    // free draw
+    builder.addCase(getFreeDraw.pending, (state) => {
+        state.freedraw = [];
+    });
+    builder.addCase(getFreeDraw.fulfilled, (state, { payload }) => {
+        state.freedraw = payload;
+        state.scan_status = "waiting"
+    });
+    builder.addCase(getFreeDraw.rejected,(state, action) => {
         state.loading = "error";
         state.scan_status = "waiting"
     });
   }
 });
 
-export const { setEndpoint, setViewStatus, clearTrees, setScanStatus, setScanRadius, setScanCenter, setScanZoom } = markerSlice.actions;
+export const { setEndpoint, setViewStatus, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom } = markerSlice.actions;
 
 export default markerSlice

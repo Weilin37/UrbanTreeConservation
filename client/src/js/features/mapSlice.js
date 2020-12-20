@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
-import Freedraw, { ALL, EDIT, CREATE, DELETE, NONE } from 'react-leaflet-freedraw';
+import { NONE } from 'react-leaflet-freedraw';
 
 // CREATE Thunk
 export const getSearch = createAsyncThunk("search/getSearch", async (location, thunkAPI) => {
@@ -24,12 +24,10 @@ const mapSlice = createSlice({
     lng: -96,
     search: "waiting",
     draw_mode: NONE,
-    draw_mode_button: false
   },
   reducers: {
     setZoom: (state, action) => {state.zoom = action.payload},
     setDrawMode: (state, action) => {state.draw_mode = action.payload},
-    setDrawModeButton: (state, action) => {state.draw_mode_button = action.payload},
     setSearch: (state, action) => {state.search = action.payload},
     setCenter: (state, action) => {
         state.lat = action.payload.lat;
@@ -64,7 +62,6 @@ export const {
     setZoom,
     setCenter,
     setSearch,
-    setDrawModeButton,
     setDrawMode
 } = mapSlice.actions;
 

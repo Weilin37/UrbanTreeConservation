@@ -4,10 +4,11 @@ import DrawBounds from "./DrawBounds";
 import FreeDrawCustom from "./FreeDrawCustom";
 import FreeDrawButtons from "./FreeDrawButtons";
 import GetMarkers from "./GetMarkers";
+import DataViewButtons from "./DataViewButtons";
 import { Map, TileLayer } from "react-leaflet";
 import "../../css/app.css";
 import { useSelector, useDispatch, batch } from "react-redux";
-import { getCities, getTrees, setEndpoint, setViewStatus, clearTrees, setScanStatus, setScanRadius, setScanCenter, setScanZoom } from "../features/markerSlice";
+import { getGlobal, getCity, getFreeDraw, setEndpoint, setViewStatus, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom } from "../features/markerSlice";
 import { setSearch } from "../features/mapSlice";
 
 export const LeafMap = () => {
@@ -21,12 +22,15 @@ export const LeafMap = () => {
 
     // Effects
     useEffect(() => {
-        dispatch(getCities("/api/get/cities"));
+        dispatch(getGlobal("/api/get/cities"));
     }, [dispatch]);
 
     useEffect(() => {
-        if (stateMarker.scan_status === "scanning" && stateMarker.scan_zoom >= stateMarker.clusterZoom) {
-           dispatch(getTrees(stateMarker.endpoint));
+        if (stateMarker.scan_status === "scanning" && stateMarker.view_status === "city") {
+           dispatch(getCity(stateMarker.endpoint));
+        }
+        else if (stateMarker.scan_status === "scanning" && stateMarker.view_status === "freedraw") {
+           dispatch(getFreeDraw(stateMarker.endpoint));
         }
     }, [stateMarker.endpoint]);
 
@@ -62,18 +66,18 @@ export const LeafMap = () => {
         const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
 
         if (zoom < clusterZoom) {
-           dispatch(setViewStatus("cities"));
+           dispatch(setViewStatus("global"));
         }
         else {
-            dispatch(setViewStatus("cluster"));
+            dispatch(setViewStatus("city"));
             if (stateMap.search === "searching") {
                 batch(() => {
-                    dispatch(clearTrees());
+                    dispatch(clearCity());
                     dispatch(setScanRadius(radius));
                     dispatch(setScanCenter({lat:lat, lng:lng}));
                     dispatch(setScanZoom(zoom));
                     dispatch(setSearch("waiting"))
-                    dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, radius:radius, limit:1000}));
+                    dispatch(setEndpoint({type:"city", lat:lat, lng:lng, radius:radius, limit:1000}));
                     dispatch(setScanStatus("scanning"));
                 });
             }
@@ -82,7 +86,7 @@ export const LeafMap = () => {
     }
 
     // render component
-    if (stateMarker.cities.length > 0) {
+    if (stateMarker.global.length > 0) {
         return (
             <Map onmoveend={handlemoveend} doubleClickZoom={false} preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
@@ -93,6 +97,7 @@ export const LeafMap = () => {
               <RescanMarkers />
               <FreeDrawButtons />
               <FreeDrawCustom />
+              <DataViewButtons />
             </Map>
         );
     } else {
@@ -101,7 +106,6 @@ export const LeafMap = () => {
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />
-              <RescanMarkers />
             </Map>
         );
     }

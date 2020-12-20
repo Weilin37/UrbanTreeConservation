@@ -3,28 +3,21 @@ import Fab from '@material-ui/core/Fab';
 import AdjustIcon from '@material-ui/icons/Adjust';
 import { useDispatch, batch } from "react-redux";
 import { useLeaflet } from "react-leaflet";
-import { setSearch } from "../features/mapSlice";
+import { setSearch, setDrawMode } from "../features/mapSlice";
+import { NONE } from 'react-leaflet-freedraw';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { setEndpoint, clearTrees, setScanStatus, setScanRadius, setScanCenter, setScanZoom } from "../features/markerSlice";
+import { setEndpoint, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom } from "../features/markerSlice";
 
 const useStyles = makeStyles((theme) => ({
-  margin: {
+  scanMargin: {
     margin: theme.spacing(1),
-    top: theme.spacing(16),
+    top: theme.spacing(28),
     left: theme.spacing(1),
     position: 'fixed',
     zIndex: 1000,
   }
 }));
-
-const theme = createMuiTheme({
-  palette: {
-    secondary: {
-      main: '#11cb5f',
-    }
-  }
-});
 
 
 const RescanMarkers = () => {
@@ -64,7 +57,8 @@ const RescanMarkers = () => {
         const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
 
         batch(() => {
-            dispatch(clearTrees());
+            dispatch(clearCity());
+            dispatch(setDrawMode(NONE));
             dispatch(setScanRadius(radius));
             dispatch(setScanCenter({lat:lat, lng:lng}));
             dispatch(setScanZoom(zoom));
@@ -75,11 +69,11 @@ const RescanMarkers = () => {
     }
 
     return (
-        <ThemeProvider theme={theme}>
-            <Fab onClick={handleclick} size="small" color="secondary" aria-label="add" className={classes.margin}>
+        <div>
+            <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
                 <AdjustIcon />
             </Fab>
-        </ThemeProvider>
+        </div>
     );
 }
 

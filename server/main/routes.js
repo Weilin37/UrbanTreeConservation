@@ -2,12 +2,8 @@ var express = require('express')
 var router = express.Router()
 var pool = require('./db')
 
-router.get('/api/hello', (req, res) => {
-	res.json('hello world')
-})
-
-// Get all cities
-router.get('/api/get/cities', (req,res,next) => {
+// Get global level data
+router.get('/api/get/global', (req,res,next) => {
 	pool.query(`select city,
 	    state,
 	    avg(latitude) as latitude,
@@ -20,8 +16,8 @@ router.get('/api/get/cities', (req,res,next) => {
     })
 })
 
-// Get trees in radius
-router.get('/api/get/trees', (req,res,next) => {
+// Get city level data
+router.get('/api/get/city', (req,res,next) => {
 	pool.query(`select * from public.standard_dataset
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})
@@ -32,7 +28,7 @@ router.get('/api/get/trees', (req,res,next) => {
 })
 
 // Get trees in polygon
-router.get('/api/get/polygon', (req,res,next) => {
+router.get('/api/get/freedraw', (req,res,next) => {
 	pool.query(`select * from public.standard_dataset
 	    where ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON(('+${req.query.polygons}+'))'),geom)`,
 		(q_err, q_res) => {

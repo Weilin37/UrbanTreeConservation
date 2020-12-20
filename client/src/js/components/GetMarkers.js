@@ -6,8 +6,8 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 const GetMarkers = () => {
     const stateMarker = useSelector(state => state.marker);
 
-    if (stateMarker.view_status === "cities"){
-        return stateMarker.cities.map((el, i) => (
+    if (stateMarker.view_status === "global"){
+        return stateMarker.global.map((el, i) => (
           <Marker
             key={i}
             position={[el.latitude, el.longitude]}
@@ -19,10 +19,10 @@ const GetMarkers = () => {
             </Popup>
           </Marker>
         ));
-    } else if (stateMarker.view_status === "cluster")  {
+    } else if (stateMarker.view_status === "city")  {
         return (
             <MarkerClusterGroup disableClusteringAtZoom={stateMarker.treeZoom} spiderfyOnMaxZoom={false}>
-                {stateMarker.trees.map((el, i) => (
+                {stateMarker.city.map((el, i) => (
                   <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
                     <Popup>
                         <p>City: {el.city}</p>
@@ -36,6 +36,8 @@ const GetMarkers = () => {
                 ))}
             </MarkerClusterGroup>
         )
+    } else {
+        return null
     }
 };
 

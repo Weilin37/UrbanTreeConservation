@@ -5,7 +5,7 @@ import { Circle } from "react-leaflet";
 const DrawBounds = () => {
     const stateMarker = useSelector(state => state.marker);
 
-    if (stateMarker.view_status === "cluster") {
+    if (stateMarker.view_status === "city") {
         return <Circle
                 weight={1}
                 opacity={0.5}
