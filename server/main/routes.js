@@ -29,11 +29,6 @@ router.get('/api/get/city', (req,res,next) => {
 
 // Get trees in polygon
 router.get('/api/get/freedraw', (req,res,next) => {
-    console.log(`select * from public.standard_dataset
-	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
-	    (${req.query.radius})
-	    ) @> ll_to_earth(latitude, longitude)
-	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)`)
 	pool.query(`select * from public.standard_dataset
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})

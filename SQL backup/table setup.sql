@@ -18,6 +18,8 @@ select * from public.standard_dataset
     (${req.query.radius})
     ) @> ll_to_earth(latitude, longitude) limit ${req.query.limit}
 
-SELECT latitude, longitude
-FROM public.standard_dataset
-WHERE ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((-122.35866308212282 47.67823259604642 ,-122.35703229904176 47.676397755374985,-122.36085176467897 47.675343053974366,  -122.36353397369386 47.67742354039624,-122.35866308212282 47.67823259604642))'),geom)
+select * from public.standard_dataset
+	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
+	    (${req.query.radius})
+	    ) @> ll_to_earth(latitude, longitude)
+	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)
