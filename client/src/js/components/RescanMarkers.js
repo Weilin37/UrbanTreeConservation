@@ -1,13 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AdjustIcon from '@material-ui/icons/Adjust';
-import { useDispatch, batch } from "react-redux";
+import { useDispatch, useSelector, batch } from "react-redux";
 import { useLeaflet } from "react-leaflet";
-import { setSearch, setDrawMode } from "../features/mapSlice";
 import { NONE } from 'react-leaflet-freedraw';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { setEndpoint, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom } from "../features/markerSlice";
+import { setEndpoint, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom, setViewStatus } from "../features/markerSlice";
+import { setDrawMode, setSearch } from "../features/mapSlice";
 
 const useStyles = makeStyles((theme) => ({
   scanMargin: {
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const RescanMarkers = () => {
+    const stateMarker = useSelector(state => state.marker);
     const dispatch = useDispatch();
     // classes
     const classes = useStyles();
@@ -47,25 +48,43 @@ const RescanMarkers = () => {
     }
 
     function handleclick(e) {
-        const center = map.getCenter();
-        const zoom = map.getZoom();
-        const lat = center.lat;
-        const lng = center.lng;
-        const bounds = map.getBounds();
-        const latNE = bounds['_northEast'].lat
-        const lngNE = bounds['_northEast'].lng
-        const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
+        if (stateMarker.view_status === "city" || stateMarker.view_status === "global") {
+            if (map.getZoom() < stateMarker.cityZoom) {
+                map.setZoom(stateMarker.cityZoom);
+            }
+            const zoom = map.getZoom();
+            const center = map.getCenter();
+            const lat = center.lat;
+            const lng = center.lng;
+            const bounds = map.getBounds();
+            const latNE = bounds['_northEast'].lat
+            const lngNE = bounds['_northEast'].lng
+            const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
 
-        batch(() => {
-            dispatch(clearCity());
-            dispatch(setDrawMode(NONE));
-            dispatch(setScanRadius(radius));
-            dispatch(setScanCenter({lat:lat, lng:lng}));
-            dispatch(setScanZoom(zoom));
-            dispatch(setSearch("waiting"));
-            dispatch(setEndpoint({type:"trees", lat:lat, lng:lng, radius:radius, limit:1000}));
-            dispatch(setScanStatus("scanning"));
-        });
+            batch(() => {
+                dispatch(clearCity());
+                dispatch(setScanRadius(radius));
+                dispatch(setScanCenter({lat:lat, lng:lng}));
+                dispatch(setSearch("waiting"));
+                if (zoom < stateMarker.cityZoom) {
+                    dispatch(setScanZoom(stateMarker.cityZoom));
+                } else {
+                    dispatch(setScanZoom(zoom));
+                }
+                dispatch(setViewStatus("city"))
+                dispatch(setEndpoint({type:"city", lat:lat, lng:lng, radius:radius, limit:1000}));
+                dispatch(setScanStatus("scanning"));
+            });
+        } else if (stateMarker.view_status === "freedraw") {
+            if (stateMarker.endpoint.length > 0) {
+                batch(() => {
+                    dispatch(setViewStatus("freedraw"))
+                    dispatch(setScanStatus("scanning"));
+                    dispatch(setDrawMode(NONE));
+                });
+            }
+        }
+
     }
 
     return (

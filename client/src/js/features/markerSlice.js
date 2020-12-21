@@ -42,9 +42,10 @@ const markerSlice = createSlice({
     scan_lat: 37.8,
     scan_lng: -96,
     scan_zoom: 3,
-    clusterZoom: 10,
+    cityZoom: 10,
     treeZoom: 16,
     view_status: "global",
+    previous_view_status: "global",
   },
   reducers: {
     setEndpoint: (state, action) => {
@@ -53,12 +54,15 @@ const markerSlice = createSlice({
         } else if (action.payload.type === "city") {
             state.endpoint = "/api/get/city?lat="+action.payload.lat+"&lng="+action.payload.lng+"&radius="+action.payload.radius+"&limit="+action.payload.limit
         } else if (action.payload.type === "freedraw") {
-            state.endpoint = "/api/get/freedraw?polygons="+action.payload.polygons;
+            state.endpoint = "/api/get/freedraw?lat="+action.payload.lat+"&lng="+action.payload.lng+"&radius="+action.payload.radius+"&polygons="+action.payload.polygons;
         }
     },
     clearCity: (state) => {state.city = [];},
     setScanStatus: (state, action) => {state.scan_status = action.payload;},
-    setViewStatus: (state, action) => {state.view_status = action.payload;},
+    setViewStatus: (state, action) => {
+        state.previous_view_status = state.view_status;
+        state.view_status = action.payload;
+    },
     setScanRadius: (state, action) => {state.scan_radius = action.payload;},
     setScanZoom: (state, action) => {state.scan_zoom = action.payload;},
     setScanCenter: (state, action) => {

@@ -1,11 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { setDrawMode } from "../features/mapSlice";
-import { useDispatch, batch } from "react-redux";
+import { useDispatch, useSelector, batch } from "react-redux";
 import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { ALL, DELETE } from 'react-leaflet-freedraw';
 import { setViewStatus } from "../features/markerSlice";
+import { useLeaflet } from "react-leaflet";
 
 const useStyles = makeStyles((theme) => ({
   freeDrawMargin: {
@@ -28,8 +29,13 @@ const useStyles = makeStyles((theme) => ({
 const FreeDrawButtons = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const stateMarker = useSelector(state => state.marker);
+    const { map } = useLeaflet();
 
     function handleSwitchClick(e) {
+        if (map.getZoom() < stateMarker.cityZoom) {
+            map.setZoom(stateMarker.cityZoom);
+        }
         dispatch(setDrawMode((ALL)));
         batch(() => {
             dispatch(setViewStatus("freedraw"));

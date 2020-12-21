@@ -18,11 +18,11 @@ export const LeafMap = () => {
     const stateMarker = useSelector(state => state.marker);
     const stateMap = useSelector(state => state.map);
 
-    const clusterZoom = stateMarker.clusterZoom;
+    const cityZoom = stateMarker.cityZoom;
 
     // Effects
     useEffect(() => {
-        dispatch(getGlobal("/api/get/cities"));
+        dispatch(getGlobal(stateMarker.endpoint));
     }, [dispatch]);
 
     useEffect(() => {
@@ -30,9 +30,10 @@ export const LeafMap = () => {
            dispatch(getCity(stateMarker.endpoint));
         }
         else if (stateMarker.scan_status === "scanning" && stateMarker.view_status === "freedraw") {
+            console.log("api")
            dispatch(getFreeDraw(stateMarker.endpoint));
         }
-    }, [stateMarker.endpoint]);
+    }, [stateMarker.scan_status]);
 
     function toRadian(degree) {
         return degree*Math.PI/180;
@@ -54,6 +55,23 @@ export const LeafMap = () => {
         return c * EARTH_RADIUS * 1000;
     }
 
+    function handlezoomend(e) {
+        const map = e.target;
+        const zoom = map.getZoom();
+
+        if (zoom < cityZoom) {
+            if (stateMarker.view_status !== "global") {
+                dispatch(setViewStatus("global"));
+            }
+        } else {
+            if (stateMarker.view_status === "global" && stateMarker.previous_view_status === "global") {
+                dispatch(setViewStatus("city"));
+            } else if (stateMarker.view_status === "global" && stateMarker.previous_view_status !== "global") {
+                dispatch(setViewStatus(stateMarker.previous_view_status));
+            }
+        }
+    }
+
     function handlemoveend(e) {
         const map = e.target;
         const zoom = map.getZoom();
@@ -64,19 +82,14 @@ export const LeafMap = () => {
         const latNE = bounds['_northEast'].lat
         const lngNE = bounds['_northEast'].lng
         const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
-
-        if (zoom < clusterZoom) {
-           dispatch(setViewStatus("global"));
-        }
-        else {
-            dispatch(setViewStatus("city"));
+        if (zoom >= cityZoom) {
             if (stateMap.search === "searching") {
                 batch(() => {
                     dispatch(clearCity());
                     dispatch(setScanRadius(radius));
                     dispatch(setScanCenter({lat:lat, lng:lng}));
                     dispatch(setScanZoom(zoom));
-                    dispatch(setSearch("waiting"))
+                    dispatch(setSearch("waiting"));
                     dispatch(setEndpoint({type:"city", lat:lat, lng:lng, radius:radius, limit:1000}));
                     dispatch(setScanStatus("scanning"));
                 });
@@ -88,7 +101,7 @@ export const LeafMap = () => {
     // render component
     if (stateMarker.global.length > 0) {
         return (
-            <Map onmoveend={handlemoveend} doubleClickZoom={false} preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
+            <Map onmoveend={handlemoveend} onzoomend={handlezoomend} doubleClickZoom={false} preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />

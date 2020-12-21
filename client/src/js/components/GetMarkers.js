@@ -36,6 +36,19 @@ const GetMarkers = () => {
                 ))}
             </MarkerClusterGroup>
         )
+    } else if (stateMarker.view_status === "freedraw") {
+        return stateMarker.freedraw.map((el, i) => (
+                  <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
+                    <Popup>
+                        <p>City: {el.city}</p>
+                        <p>State: {el.state}</p>
+                        <p>Scientific Name: {el.scientific_name}</p>
+                        <p>Native: {el.native}</p>
+                        <p>Condition: {el.condition}</p>
+                        <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
+                    </Popup>
+                  </Circle>
+                ));
     } else {
         return null
     }
