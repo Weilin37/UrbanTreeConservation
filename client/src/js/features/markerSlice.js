@@ -58,6 +58,7 @@ const markerSlice = createSlice({
         }
     },
     clearCity: (state) => {state.city = [];},
+    clearFreeDraw: (state) => {state.freedraw = [];},
     setScanStatus: (state, action) => {state.scan_status = action.payload;},
     setViewStatus: (state, action) => {
         state.previous_view_status = state.view_status;
@@ -109,6 +110,6 @@ const markerSlice = createSlice({
   }
 });
 
-export const { setEndpoint, setViewStatus, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom } = markerSlice.actions;
+export const { setEndpoint, setViewStatus, clearCity, clearFreeDraw, setScanStatus, setScanRadius, setScanCenter, setScanZoom } = markerSlice.actions;
 
 export default markerSlice

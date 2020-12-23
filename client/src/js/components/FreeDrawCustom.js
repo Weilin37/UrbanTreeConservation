@@ -2,7 +2,7 @@ import React, {useRef} from "react";
 import Freedraw from 'react-leaflet-freedraw';
 import "../../css/freedraw.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setEndpoint } from "../features/markerSlice";
+import { setEndpoint, clearFreeDraw } from "../features/markerSlice";
 import { setDrawMode } from "../features/mapSlice";
 import { useLeaflet } from "react-leaflet";
 
@@ -59,6 +59,10 @@ const FreeDrawCustom = () => {
             let polygonString = polygonArray.join(',');
             dispatch(setEndpoint({type:"freedraw", polygons:polygonString, lat:lat, lng:lng, radius:radius}));
         }
+        else if (e.latLngs.length == 0) {
+            console.log("clearing free draw");
+            dispatch(clearFreeDraw());
+        }
     };
 
     function handleModeChange(e) {
@@ -76,8 +80,7 @@ const FreeDrawCustom = () => {
           simplifyFactor={2}
           ref={freeDrawRef}
           leaveModeAfterCreate={true}
-          destroyPreviousPolygon={true}
-          allowMultiplePolygons={false}
+          maximumPolygons={1}
         />
     )
 
