@@ -76,6 +76,8 @@ const FreeDrawCustom = () => {
           simplifyFactor={2}
           ref={freeDrawRef}
           leaveModeAfterCreate={true}
+          destroyPreviousPolygon={true}
+          allowMultiplePolygons={false}
         />
     )
 
