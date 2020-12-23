@@ -3,6 +3,7 @@ import Freedraw from 'react-leaflet-freedraw';
 import "../../css/freedraw.css";
 import { useSelector, useDispatch } from "react-redux";
 import { setEndpoint } from "../features/markerSlice";
+import { setDrawMode } from "../features/mapSlice";
 import { useLeaflet } from "react-leaflet";
 
 // Custom map components
@@ -62,6 +63,9 @@ const FreeDrawCustom = () => {
 
     function handleModeChange(e) {
         console.log('mode changed', e.mode);
+        if (e.mode === 10 && stateMap.draw_mode !== 10) {
+            dispatch(setDrawMode(10));
+        }
     };
 
     return (
@@ -69,6 +73,7 @@ const FreeDrawCustom = () => {
           mode={stateMap.draw_mode}
           onMarkers={handleOnMarkers}
           onModeChange={handleModeChange}
+          simplifyFactor={2}
           ref={freeDrawRef}
           leaveModeAfterCreate={true}
         />
