@@ -13,7 +13,6 @@ const FreeDrawCustom = () => {
     const freeDrawRef = useRef(null);
 
     const { map } = useLeaflet();
-    const zoom = map.getZoom();
     const center = map.getCenter();
     const lat = center.lat;
     const lng = center.lng;
@@ -59,7 +58,7 @@ const FreeDrawCustom = () => {
             let polygonString = polygonArray.join(',');
             dispatch(setEndpoint({type:"freedraw", polygons:polygonString, lat:lat, lng:lng, radius:radius}));
         }
-        else if (e.latLngs.length == 0) {
+        else if (e.latLngs.length === 0) {
             console.log("clearing free draw");
             dispatch(clearFreeDraw());
         }

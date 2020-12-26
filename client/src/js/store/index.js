@@ -6,6 +6,7 @@ import {
 import { combineReducers } from "redux";
 import markerSlice from "../features/markerSlice";
 import mapSlice from "../features/mapSlice";
+import analysisSlice from "../features/analysisSlice";
 
 
 const middleware = [
@@ -16,6 +17,7 @@ const middleware = [
 const rootReducer = combineReducers({
     marker: markerSlice.reducer,
     map: mapSlice.reducer,
+    analysis: analysisSlice.reducer,
 });
 
 // CREATE STORE

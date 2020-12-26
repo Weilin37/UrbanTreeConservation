@@ -4,6 +4,7 @@ import DrawBounds from "./DrawBounds";
 import FreeDrawCustom from "./FreeDrawCustom";
 import FreeDrawButtons from "./FreeDrawButtons";
 import DrawAnalysisNative from "./DrawAnalysisNative";
+import DrawAnalysisSimilarity from "./DrawAnalysisSimilarity";
 import GetMarkers from "./GetMarkers";
 import DataViewButtons from "./DataViewButtons";
 import { Map, TileLayer } from "react-leaflet";
@@ -113,6 +114,7 @@ export const LeafMap = () => {
               <FreeDrawCustom />
               <DataViewButtons />
               <DrawAnalysisNative />
+              <DrawAnalysisSimilarity />
             </Map>
         );
     } else {
