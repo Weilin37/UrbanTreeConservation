@@ -26,14 +26,9 @@ const DrawAnalysisSimilarity = () => {
 
 
     if (stateMarker.view_status === "global" && stateAnalysis.similarityData.length > 0) {
-
         return(
-            <Box className={classes.analysisMargin}>
-            <Paper>
-                <h5>Total: </h5>
-                <h5>Native: </h5>
-                <h5>Non-Native: </h5>
-            </Paper>
+            <Box>
+                <h5>Dice Sorensen Similarity: {stateAnalysis.similarityData['ds_similarity']}</h5>
             </Box>
         )
     } else {

@@ -15,7 +15,7 @@ export const getSimilarity = createAsyncThunk("analysis/getSimilarity", async (e
 const analysisSlice = createSlice({
   name: "analysis",
   initialState: {
-    similarityData: [],
+    similarityData: {'ds_similarity': '', 'city1':'','city2':'','state1':'','state2':''},
     similarityCity1: "",
     similarityCity2: "",
     similarityState1: "",
@@ -30,10 +30,14 @@ const analysisSlice = createSlice({
   extraReducers: (builder) => {
     // global
     builder.addCase(getSimilarity.pending, (state) => {
-        state.similarityData = [];
+        state.similarityData = {'ds_similarity': '', 'city1':'','city2':'','state1':'','state2':''};
     });
     builder.addCase(getSimilarity.fulfilled, (state, { payload }) => {
-        state.similarityData = payload;
+        state.similarityData['ds_similarity'] = payload[0]['ds_similarity'];
+        state.similarityData['city1'] = state.similarityCity1;
+        state.similarityData['city2'] = state.similarityCity2;
+        state.similarityData['state1'] = state.similarityState1;
+        state.similarityData['state2'] = state.similarityState2;
     });
   }
 });

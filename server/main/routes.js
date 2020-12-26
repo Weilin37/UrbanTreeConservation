@@ -39,4 +39,57 @@ router.get('/api/get/freedraw', (req,res,next) => {
 		})
 })
 
+// Get similarity between two cities
+router.get('/api/get/citysimilarity', (req,res,next) => {
+    console.log(`select
+        ROUND(
+        (
+            select 2*count(*)
+            from (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state1}') and lower(city) = lower('${req.query.city1}')) a
+            inner join (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state2}') and lower(city) = lower('${req.query.city2}')) b
+            on a.scientific_name = b.scientific_name
+        )::numeric
+        /
+        (
+            (select count(distinct scientific_name)
+            from public.standard_dataset
+            where lower(state) = lower('${req.query.state1}')
+            and lower(city) = lower('${req.query.city1}'))
+            +
+            (select count(distinct scientific_name)
+            from public.standard_dataset
+            where lower(state) = lower('${req.query.state2}')
+            and lower(city) = lower('${req.query.city2}'))
+        )::numeric
+        ,4 )`)
+
+
+	pool.query(
+        `select
+        ROUND(
+        (
+            select 2*count(*)
+            from (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state1}') and lower(city) = lower('${req.query.city1}')) a
+            inner join (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state2}') and lower(city) = lower('${req.query.city2}')) b
+            on a.scientific_name = b.scientific_name
+        )::numeric
+        /
+        (
+            (select count(distinct scientific_name)
+            from public.standard_dataset
+            where lower(state) = lower('${req.query.state1}')
+            and lower(city) = lower('${req.query.city1}'))
+            +
+            (select count(distinct scientific_name)
+            from public.standard_dataset
+            where lower(state) = lower('${req.query.state2}')
+            and lower(city) = lower('${req.query.city2}'))
+        )::numeric
+        ,4 ) as ds_similarity`,
+		(q_err, q_res) => {
+		    console.log(q_res.rows);
+			res.json(q_res.rows)
+		})
+})
+
 module.exports = router
