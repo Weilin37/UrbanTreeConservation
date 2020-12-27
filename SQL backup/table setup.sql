@@ -48,9 +48,14 @@ ROUND(
 ,4 ) as ds_similarity
 
 
+
 create table public.dice_similarity
 AS
 select
+geo.city1,
+geo.state1,
+geo.city2,
+geo.state2,
 ROUND(
 (
     select 2*count(*)
@@ -78,4 +83,5 @@ FROM
 	inner join (select distinct city, state from public.standard_dataset) B 
 	on A.city||A.state > B.city||B.state
 ) geo
+
 
