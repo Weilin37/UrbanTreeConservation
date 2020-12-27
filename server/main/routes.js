@@ -41,55 +41,27 @@ router.get('/api/get/freedraw', (req,res,next) => {
 
 // Get similarity between two cities
 router.get('/api/get/citysimilarity', (req,res,next) => {
-    console.log(`select
-        ROUND(
-        (
-            select 2*count(*)
-            from (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state1}') and lower(city) = lower('${req.query.city1}')) a
-            inner join (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state2}') and lower(city) = lower('${req.query.city2}')) b
-            on a.scientific_name = b.scientific_name
-        )::numeric
-        /
-        (
-            (select count(distinct scientific_name)
-            from public.standard_dataset
-            where lower(state) = lower('${req.query.state1}')
-            and lower(city) = lower('${req.query.city1}'))
-            +
-            (select count(distinct scientific_name)
-            from public.standard_dataset
-            where lower(state) = lower('${req.query.state2}')
-            and lower(city) = lower('${req.query.city2}'))
-        )::numeric
-        ,4 )`)
-
-
 	pool.query(
-        `select
-        ROUND(
-        (
-            select 2*count(*)
-            from (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state1}') and lower(city) = lower('${req.query.city1}')) a
-            inner join (select distinct scientific_name from public.standard_dataset where lower(state) = lower('${req.query.state2}') and lower(city) = lower('${req.query.city2}')) b
-            on a.scientific_name = b.scientific_name
-        )::numeric
-        /
-        (
-            (select count(distinct scientific_name)
-            from public.standard_dataset
-            where lower(state) = lower('${req.query.state1}')
-            and lower(city) = lower('${req.query.city1}'))
-            +
-            (select count(distinct scientific_name)
-            from public.standard_dataset
-            where lower(state) = lower('${req.query.state2}')
-            and lower(city) = lower('${req.query.city2}'))
-        )::numeric
-        ,4 ) as ds_similarity`,
+        `select city1, state1, city2, state2, ds_similarity
+        from public.dice_similarity
+        where (
+        		state1 in ('${req.query.state1}','${req.query.state2}') and city1 in ('${req.query.city1}','${req.query.city2}')
+        	)
+        and (
+        	state2 in ('${req.query.state1}','${req.query.state2}') and city2 in ('${req.query.city1}','${req.query.city2}')
+      	)`,
 		(q_err, q_res) => {
-		    console.log(q_res.rows);
 			res.json(q_res.rows)
 		})
-})
+});
+
+// Get similarity histogram
+router.get('/api/get/similarityhistogram', (req,res,next) => {
+	pool.query(
+        `select ds_similarity as x from public.dice_similarity`,
+		(q_err, q_res) => {
+			res.json(q_res.rows)
+		})
+});
 
 module.exports = router

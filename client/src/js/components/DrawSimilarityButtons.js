@@ -8,13 +8,13 @@ import { useLeaflet } from "react-leaflet";
 import Chip from '@material-ui/core/Chip';
 import Paper from '@material-ui/core/Paper';
 import DrawAnalysisSimilarity from "./DrawAnalysisSimilarity";
-import { getSimilarity, setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilarityState2 } from "../features/analysisSlice";
+import { getSimilarity, getSimilarityHistogram, setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilarityState2 } from "../features/analysisSlice";
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   chipMargin: {
     margin: theme.spacing(1),
-    top: theme.spacing(10),
+    top: theme.spacing(7),
     right: theme.spacing(1),
     position: 'fixed',
     zIndex: 1000,
@@ -47,8 +47,10 @@ const DrawSimilarityButtons = () => {
         if (stateAnalysis.similarityCity1 !== "" && stateAnalysis.similarityCity2 !== "") {
             let endpoint = '/api/get/citysimilarity?city1='+stateAnalysis.similarityCity1+'&city2='+stateAnalysis.similarityCity2+
             '&state1='+stateAnalysis.similarityState1+'&state2='+stateAnalysis.similarityState2;
-            console.log(endpoint);
-            dispatch(getSimilarity(endpoint));
+            batch(() => {
+                dispatch(getSimilarity(endpoint));
+                dispatch(getSimilarityHistogram());
+            });
         }
     }
 
@@ -63,7 +65,7 @@ const DrawSimilarityButtons = () => {
                       label={stateAnalysis.similarityCity1+", "+stateAnalysis.similarityState1}
                       onDelete={() => handleDelete(1)}
                     />
-                    <Button onClick={handleSimilarityClick} variant="contained" color="primary">Primary</Button>
+                    <Button size="small" onClick={handleSimilarityClick} variant="contained" color="primary">calculate</Button>
                 </Paper>
             );
         } else if (stateAnalysis.similarityCity2 !== "" && stateAnalysis.similarityCity1 === "") {
@@ -75,7 +77,7 @@ const DrawSimilarityButtons = () => {
                       label={stateAnalysis.similarityCity2+", "+stateAnalysis.similarityState2}
                       onDelete={() => handleDelete(2)}
                     />
-                    <Button onClick={handleSimilarityClick} variant="contained" color="primary">Primary</Button>
+                    <Button size="small" onClick={handleSimilarityClick} variant="contained" color="primary">calculate</Button>
                 </Paper>
             );
         } else {
@@ -92,7 +94,7 @@ const DrawSimilarityButtons = () => {
                       label={stateAnalysis.similarityCity2+", "+stateAnalysis.similarityState2}
                       onDelete={() => handleDelete(2)}
                     />
-                    <Button onClick={handleSimilarityClick} variant="contained" color="primary">Primary</Button>
+                    <Button size="small" onClick={handleSimilarityClick} variant="contained" color="primary">calculate</Button>
                 </Paper>
             );
         }

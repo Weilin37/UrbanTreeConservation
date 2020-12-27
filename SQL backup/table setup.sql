@@ -84,4 +84,14 @@ FROM
 	on A.city||A.state > B.city||B.state
 ) geo
 
+select city1, state1, city2, state2, ds_similarity
+from public.dice_similarity
+where (
+        state1 in ('${req.query.state1}','${req.query.state2}') and city1 in ('${req.query.city1}','${req.query.city2}')
+    )
+and (
+    state2 in ('${req.query.state1}','${req.query.state2}') and city2 in ('${req.query.city1}','${req.query.city2}')
+)
+
+select ds_similarity as x from public.dice_similarity;
 

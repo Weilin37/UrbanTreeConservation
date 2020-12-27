@@ -11,10 +11,20 @@ export const getSimilarity = createAsyncThunk("analysis/getSimilarity", async (e
     }
 });
 
+export const getSimilarityHistogram = createAsyncThunk("analysis/getSimilarityHistogram", async (endpoint, thunkAPI) => {
+    try {
+        const response = await axios.get('/api/get/similarityhistogram');
+        return response.data;
+    } catch (error) {
+         return thunkAPI.rejectWithValue({ error: error.message });
+    }
+});
+
 // CREATE SLICE
 const analysisSlice = createSlice({
   name: "analysis",
   initialState: {
+    similarityHistogramData: [],
     similarityData: {'ds_similarity': '', 'city1':'','city2':'','state1':'','state2':''},
     similarityCity1: "",
     similarityCity2: "",
@@ -34,10 +44,16 @@ const analysisSlice = createSlice({
     });
     builder.addCase(getSimilarity.fulfilled, (state, { payload }) => {
         state.similarityData['ds_similarity'] = payload[0]['ds_similarity'];
-        state.similarityData['city1'] = state.similarityCity1;
-        state.similarityData['city2'] = state.similarityCity2;
-        state.similarityData['state1'] = state.similarityState1;
-        state.similarityData['state2'] = state.similarityState2;
+        state.similarityData['city1'] = payload[0]['city1'];
+        state.similarityData['city2'] = payload[0]['city2'];
+        state.similarityData['state1'] = payload[0]['state1'];
+        state.similarityData['state2'] = payload[0]['state2'];
+    });
+    builder.addCase(getSimilarityHistogram.pending, (state) => {
+        state.similarityHistogramData = [];
+    });
+    builder.addCase(getSimilarityHistogram.fulfilled, (state, { payload }) => {
+        state.similarityHistogramData = payload;
     });
   }
 });
