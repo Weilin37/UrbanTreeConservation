@@ -25,9 +25,10 @@ const DrawAnalysisSimilarity = () => {
     const classes = useStyles();
 
 
-    if (stateMarker.view_status === "global" && stateAnalysis.similarityData.length > 0) {
+    if (stateMarker.view_status === "global" && stateAnalysis.similarityData['ds_similarity'] !== "") {
         return(
             <Box>
+                <h5>{stateAnalysis.similarityData['city1']+", "+stateAnalysis.similarityData['state1']+" vs. "+stateAnalysis.similarityData['city2']+", "+stateAnalysis.similarityData['state2']}</h5>
                 <h5>Dice Sorensen Similarity: {stateAnalysis.similarityData['ds_similarity']}</h5>
             </Box>
         )
