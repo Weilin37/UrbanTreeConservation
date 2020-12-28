@@ -65,7 +65,7 @@ const DrawSimilarityButtons = () => {
                       label={stateAnalysis.similarityCity1+", "+stateAnalysis.similarityState1}
                       onDelete={() => handleDelete(1)}
                     />
-                    <Button size="small" onClick={handleSimilarityClick} variant="contained" color="primary">calculate</Button>
+                    <Button size="small" variant="outlined" onClick={handleSimilarityClick} color="primary">calculate</Button>
                 </Paper>
             );
         } else if (stateAnalysis.similarityCity2 !== "" && stateAnalysis.similarityCity1 === "") {
@@ -77,7 +77,7 @@ const DrawSimilarityButtons = () => {
                       label={stateAnalysis.similarityCity2+", "+stateAnalysis.similarityState2}
                       onDelete={() => handleDelete(2)}
                     />
-                    <Button size="small" onClick={handleSimilarityClick} variant="contained" color="primary">calculate</Button>
+                    <Button size="small" variant="outlined" onClick={handleSimilarityClick} color="primary">calculate</Button>
                 </Paper>
             );
         } else {
@@ -94,7 +94,7 @@ const DrawSimilarityButtons = () => {
                       label={stateAnalysis.similarityCity2+", "+stateAnalysis.similarityState2}
                       onDelete={() => handleDelete(2)}
                     />
-                    <Button size="small" onClick={handleSimilarityClick} variant="contained" color="primary">calculate</Button>
+                    <Button size="small" variant="outlined" onClick={handleSimilarityClick} color="primary">calculate</Button>
                 </Paper>
             );
         }

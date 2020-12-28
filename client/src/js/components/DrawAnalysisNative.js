@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import { Circle } from "react-leaflet";
 import { makeStyles } from '@material-ui/core/styles';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   analysisMargin: {
@@ -12,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(1),
     position: 'fixed',
     zIndex: 1000,
-    width: 150,
-    height:150
+    width: 250,
+    padding: theme.spacing(1),
   }
 }));
 
@@ -22,24 +24,16 @@ const DrawAnalysisNative = () => {
     const stateMarker = useSelector(state => state.marker);
     const classes = useStyles();
 
-    /*
-    city: "Seattle"
-    condition: " "
-    diameter_breast_height_cm: "71.12"
-    geom: "0101000020E610000018A1E93672945EC09E2B63A661CF4740"
-    latitude: 47.62016754
-    longitude: -122.31947109999999
-    native: "FALSE"
-    scientific_name: "Tilia cordata"
-    state: "Washington"
-    */
+    if ((stateMarker.view_status === "freedraw" && stateMarker.freedraw.length > 0) || (stateMarker.view_status === "city" && stateMarker.city.length > 0)) {
+        let data;
+        if (stateMarker.view_status === "freedraw" && stateMarker.freedraw.length > 0) {
+            data = stateMarker.freedraw;
+        } else if (stateMarker.view_status === "city" && stateMarker.city.length > 0) {
+            data = stateMarker.city;
+        }
+        const total = data.length;
 
-
-
-    if (stateMarker.view_status === "freedraw" && stateMarker.freedraw.length > 0) {
-        const total = stateMarker.freedraw.length;
-
-        const countNonNative = stateMarker.freedraw.reduce((cnt, row) => {
+        const countNonNative = data.reduce((cnt, row) => {
             if (row.native === "FALSE") {
                 return cnt = cnt+1;
             } else {
@@ -47,7 +41,7 @@ const DrawAnalysisNative = () => {
             }
         }, 0);
 
-        const countNative = stateMarker.freedraw.reduce((cnt, row) => {
+        const countNative = data.reduce((cnt, row) => {
             if (row.native === "TRUE") {
                 return cnt = cnt+1;
             } else {
@@ -55,18 +49,30 @@ const DrawAnalysisNative = () => {
             }
         }, 0);
 
-        console.log(total);
-        console.log(countNonNative);
-        console.log(countNative);
+        const marks = [
+          {value: countNative,label: 'Native'},
+          {value: countNonNative,label: 'Non Native'},
+          {value: total,label: ''},
+        ];
 
         return(
-            <Box className={classes.analysisMargin}>
-            <Paper>
-                <h5>Total: {total}</h5>
-                <h5>Native: {countNative}</h5>
-                <h5>Non-Native: {countNonNative}</h5>
+            <Paper className={classes.analysisMargin}>
+                <Grid container justify="center" alignItems="center" spacing={2}>
+                    <Grid item align="center" xs={10} >
+                        <Typography gutterBottom>Native Distribution</Typography>
+                        <Box pb={5} />
+                        <Slider
+                            defaultValue={[countNative,countNonNative]}
+                            track="inverted"
+                            valueLabelDisplay="on"
+                            step={null}
+                            min={0}
+                            max={total}
+                            marks={marks}
+                        />
+                    </Grid>
+                </Grid>
             </Paper>
-            </Box>
         )
     } else {
         return null
