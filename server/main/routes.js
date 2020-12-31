@@ -4,13 +4,7 @@ var pool = require('./db')
 
 // Get global level data
 router.get('/api/get/global', (req,res,next) => {
-	pool.query(`select city,
-	    state,
-	    avg(latitude) as latitude,
-	    avg(longitude)as longitude,
-	    count(latitude) as num_trees
-	    from public.standard_dataset
-	    group by city, state`,
+	pool.query(`select * from public.city_stats`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
     })

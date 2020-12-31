@@ -50,9 +50,7 @@ const DrawAnalysisNative = () => {
         }, 0);
 
         const marks = [
-          {value: countNative,label: 'Native'},
-          {value: countNonNative,label: 'Non Native'},
-          {value: total,label: ''},
+          {value: countNative,label: 'Native'}
         ];
 
         return(
@@ -62,8 +60,7 @@ const DrawAnalysisNative = () => {
                         <Typography gutterBottom>Native Distribution</Typography>
                         <Box pb={5} />
                         <Slider
-                            defaultValue={[countNative,countNonNative]}
-                            track="inverted"
+                            defaultValue={countNative}
                             valueLabelDisplay="on"
                             step={null}
                             min={0}
