@@ -12,10 +12,18 @@ router.get('/api/get/global', (req,res,next) => {
 
 // Get city level data
 router.get('/api/get/city', (req,res,next) => {
-	pool.query(`select * from public.standard_dataset
+	pool.query(`select latitude,
+	    longitude,
+	    scientific_name,
+	    native,
+	    case
+	        when native='TRUE' then 1
+	        else 0
+	    end as native_flag
+	    from public.standard_dataset
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})
-	    ) @> ll_to_earth(latitude, longitude) limit ${req.query.limit}`,
+	    ) @> ll_to_earth(latitude, longitude)`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})

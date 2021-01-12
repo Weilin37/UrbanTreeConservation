@@ -3,7 +3,7 @@ import { Circle } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-import MarkerClusterGroup from "react-leaflet-markercluster";
+import HeatmapLayer from 'react-leaflet-heatmap-layer';
 import Slider from '@material-ui/core/Slider';
 import { setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilarityState2 } from "../features/analysisSlice";
 
@@ -58,20 +58,14 @@ const GetMarkers = () => {
         ));
     } else if (stateMarker.view_status === "city")  {
         return (
-            <MarkerClusterGroup disableClusteringAtZoom={stateMarker.treeZoom} spiderfyOnMaxZoom={false}>
-                {stateMarker.city.map((el, i) => (
-                  <Circle key={i} center={[el.latitude, el.longitude]} radius={5} color={"green"}>
-                    <Popup>
-                        <p>City: {el.city}</p>
-                        <p>State: {el.state}</p>
-                        <p>Scientific Name: {el.scientific_name}</p>
-                        <p>Native: {el.native}</p>
-                        <p>Condition: {el.condition}</p>
-                        <p>Diameter Breast Height (CM): {el.diameter_breast_height_cm}</p>
-                    </Popup>
-                  </Circle>
-                ))}
-            </MarkerClusterGroup>
+            <HeatmapLayer
+                fitBoundsOnLoad
+                points={stateMarker.city}
+                radius={10}
+                max={1}
+                longitudeExtractor={m => m['longitude']}
+                latitudeExtractor={m => m['latitude']}
+                intensityExtractor={m => parseFloat(m['native_flag'])} />
         )
     } else if (stateMarker.view_status === "freedraw") {
         return stateMarker.freedraw.map((el, i) => (

@@ -92,7 +92,7 @@ export const LeafMap = () => {
                     dispatch(setScanCenter({lat:lat, lng:lng}));
                     dispatch(setScanZoom(zoom));
                     dispatch(setSearch("waiting"));
-                    dispatch(setEndpoint({type:"city", lat:lat, lng:lng, radius:radius, limit:1000}));
+                    dispatch(setEndpoint({type:"city", lat:lat, lng:lng, radius:radius, limit:50000}));
                     dispatch(setScanStatus("scanning"));
                 });
             }
