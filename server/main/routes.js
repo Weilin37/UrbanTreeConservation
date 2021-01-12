@@ -21,9 +21,8 @@ router.get('/api/get/city', (req,res,next) => {
 	        else 0
 	    end as native_flag
 	    from public.standard_dataset
-	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
-	    (${req.query.radius})
-	    ) @> ll_to_earth(latitude, longitude)`,
+	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),(${req.query.radius})) @> ll_to_earth(latitude, longitude)
+	    and native='TRUE'`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
