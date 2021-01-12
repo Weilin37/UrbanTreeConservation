@@ -26,31 +26,44 @@ const DrawAnalysisNative = () => {
 
     if ((stateMarker.view_status === "freedraw" && stateMarker.freedraw.length > 0) || (stateMarker.view_status === "city" && stateMarker.city.length > 0)) {
         let data;
+        let total;
+        let countNonNative;
+        let countNative;
+
+        //get native data
         if (stateMarker.view_status === "freedraw" && stateMarker.freedraw.length > 0) {
             data = stateMarker.freedraw;
+            total = data.length;
+
+            countNonNative = data.reduce((cnt, row) => {
+                if (row.native === "FALSE") {
+                    return cnt = cnt+1;
+                } else {
+                    return cnt;
+                }
+            }, 0);
+
+            countNative = data.reduce((cnt, row) => {
+                if (row.native === "TRUE") {
+                    return cnt = cnt+1;
+                } else {
+                    return cnt;
+                }
+            }, 0);
         } else if (stateMarker.view_status === "city" && stateMarker.city.length > 0) {
-            data = stateMarker.city;
+            data = stateMarker.global.filter(function (el) {
+              return el.city === stateMarker.city[0].city && el.state === stateMarker.city[0].state
+            });
+
+            total = data[0].total_species;
+            countNonNative = data[0].count_non_native;
+            countNative = data[0].count_native;
+            console.log(data);
         }
-        const total = data.length;
-
-        const countNonNative = data.reduce((cnt, row) => {
-            if (row.native === "FALSE") {
-                return cnt = cnt+1;
-            } else {
-                return cnt;
-            }
-        }, 0);
-
-        const countNative = data.reduce((cnt, row) => {
-            if (row.native === "TRUE") {
-                return cnt = cnt+1;
-            } else {
-                return cnt;
-            }
-        }, 0);
 
         const marks = [
-          {value: countNative,label: 'Native'}
+          {value: countNative,label: 'Native'},
+          {value: total,label: (total/1000).toFixed()+"K"},
         ];
 
         return(

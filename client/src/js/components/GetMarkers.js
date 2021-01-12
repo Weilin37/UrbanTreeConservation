@@ -47,6 +47,7 @@ const GetMarkers = () => {
                     marks={
                         [
                           {value: el.count_native,label: 'Native'},
+                          {value: el.total_species, label: (el.total_species/1000).toFixed()+"K"}
                         ]
                     }
                 />

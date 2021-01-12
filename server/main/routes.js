@@ -12,7 +12,9 @@ router.get('/api/get/global', (req,res,next) => {
 
 // Get city level data
 router.get('/api/get/city', (req,res,next) => {
-	pool.query(`select latitude,
+	pool.query(`select city,
+	    state,
+	    latitude,
 	    longitude,
 	    scientific_name,
 	    native,
