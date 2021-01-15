@@ -1,0 +1,775 @@
+city,state,city_id,genus,species,scientific_name,district,cultivar,inventory_date,plant_year,block,lot,address,month.of.update,condition_date,maintained_by,scientific_name_old,nonmatch,word_count_name,genus_only,native,latitude,longitude
+Jersey City,New Jersey,203,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,754,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,735,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,740,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,736,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,237,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,238,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,267,Liquidambar,styraciflua,Liquidambar styraciflua,,,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Liquidambar styraciflua,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,272,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,339,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,304,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,233,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,40,105 SECOND ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5042973,-74.275495
+Jersey City,New Jersey,218,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,40,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,33,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,9,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,429,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,375,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,83,Acer,rubrum,Acer rubrum,,Red Sunset,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Acer rubrum,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,109,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,13,964 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7116381,-74.0690944
+Jersey City,New Jersey,707,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,694,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,699,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,661,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,643,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,628,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,561,Taxodium,disticum,Taxodium distichum,,,10,2017,29202,1,1630 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Taxodium disticum,FALSE,2,no,FALSE,40.3577992,-74.3644894
+Jersey City,New Jersey,575,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,555,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,521,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,14,966 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7116748,-74.0690689
+Jersey City,New Jersey,525,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,18,976 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7118587,-74.0689415
+Jersey City,New Jersey,772,Zelkova,serrata,Zelkova serrata,,,11,2015,5202,29,109 OGDEN AVE.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.7387166,-74.0467926
+Jersey City,New Jersey,66,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,95,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,123,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,201,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,204,Gleditsia,triacanthos,Gleditsia triacanthos,,,4,2016,11006,25,386 FIRST ST,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.50462,-74.27379
+Jersey City,New Jersey,265,Liquidambar,styraciflua,Liquidambar styraciflua,,,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Liquidambar styraciflua,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,278,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,336,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,377,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,392,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,396,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,406,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,423,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,432,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,445,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,478,Quercus,rubra,Quercus rubra,,,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.710752,-74.0679186
+Jersey City,New Jersey,482,Quercus,rubra,Quercus rubra,,,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.710752,-74.0679186
+Jersey City,New Jersey,485,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,524,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,17,972 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7117851,-74.0689924
+Jersey City,New Jersey,536,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,545,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,547,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,578,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,581,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,590,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,645,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,648,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,653,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,682,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,698,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,770,Zelkova,serrata,Zelkova serrata,,Green Vase,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,35,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,39,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,518,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,13,964 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7116381,-74.0690944
+Jersey City,New Jersey,140,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,167,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,137,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,102,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,11,948 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7113654,-74.0693259
+Jersey City,New Jersey,116,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,20,980 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7119322,-74.0688905
+Jersey City,New Jersey,77,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,89,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,87,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,230,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,268,Liquidambar,styraciflua,Liquidambar styraciflua,,,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Liquidambar styraciflua,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,363,Pseudotsuga,menziesii,Pseudotsuga menziesii,,,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Pseudotsuga menziesii,FALSE,2,no,FALSE,40.7134628,-74.0639761
+Jersey City,New Jersey,388,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,438,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,210,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,183,Cornus,florida,Cornus florida,,,4,2016,11006,26,388 FIRST ST,3,2019,Jersey City Division of Architecture,Cornus florida,FALSE,2,no,TRUE,40.50462,-74.27379
+Jersey City,New Jersey,302,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,294,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,273,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,457,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,441,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,549,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,619,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,692,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,679,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,689,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,100,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,10,946 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7113317,-74.0693553
+Jersey City,New Jersey,111,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,15,968 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7117116,-74.0690434
+Jersey City,New Jersey,124,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,258,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,40.7134628,-74.0639761
+Jersey City,New Jersey,260,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,40.7134628,-74.0639761
+Jersey City,New Jersey,283,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,289,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,292,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,296,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,305,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,313,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,382,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,398,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,417,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,484,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,492,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,502,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,560,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,583,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,585,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,600,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,610,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,621,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,631,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,634,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,667,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,670,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,691,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,722,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,744,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,758,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,110,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,13,964 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7116381,-74.0690944
+Jersey City,New Jersey,118,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,96,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,9,944 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112979,-74.0693847
+Jersey City,New Jersey,508,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,10,946 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7113317,-74.0693553
+Jersey City,New Jersey,251,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,243,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,259,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,40.7134628,-74.0639761
+Jersey City,New Jersey,341,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,376,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,374,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,373,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,550,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,197,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,168,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,180,Cornus,florida,Cornus florida,,,4,2016,11006,24,384 FIRST ST,3,2019,Jersey City Division of Architecture,Cornus florida,FALSE,2,no,TRUE,40.50462,-74.27379
+Jersey City,New Jersey,228,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,207,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,220,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,223,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,142,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,134,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,74,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,64,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,385,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,387,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,528,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,19,978 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7118955,-74.068916
+Jersey City,New Jersey,562,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,732,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,751,Tilia,cordata,Tilia cordata,,Greenspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7134628,-74.0639761
+Jersey City,New Jersey,753,Tilia,cordata,Tilia cordata,,Greenspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7134628,-74.0639761
+Jersey City,New Jersey,678,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,468,Quercus,rubra,Quercus rubra,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,495,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,194,Gleditsia,triacanthos,Gleditsia triacanthos,,,4,2017,11404,18,126 NEWARK AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.720097,-74.04297
+Jersey City,New Jersey,177,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,179,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,738,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,742,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,247,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,240,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,250,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,274,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,348,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,355,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,18,976 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7118587,-74.0689415
+Jersey City,New Jersey,365,Pseudotsuga,menziesii,Pseudotsuga menziesii,,,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Pseudotsuga menziesii,FALSE,2,no,FALSE,40.7134628,-74.0639761
+Jersey City,New Jersey,325,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,208,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,224,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,71,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,85,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,38,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,15,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,44,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,62,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,466,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,450,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,386,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,402,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,383,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,516,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,105,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,715,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,720,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,651,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,624,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,580,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,533,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,541,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,29,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,101,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,11,948 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7113654,-74.0693259
+Jersey City,New Jersey,115,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,20,980 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7119322,-74.0688905
+Jersey City,New Jersey,121,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,174,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,214,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,239,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,245,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,249,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,252,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,42,110 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032857,-74.2743463
+Jersey City,New Jersey,256,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,40.7134628,-74.0639761
+Jersey City,New Jersey,306,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,321,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,350,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,366,Pseudotsuga,menziesii,Pseudotsuga menziesii,,,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Pseudotsuga menziesii,FALSE,2,no,FALSE,40.7134628,-74.0639761
+Jersey City,New Jersey,370,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,389,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,403,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,458,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,459,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,469,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,472,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,591,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,623,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,654,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,677,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,697,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,719,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,727,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,734,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,760,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,763,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,522,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,15,968 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7117116,-74.0690434
+Jersey City,New Jersey,490,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,158,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,131,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,128,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,175,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,264,Liquidambar,styraciflua,Liquidambar styraciflua,,,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Liquidambar styraciflua,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,316,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,352,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,14,966 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7116748,-74.0690689
+Jersey City,New Jersey,75,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,50,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,418,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,437,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,439,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,419,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,532,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,196,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,188,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Halka,4,2017,11603,40,105 SECOND ST.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.5042973,-74.275495
+Jersey City,New Jersey,192,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Halka,4,2017,11610,1,111 FIRST ST.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.5038108,-74.2743135
+Jersey City,New Jersey,280,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,297,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,301,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,275,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,462,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,454,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,486,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,566,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,589,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,662,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,647,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,635,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,637,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,767,Zelkova,serrata,Zelkova serrata,,Green Vase,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,724,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,725,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,61,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,68,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,91,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,117,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,244,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,246,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,282,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,330,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,345,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,10,946 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7113317,-74.0693553
+Jersey City,New Jersey,400,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,408,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,446,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,453,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,467,Quercus,rubra,Quercus rubra,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,479,Quercus,rubra,Quercus rubra,,,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.710752,-74.0679186
+Jersey City,New Jersey,493,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,538,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,576,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,577,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,586,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,616,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,632,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,640,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,655,Thuja,,Thuja,,Green Giant,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja ,FALSE,1,genus_only,no_info,40.7124816,-74.0685249
+Jersey City,New Jersey,660,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,701,Tilia,cordata,Tilia cordata,,Greenspire,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.710752,-74.0679186
+Jersey City,New Jersey,708,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,750,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,759,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,17,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,510,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,489,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,232,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,40,105 SECOND ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5042973,-74.275495
+Jersey City,New Jersey,263,Liquidambar,styraciflua,Liquidambar styraciflua,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Liquidambar styraciflua,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,351,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,13,964 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7116381,-74.0690944
+Jersey City,New Jersey,357,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,359,Prunus,sargentii,Prunus sargentii,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Prunus sargentii,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,460,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,470,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,463,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,471,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,427,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,169,Cercis,canadensis,Cercis canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,209,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,217,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,205,Gymnocladus,dioicus,Gymnocladus dioicus,,,9,2017,3003,1,300 OGDEN AVE.,3,2019,Jersey City Division of Architecture,Gymnocladus dioicus,FALSE,2,no,FALSE,40.745282,-74.042342
+Jersey City,New Jersey,161,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,70,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,311,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,410,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,588,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,601,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,673,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,638,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,620,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,764,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,756,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,769,Zelkova,serrata,Zelkova serrata,,Green Vase,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,737,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,705,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,711,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,723,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,700,Tilia,cordata,Tilia cordata,,Greenspire,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.710752,-74.0679186
+Jersey City,New Jersey,500,Quercus,palustrus,Quercus palustris,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus palustrus,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,498,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,156,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,185,Franklinia,alatamaha,Franklinia alatamaha,,,4,2016,11006,26,388 FIRST ST,3,2019,Jersey City Division of Architecture,Franklinia alatamaha,FALSE,2,no,FALSE,40.50462,-74.27379
+Jersey City,New Jersey,730,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,733,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,241,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,354,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,18,976 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7118587,-74.0689415
+Jersey City,New Jersey,362,Prunus,serotina,Prunus serotina,,,4,2016,11006,26,388 FIRST ST,3,2019,Jersey City Division of Architecture,Prunus serotina,FALSE,2,no,TRUE,40.50462,-74.27379
+Jersey City,New Jersey,286,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,298,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,308,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,225,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,231,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,73,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,92,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,52,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,1,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,443,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,415,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,434,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,378,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,390,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,405,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,144,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,72,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,119,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,154,Betula,nigra,Betula nigra,,Cully,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Betula nigra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,714,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,721,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,713,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,594,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,612,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,617,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,553,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,768,Zelkova,serrata,Zelkova serrata,,Green Vase,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,7,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,11,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,13,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,28,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,54,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,104,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,122,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,151,Betula,nigra,Betula nigra,,Cully,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Betula nigra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,153,Betula,nigra,Betula nigra,,Cully,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Betula nigra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,170,Cercis,canadensis,Cercis canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,189,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Halka,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,212,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,293,Nyssa,sylvatica,Nyssa sylvatica,,,4,2017,12904,1,280 GROVE STREET,3,2019,Jersey City Division of Architecture,Nyssa sylvatica,FALSE,2,no,TRUE,40.7177511,-74.0430879
+Jersey City,New Jersey,299,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,310,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,319,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,328,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,397,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,442,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,451,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,503,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,507,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,9,944 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7112979,-74.0693847
+Jersey City,New Jersey,513,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,595,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,618,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,627,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,644,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,663,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,672,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,702,Tilia,cordata,Tilia cordata,,Greenspire,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.710752,-74.0679186
+Jersey City,New Jersey,704,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,743,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,46,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,21,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,501,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,130,Amelanchier,arborea,Amelanchier arborea,,Grandiflora,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Amelanchier arborea,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,150,Betula,nigra,Betula nigra,,Cully,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Betula nigra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,129,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,103,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,78,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,94,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,98,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,9,944 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112979,-74.0693847
+Jersey City,New Jersey,248,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,229,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,347,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,327,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,381,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,399,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,47,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,53,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,59,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,428,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,420,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,424,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,544,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,530,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,20,980 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7119322,-74.0688905
+Jersey City,New Jersey,221,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,219,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,476,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,464,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,481,Quercus,rubra,Quercus rubra,,,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.710752,-74.0679186
+Jersey City,New Jersey,546,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,554,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,599,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,675,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,696,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,639,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,636,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,625,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,8,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,14,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,22,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,25,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,114,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,19,978 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7118955,-74.068916
+Jersey City,New Jersey,126,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,143,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,164,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,242,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,270,Liquidambar,styraciflua,Liquidambar styraciflua,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Liquidambar styraciflua,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,285,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,290,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,307,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,314,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,364,Pseudotsuga,menziesii,Pseudotsuga menziesii,,,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Pseudotsuga menziesii,FALSE,2,no,FALSE,40.7134628,-74.0639761
+Jersey City,New Jersey,436,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,448,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,519,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,13,964 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7116381,-74.0690944
+Jersey City,New Jersey,523,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,16,970 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7117484,-74.0690179
+Jersey City,New Jersey,529,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,20,980 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7119322,-74.0688905
+Jersey City,New Jersey,593,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,629,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,646,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,669,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,717,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,746,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,19,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,108,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,90,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,125,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,300,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,303,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,346,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,342,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,369,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,449,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,431,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,199,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,172,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,227,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,163,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,149,Betula,nigra,Betula nigra,,Cully,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Betula nigra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,132,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,80,Acer,rubrum,Acer rubrum,,October Glory,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Acer rubrum,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,42,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,55,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,334,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,394,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,534,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,531,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,569,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,603,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,658,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,615,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,706,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,726,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,487,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,483,Quercus,rubra,Quercus rubra,,,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.710752,-74.0679186
+Jersey City,New Jersey,138,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,141,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,195,Gleditsia,triacanthos,Gleditsia triacanthos,,,4,2017,11404,27,146 NEWARK AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.7206181,-74.0437631
+Jersey City,New Jersey,731,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,748,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,353,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,15,968 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7117116,-74.0690434
+Jersey City,New Jersey,343,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,360,Prunus,sargentii,Prunus sargentii,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Prunus sargentii,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,295,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,288,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,287,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,215,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,222,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,99,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,10,946 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7113317,-74.0693553
+Jersey City,New Jersey,86,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,60,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,452,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,444,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,416,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,413,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,372,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,391,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,200,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,112,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,16,970 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7117484,-74.0690179
+Jersey City,New Jersey,671,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,690,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,659,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,650,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,582,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,611,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,517,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,542,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,559,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,773,Zelkova,serrata,Zelkova serrata,,Village Green,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,762,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,761,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,6,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,26,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,82,Acer,rubrum,Acer rubrum,,October Glory,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Acer rubrum,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,127,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,152,Betula,nigra,Betula nigra,,Cully,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Betula nigra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,159,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,165,Cercis,canadensis,Cercis canadensis,,Ace of Hearts,11,2015,5202,29,109 OGDEN AVE.,3,2019,Jersey City Division of Architecture,Cercis canadensis,FALSE,2,no,TRUE,40.7387166,-74.0467926
+Jersey City,New Jersey,166,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,187,Franklinia,alatamaha,Franklinia alatamaha,,,4,2016,11006,26,388 FIRST ST,3,2019,Jersey City Division of Architecture,Franklinia alatamaha,FALSE,2,no,FALSE,40.50462,-74.27379
+Jersey City,New Jersey,193,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Halka,4,2017,11610,1,111 FIRST ST.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.5038108,-74.2743135
+Jersey City,New Jersey,234,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,315,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,411,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,456,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,551,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,557,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,563,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,565,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,572,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,602,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,642,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,693,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,728,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,36,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,12,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,37,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,41,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,43,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,506,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,496,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,255,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,40.7134628,-74.0639761
+Jersey City,New Jersey,349,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,76,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,543,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,186,Franklinia,alatamaha,Franklinia alatamaha,,,4,2016,11006,26,388 FIRST ST,3,2019,Jersey City Division of Architecture,Franklinia alatamaha,FALSE,2,no,FALSE,40.50462,-74.27379
+Jersey City,New Jersey,281,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,465,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,480,Quercus,rubra,Quercus rubra,,,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.710752,-74.0679186
+Jersey City,New Jersey,568,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,622,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,666,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,680,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,683,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,657,Thuja,,Thuja,,Green Giant,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja ,FALSE,1,genus_only,no_info,40.7124816,-74.0685249
+Jersey City,New Jersey,747,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,2,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,16,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,32,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,56,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,57,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,148,Betula,nigra,Betula nigra,,Cully,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Betula nigra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,184,Franklinia,alatamaha,Franklinia alatamaha,,,4,2016,11006,24,384 FIRST ST,3,2019,Jersey City Division of Architecture,Franklinia alatamaha,FALSE,2,no,FALSE,40.50462,-74.27379
+Jersey City,New Jersey,198,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,235,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,254,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,40.7134628,-74.0639761
+Jersey City,New Jersey,318,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,412,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,422,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,435,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,447,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,505,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,526,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,18,976 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7118587,-74.0689415
+Jersey City,New Jersey,574,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,606,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,609,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,668,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,674,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,684,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,686,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,709,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,745,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,757,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,10,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,20,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,27,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,34,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,23,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,107,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,113,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,18,976 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7118587,-74.0689415
+Jersey City,New Jersey,97,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,9,944 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112979,-74.0693847
+Jersey City,New Jersey,120,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,514,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,488,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,430,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,171,Cladrastis,kentukea,Cladrastis kentukea,,,4,2016,11006,25,386 FIRST ST,3,2019,Jersey City Division of Architecture,Cladrastis kentukea,FALSE,2,no,FALSE,40.50462,-74.27379
+Jersey City,New Jersey,182,Cornus,florida,Cornus florida,,,4,2016,11006,26,388 FIRST ST,3,2019,Jersey City Division of Architecture,Cornus florida,FALSE,2,no,TRUE,40.50462,-74.27379
+Jersey City,New Jersey,178,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,155,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,133,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,136,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,51,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,326,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,323,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,331,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,340,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,329,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,312,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,393,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,409,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,401,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,407,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,527,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,19,978 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7118955,-74.068916
+Jersey City,New Jersey,604,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,579,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,676,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,641,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,633,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,729,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,739,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,190,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Halka,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,474,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,473,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,157,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,160,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,269,Liquidambar,styraciflua,Liquidambar styraciflua,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Liquidambar styraciflua,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,361,Prunus,sargentii,Prunus sargentii,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Prunus sargentii,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,317,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,333,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,145,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,206,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,93,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,48,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,79,Acer,rubrum,Acer rubrum,,,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Acer rubrum,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,65,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,395,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,147,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,106,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,652,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,626,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,630,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,587,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,613,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,552,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,3,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,18,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,24,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,45,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,135,Amelanchier,canadensis,Amelanchier canadensis,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Amelanchier canadensis,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,176,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,284,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,324,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,344,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,356,Platanus,occidentalis,Platanus occidentalis,,,0,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,371,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,384,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,425,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,455,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,461,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,477,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,509,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,10,946 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7113317,-74.0693553
+Jersey City,New Jersey,520,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,13,964 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7116381,-74.0690944
+Jersey City,New Jersey,535,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,540,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,564,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,584,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,592,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,596,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,605,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,656,Thuja,,Thuja,,Green Giant,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja ,FALSE,1,genus_only,no_info,40.7124816,-74.0685249
+Jersey City,New Jersey,685,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,712,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,749,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,771,Zelkova,serrata,Zelkova serrata,,Green Vase,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,511,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,491,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,494,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,81,Acer,rubrum,Acer rubrum,,October Glory,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Acer rubrum,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,236,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,226,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,257,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,40.7134628,-74.0639761
+Jersey City,New Jersey,266,Liquidambar,styraciflua,Liquidambar styraciflua,,,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Liquidambar styraciflua,FALSE,2,no,TRUE,40.8531551,-74.2770923
+Jersey City,New Jersey,332,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,58,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,67,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,63,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,69,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,426,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,414,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,216,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,213,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,309,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,291,Nyssa,sylvatica,Nyssa sylvatica,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Nyssa sylvatica,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,571,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,598,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,597,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,614,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,573,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,710,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,688,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,665,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,649,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,774,Zelkova,serrata,Zelkova serrata,,Village Green,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,741,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,752,Tilia,cordata,Tilia cordata,,Greenspire,6,2016,19803,5,WOODWARD ST,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7134628,-74.0639761
+Jersey City,New Jersey,5,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,31,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,146,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,162,Cercis,canadensis,Cercis canadensis,,Forest Pansy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Cercis canadensis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,173,Cornus,kousa,Cornus kousa,,,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Cornus kousa,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,191,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Halka,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,253,Juniperus,chinensis,Juniperus chinensis,,Torulosa,4,2017,11603,42,110 FIRST ST.,3,2019,Jersey City Division of Architecture,Juniperus chinensis,FALSE,2,no,FALSE,40.5032857,-74.2743463
+Jersey City,New Jersey,271,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,276,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,277,Magnolia,virginiana,Magnolia virginiana,,,0,0,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Magnolia virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,320,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,337,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,338,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,358,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,367,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,368,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,404,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,433,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,440,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,504,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,556,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,567,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,570,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,664,Thuja,occidentalis,Thuja occidentalis,,Smaragd,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Thuja occidentalis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,687,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,703,Tilia,cordata,Tilia cordata,,Greenspire,6,2016,19803,4,65 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.710752,-74.0679186
+Jersey City,New Jersey,718,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,755,Ulmus,americana,Ulmus americana,,Princeton,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Ulmus americana,FALSE,2,no,TRUE,40.7299639,-74.0663973
+Jersey City,New Jersey,765,Zelkova,serrata,Zelkova serrata,,Green Vase,4,2017,11603,40,105 SECOND ST.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.5042973,-74.275495
+Jersey City,New Jersey,30,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,4,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,512,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,515,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,12,960-958 GARFIELD AVE,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.711287,-74.069485
+Jersey City,New Jersey,497,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,499,Quercus,rubra,Quercus rubra,,,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,279,Malus,,Malus,,Harvest Gold,11,2016,12106,11,298 ACADEMY ST.,3,2019,Jersey City Division of Architecture,Malus ,FALSE,1,genus_only,no_info,40.7299639,-74.0663973
+Jersey City,New Jersey,262,Liquidambar,styraciflua,Liquidambar styraciflua,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Liquidambar styraciflua,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,261,Liquidambar,styraciflua,Liquidambar styraciflua,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Liquidambar styraciflua,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,475,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,421,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,548,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,558,Quercus,bicolor,Quercus bicolor,,,6,2016,19803,21,INSIDE GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.685772,-74.099794
+Jersey City,New Jersey,537,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,539,Quercus,bicolor,Quercus bicolor,,,6,2016,18901,1,990 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Quercus bicolor,FALSE,2,no,TRUE,40.7123,-74.0686437
+Jersey City,New Jersey,181,Cornus,florida,Cornus florida,,,4,2016,11006,25,386 FIRST ST,3,2019,Jersey City Division of Architecture,Cornus florida,FALSE,2,no,TRUE,40.50462,-74.27379
+Jersey City,New Jersey,202,Gleditsia,triacanthos,Gleditsia triacanthos,inermis,Shademaster,11,2015,4802,2,201 CENTRAL AVE.,3,2019,Jersey City Division of Architecture,Gleditsia triacanthos,FALSE,2,no,FALSE,40.8531551,-74.2770923
+Jersey City,New Jersey,211,Juniperus,virginiana,Juniperus virginiana,,Hillspire,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Juniperus virginiana,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,139,Amelancier,laevis,Amelanchier laevis,,Princess Diana,8,2015,16302,40,2565 KENNEDY BLVD.,3,2019,Jersey City Division of Architecture,Amelancier laevis,FALSE,2,no,TRUE,40.3577992,-74.3644894
+Jersey City,New Jersey,84,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,88,Acer,rubrum,Acer rubrum,,Sunvalley,6,2016,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Acer rubrum,FALSE,2,no,TRUE,40.7108088,-74.0678418
+Jersey City,New Jersey,49,Acer,saccharum,Acer saccharum,,Legacy,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Acer saccharum,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,322,Platanus,occidentalis,Platanus occidentalis,,,6,2016,18901,2,1000 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7124816,-74.0685249
+Jersey City,New Jersey,335,Platanus,occidentalis,Platanus occidentalis,,,6,2016,19803,8,942 GARFIELD AVE.,3,2019,Jersey City Redevelopment Agency,Platanus occidentalis,FALSE,2,no,TRUE,40.7112642,-74.0694141
+Jersey City,New Jersey,380,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,379,Quercus,rubra,Quercus rubra,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Quercus rubra,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,608,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,607,Thuja,occidentalis,Thuja occidentalis,,,6,2016,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Thuja occidentalis,FALSE,2,no,TRUE,41.217003,-74.658902
+Jersey City,New Jersey,766,Zelkova,serrata,Zelkova serrata,,Green Vase,4,2017,11603,41,108 FIRST ST.,3,2019,Jersey City Division of Architecture,Zelkova serrata,FALSE,2,no,FALSE,40.5032196,-74.2743796
+Jersey City,New Jersey,716,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,19803,3,75 WOODWARD ST.,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,40.7108088,-74.0678418
+Jersey City,New Jersey,695,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
+Jersey City,New Jersey,681,Tilia,cordata,Tilia cordata,,Greenspire,4,2014,18901,18,1 BERRY ROAD,3,2019,Jersey City Redevelopment Agency,Tilia cordata,FALSE,2,no,FALSE,41.217003,-74.658902
