@@ -12,10 +12,12 @@ router.get('/api/get/global', (req,res,next) => {
 
 // Get city level data
 router.get('/api/get/city', (req,res,next) => {
-	pool.query(`select city,
+	pool.query(`select
+	    row_number() OVER () as id,
+	    city,
 	    state,
-	    latitude,
-	    longitude,
+	    latitude_coordinate as latitude,
+	    longitude_coordinate as longitude,
 	    scientific_name,
 	    native,
 	    case
@@ -23,8 +25,7 @@ router.get('/api/get/city', (req,res,next) => {
 	        else 0
 	    end as native_flag
 	    from public.standard_dataset
-	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),(${req.query.radius})) @> ll_to_earth(latitude, longitude)
-	    and native='TRUE'`,
+	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),(${req.query.radius})) @> ll_to_earth(latitude_coordinate, longitude_coordinate)`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
@@ -32,10 +33,23 @@ router.get('/api/get/city', (req,res,next) => {
 
 // Get trees in polygon
 router.get('/api/get/freedraw', (req,res,next) => {
-	pool.query(`select * from public.standard_dataset
+    console.log(`select * from public.standard_dataset
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})
-	    ) @> ll_to_earth(latitude, longitude)
+	    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
+	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)`);
+
+	pool.query(`select city,
+	    state,
+	    native,
+	    scientific_name,
+	    condition,
+	    latitude_coordinate as latitude,
+	    longitude_coordinate as longitude
+	    from public.standard_dataset
+	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
+	    (${req.query.radius})
+	    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
 	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)

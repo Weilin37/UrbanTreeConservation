@@ -103,7 +103,8 @@ export const LeafMap = () => {
     // render component
     if (stateMarker.global.length > 0) {
         return (
-            <Map onmoveend={handlemoveend} onzoomend={handlezoomend} doubleClickZoom={false} preferCanvas={true} center={[stateMap.lat, stateMap.lng]} zoom={stateMap.zoom} scrollWheelZoom={true}>
+            <Map onmoveend={handlemoveend} onzoomend={handlezoomend} doubleClickZoom={false} preferCanvas={true} center={[stateMap.lat, stateMap.lng]}
+            zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />

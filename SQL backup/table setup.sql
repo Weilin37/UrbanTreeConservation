@@ -3,7 +3,9 @@ CREATE EXTENSION earthdistance;
 CREATE EXTENSION postgis;
 
 ALTER TABLE public.standard_dataset ADD COLUMN geom geometry(Point, 4326);
-UPDATE public.standard_dataset SET geom = ST_SetSRID(ST_MakePoint(longitude, latitude), 4326);
+UPDATE public.standard_dataset SET geom = ST_SetSRID(ST_MakePoint(longitude_coordinate, latitude_coordinate), 4326);
+
+CREATE INDEX ON standard_dataset USING gist (ll_to_earth(latitude_coordinate, longitude_coordinate));
 
 select city,
 	state,
@@ -16,12 +18,12 @@ select city,
 select * from public.standard_dataset
     where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
     (${req.query.radius})
-    ) @> ll_to_earth(latitude, longitude) limit ${req.query.limit}
+    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate) limit ${req.query.limit}
 
 select * from public.standard_dataset
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})
-	    ) @> ll_to_earth(latitude, longitude)
+	    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
 	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)
 
 
@@ -95,3 +97,15 @@ and (
 
 select ds_similarity as x from public.dice_similarity;
 
+create table city_stats
+as
+select city,
+state,
+avg(latitude_coordinate) as latitude,
+avg(longitude_coordinate)as longitude,
+count(scientific_name) as total_species,
+count(distinct scientific_name) as total_unique_species,
+count(CASE WHEN native = 'TRUE' THEN 1 END) as count_native,
+count(CASE WHEN native = 'FALSE' THEN 1 END) as count_non_native
+from public.standard_dataset
+group by city, state

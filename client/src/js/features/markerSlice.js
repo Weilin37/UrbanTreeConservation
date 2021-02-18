@@ -88,6 +88,19 @@ const markerSlice = createSlice({
         state.city = [];
     });
     builder.addCase(getCity.fulfilled, (state, { payload }) => {
+        payload = payload.map(function(o) {
+          o.position = [o.latitude, o.longitude];
+          o.markerSpriteAnchor = [0.5,0.5];
+          if (o.native == "TRUE") {
+            o.iconId = "icon_green";
+            o.customIcon = '<svg xmlns="http://www.w3.org/2000/svg" overflow="visible" fill="green" preserveAspectRatio="xMinYMin meet" width="10" height="10" viewBox="0 0 10 10"><circle r="50%" cx="50%" cy="50%" /></svg>'
+          } else {
+            o.iconId = "icon_gray";
+            o.customIcon = '<svg xmlns="http://www.w3.org/2000/svg" overflow="visible" fill="gray" fill-opacity="50%" width="10" height="10" preserveAspectRatio="xMinYMin meet" viewBox="0 0 10 10"><circle r="50%" cx="50%" cy="50%" /></svg>'
+          }
+          return o;
+        });
+
         state.city = payload;
         state.scan_status = "waiting"
     });
@@ -100,6 +113,7 @@ const markerSlice = createSlice({
         state.freedraw = [];
     });
     builder.addCase(getFreeDraw.fulfilled, (state, { payload }) => {
+        console.log(payload);
         state.freedraw = payload;
         state.scan_status = "waiting"
     });
