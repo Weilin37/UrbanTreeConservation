@@ -91,6 +91,7 @@ const markerSlice = createSlice({
         payload = payload.map(function(o) {
           o.position = [o.latitude, o.longitude];
           o.markerSpriteAnchor = [0.5,0.5];
+          o.tooltip = '<div>'+o.scientific_name+'</div>';
           if (o.native == "TRUE") {
             o.iconId = "icon_green";
             o.customIcon = '<svg xmlns="http://www.w3.org/2000/svg" overflow="visible" fill="green" preserveAspectRatio="xMinYMin meet" width="10" height="10" viewBox="0 0 10 10"><circle r="50%" cx="50%" cy="50%" /></svg>'

@@ -108,4 +108,4 @@ count(distinct scientific_name) as total_unique_species,
 count(CASE WHEN native = 'TRUE' THEN 1 END) as count_native,
 count(CASE WHEN native = 'FALSE' THEN 1 END) as count_non_native
 from public.standard_dataset
-group by city, state
+group by state, city
