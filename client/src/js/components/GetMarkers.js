@@ -34,6 +34,9 @@ const GetMarkers = () => {
     const { map } = useLeaflet();
 
     const [endpoint, setEndpoint] = useState();
+    const [scan_lat, setScanLat] = useState();
+    const [scan_lng, setScanLng] = useState();
+    const [scan_radius, setScanRadius] = useState();
 
     function handleSimilarityClick(city, state) {
         if (stateAnalysis.similarityCity1 === "") {
@@ -82,6 +85,9 @@ const GetMarkers = () => {
             const latNE = bounds['_northEast'].lat
             const lngNE = bounds['_northEast'].lng
             const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
+            setScanLat(lat);
+            setScanLng(lng);
+            setScanRadius(radius);
 
             dispatch(getCity("/api/get/city?lat="+lat+"&lng="+lng+"&radius="+radius));
         }
@@ -120,11 +126,23 @@ const GetMarkers = () => {
             </Popup>
           </Marker>
         ));
-    } else if (stateMarker.view_status === "city")  {
+    } else if (stateMarker.view_status === "city" && stateMarker.city.length == 0 )  {
         console.log("Draw PixiOverlay");
+        return (
+            <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
+                <AdjustIcon />
+            </Fab>
+        )
+    } else if (stateMarker.view_status === "city" && stateMarker.city.length > 0) {
         return (
             <div>
                 <PixiOverlay markers={stateMarker.city} />
+                <Circle
+                    weight={1}
+                    opacity={0.5}
+                    fill={false}
+                    center={[scan_lat, scan_lng]}
+                    radius={1.5*scan_radius} />
                 <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
                     <AdjustIcon />
                 </Fab>

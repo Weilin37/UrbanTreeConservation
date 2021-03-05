@@ -39,7 +39,7 @@ export const LeafMap = () => {
               <GetMarkers />
               <FreeDrawCustom />
               <DataViewButtons />
-
+              <DrawAnalysisNative />
               <DrawSimilarityButtons />
             </Map>
         );
