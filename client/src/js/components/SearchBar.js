@@ -56,7 +56,6 @@ const SearchBar = ( {test}) => {
         if(e.keyCode === 13){
             if (e.target.value !== "") {
                 batch(() => {
-                    dispatch(clearCity());
                     dispatch(setViewStatus("city"))
                     dispatch(getSearch(e.target.value));
                 });

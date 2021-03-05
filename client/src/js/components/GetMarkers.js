@@ -9,6 +9,8 @@ import { renderToString } from 'react-dom/server';
 import PixiOverlay from 'react-leaflet-pixi-overlay';
 import Slider from '@material-ui/core/Slider';
 import { setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilarityState2 } from "../features/analysisSlice";
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { useLeaflet } from "react-leaflet";
 import Fab from '@material-ui/core/Fab';
@@ -23,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     left: theme.spacing(1),
     position: 'fixed',
     zIndex: 1000,
+  },
+  backdrop: {
+    zIndex:1000
   }
 }));
 
@@ -37,6 +42,7 @@ const GetMarkers = () => {
     const [scan_lat, setScanLat] = useState();
     const [scan_lng, setScanLng] = useState();
     const [scan_radius, setScanRadius] = useState();
+    const [loading, setLoading] = useState(0);
 
     function handleSimilarityClick(city, state) {
         if (stateAnalysis.similarityCity1 === "") {
@@ -90,6 +96,7 @@ const GetMarkers = () => {
             setScanRadius(radius);
 
             dispatch(getCity("/api/get/city?lat="+lat+"&lng="+lng+"&radius="+radius));
+            setLoading(1);
         }
 
     }
@@ -126,14 +133,19 @@ const GetMarkers = () => {
             </Popup>
           </Marker>
         ));
-    } else if (stateMarker.view_status === "city" && stateMarker.city.length == 0 )  {
-        console.log("Draw PixiOverlay");
+    } else if (stateMarker.view_status === "city" && stateMarker.city.length == 0)  {
         return (
-            <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
-                <AdjustIcon />
-            </Fab>
+            <div>
+                <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
+                    <AdjustIcon />
+                </Fab>
+                <Backdrop open={loading} className={classes.backdrop}>
+                    <CircularProgress color="inherit" />
+                </Backdrop>
+            </div>
         )
     } else if (stateMarker.view_status === "city" && stateMarker.city.length > 0) {
+        console.log("Draw PixiOverlay");
         return (
             <div>
                 <PixiOverlay markers={stateMarker.city} />

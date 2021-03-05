@@ -85,7 +85,7 @@ const markerSlice = createSlice({
     });
     // city
     builder.addCase(getCity.pending, (state) => {
-        state.city = [];
+        //state.city = [];
     });
     builder.addCase(getCity.fulfilled, (state, { payload }) => {
         payload = payload.map(function(o) {
@@ -109,7 +109,7 @@ const markerSlice = createSlice({
     });
     // free draw
     builder.addCase(getFreeDraw.pending, (state) => {
-        state.freedraw = [];
+        //state.freedraw = [];
     });
     builder.addCase(getFreeDraw.fulfilled, (state, { payload }) => {
         console.log(payload);

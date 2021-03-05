@@ -16,4 +16,5 @@
     stroke: #50622b;
     stroke-width: 2;
     fill-opacity: .3;
+    pointer-events: none !important;
 }

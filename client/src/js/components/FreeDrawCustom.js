@@ -12,6 +12,9 @@ import FilterCenterFocusIcon from '@material-ui/icons/FilterCenterFocus';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { ALL, DELETE, NONE } from 'react-leaflet-freedraw';
 
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from "@material-ui/core/CircularProgress";
+
 const useStyles = makeStyles((theme) => ({
   freeDrawMargin: {
     margin: theme.spacing(1),
@@ -33,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
     left: theme.spacing(1),
     position: 'fixed',
     zIndex: 1000,
+  },
+  backdrop: {
+    zIndex:1000
   }
 }));
 
@@ -40,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 const FreeDrawCustom = () => {
     const [drawMode, setDrawMode] = useState(NONE);
     const [endpoint, setEndpoint] = useState();
+    const [loading, setLoading] = useState(0);
 
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -109,17 +116,23 @@ const FreeDrawCustom = () => {
 
     function handleSwitchClick(e) {
         setDrawMode(ALL ^ DELETE);
+        setLoading(0);
     }
 
     function getMarkers(e) {
         if (endpoint.length > 0) {
-            //dispatch(setScanStatus("freedraw scanning"));
+            setLoading(1);
             dispatch(getFreeDraw(endpoint));
             setDrawMode(NONE);
         }
     }
 
     function handleDeleteClick(e) {
+        var polygon = document.getElementsByClassName('leaflet-polygon');
+        for (var i = 0; i < polygon.length; i++) {
+            polygon[i].setAttribute('style','pointer-events: auto !important');
+        }
+        setLoading(0);
         setDrawMode(DELETE);
     }
 
@@ -144,6 +157,9 @@ const FreeDrawCustom = () => {
                   leaveModeAfterCreate={true}
                   maximumPolygons={1}
                 />
+                <Backdrop open={stateMarker.freedraw.length == 0 && loading} className={classes.backdrop}>
+                    <CircularProgress color="inherit" />
+                </Backdrop>
             </div>
         )
     } else {
