@@ -77,6 +77,7 @@ const FreeDrawButtons = () => {
             </Fab>
         </div>
     );
+
 }
 
 export default FreeDrawButtons;

@@ -46,6 +46,7 @@ const FreeDrawCustom = () => {
     const { map } = useLeaflet();
 
     const freeDrawRef = useRef(null);
+    const stateMarker = useSelector(state => state.marker);
 
     const center = map.getCenter();
     const lat = center.lat;
@@ -122,28 +123,32 @@ const FreeDrawCustom = () => {
         setDrawMode(DELETE);
     }
 
-    return (
-        <div>
-            <Fab onClick={handleSwitchClick} className={classes.freeDrawMargin} size="small" color="primary" aria-label="add">
-                <BorderColorIcon />
-            </Fab>
-            <Fab onClick={getMarkers} className={classes.selectMargin} size="small" color="primary" aria-label="add">
-                <FilterCenterFocusIcon />
-            </Fab>
-            <Fab onClick={handleDeleteClick} className={classes.deleteMargin} size="small" color="secondary" aria-label="add">
-                <DeleteIcon />
-            </Fab>
-            <Freedraw
-              mode={drawMode}
-              onMarkers={handleOnMarkers}
-              onModeChange={handleModeChange}
-              simplifyFactor={2}
-              ref={freeDrawRef}
-              leaveModeAfterCreate={true}
-              maximumPolygons={1}
-            />
-        </div>
-    )
+    if (stateMarker.view_status === "city")  {
+        return (
+            <div>
+                <Fab onClick={handleSwitchClick} className={classes.freeDrawMargin} size="small" color="primary" aria-label="add">
+                    <BorderColorIcon />
+                </Fab>
+                <Fab onClick={getMarkers} className={classes.selectMargin} size="small" color="primary" aria-label="add">
+                    <FilterCenterFocusIcon />
+                </Fab>
+                <Fab onClick={handleDeleteClick} className={classes.deleteMargin} size="small" color="secondary" aria-label="add">
+                    <DeleteIcon />
+                </Fab>
+                <Freedraw
+                  mode={drawMode}
+                  onMarkers={handleOnMarkers}
+                  onModeChange={handleModeChange}
+                  simplifyFactor={2}
+                  ref={freeDrawRef}
+                  leaveModeAfterCreate={true}
+                  maximumPolygons={1}
+                />
+            </div>
+        )
+    } else {
+        return null
+    }
 
 }
 
