@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Circle } from "react-leaflet";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';

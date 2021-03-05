@@ -46,13 +46,6 @@ const DataViewButtons = () => {
         })
     }
 
-    function setFreeDraw() {
-        if (map.getZoom() < stateMarker.cityZoom) {
-            map.setZoom(stateMarker.cityZoom);
-        }
-        dispatch(setViewStatus("freedraw"));
-    }
-
     return (
         <Paper className={classes.dataViewMargin} elevation={3}>
         <RadioGroup row aria-label="position" name="position" defaultValue="top">
@@ -71,14 +64,6 @@ const DataViewButtons = () => {
               checked={stateMarker.view_status === "city"}
               labelPlacement="top"
               onClick={setCity}
-            />
-            <FormControlLabel
-              value="bottom"
-              control={<Radio color="primary" />}
-              label="Free Draw"
-              checked={stateMarker.view_status === "freedraw"}
-              labelPlacement="top"
-              onClick={setFreeDraw}
             />
         </RadioGroup>
         </Paper>

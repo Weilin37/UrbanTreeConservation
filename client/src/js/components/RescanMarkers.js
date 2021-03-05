@@ -3,7 +3,6 @@ import Fab from '@material-ui/core/Fab';
 import AdjustIcon from '@material-ui/icons/Adjust';
 import { useDispatch, useSelector, batch } from "react-redux";
 import { useLeaflet } from "react-leaflet";
-import { NONE } from 'react-leaflet-freedraw';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { setEndpoint, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom, setViewStatus } from "../features/markerSlice";
@@ -12,7 +11,7 @@ import { setDrawMode, setSearch } from "../features/mapSlice";
 const useStyles = makeStyles((theme) => ({
   scanMargin: {
     margin: theme.spacing(1),
-    top: theme.spacing(28),
+    top: theme.spacing(34),
     left: theme.spacing(1),
     position: 'fixed',
     zIndex: 1000,
@@ -75,14 +74,6 @@ const RescanMarkers = () => {
                 dispatch(setEndpoint({type:"city", lat:lat, lng:lng, radius:radius, limit:1000}));
                 dispatch(setScanStatus("scanning"));
             });
-        } else if (stateMarker.view_status === "freedraw") {
-            if (stateMarker.endpoint.length > 0) {
-                batch(() => {
-                    dispatch(setViewStatus("freedraw"))
-                    dispatch(setScanStatus("scanning"));
-                    dispatch(setDrawMode(NONE));
-                });
-            }
         }
 
     }

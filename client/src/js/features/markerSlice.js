@@ -103,11 +103,9 @@ const markerSlice = createSlice({
         });
 
         state.city = payload;
-        state.scan_status = "waiting"
     });
     builder.addCase(getCity.rejected,(state, action) => {
         state.loading = "error";
-        state.scan_status = "waiting"
     });
     // free draw
     builder.addCase(getFreeDraw.pending, (state) => {
@@ -116,11 +114,9 @@ const markerSlice = createSlice({
     builder.addCase(getFreeDraw.fulfilled, (state, { payload }) => {
         console.log(payload);
         state.freedraw = payload;
-        state.scan_status = "waiting"
     });
     builder.addCase(getFreeDraw.rejected,(state, action) => {
         state.loading = "error";
-        state.scan_status = "waiting"
     });
   }
 });
