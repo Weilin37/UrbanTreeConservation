@@ -2,8 +2,6 @@ import React from "react";
 import NavBar from "./NavBar";
 import { LeafMap } from "./Map";
 import Grid from '@material-ui/core/Grid';
-import { VictoryBar } from 'victory';
-import Paper from '@material-ui/core/Paper';
 
 const App = () => (
   <Grid container justify="center" alignItems="center" spacing={2}>

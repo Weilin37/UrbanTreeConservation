@@ -1,10 +1,6 @@
 import { useSelector } from "react-redux";
-import { Circle } from "react-leaflet";
-import { makeStyles } from '@material-ui/core/styles';
-import { VictoryBar, VictoryChart, VictoryLine, VictoryHistogram, VictoryLabel, VictoryAxis, VictoryTheme } from 'victory';
-import Paper from '@material-ui/core/Paper';
+import { VictoryChart, VictoryLine, VictoryHistogram, VictoryLabel } from 'victory';
 import Box from '@material-ui/core/Box';
-import { setSimilarityCity1, setSimilarityCity2, getSimilarity } from "../features/analysisSlice";
 
 
 // Custom map components

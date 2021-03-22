@@ -10,7 +10,7 @@ import analysisSlice from "../features/analysisSlice";
 
 
 const middleware = [
-  ...getDefaultMiddleware({immutableCheck: false}),
+  ...getDefaultMiddleware({immutableCheck: false, serializableCheck: false}),
   /*YOUR CUSTOM MIDDLEWARES HERE*/
 ];
 

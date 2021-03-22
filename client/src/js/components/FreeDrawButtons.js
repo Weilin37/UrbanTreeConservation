@@ -7,7 +7,7 @@ import FilterCenterFocusIcon from '@material-ui/icons/FilterCenterFocus';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { ALL, DELETE, NONE } from 'react-leaflet-freedraw';
 import { useLeaflet } from "react-leaflet";
-import { setEndpoint, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom, setViewStatus } from "../features/markerSlice";
+import { setScanStatus } from "../features/markerSlice";
 
 const useStyles = makeStyles((theme) => ({
   freeDrawMargin: {

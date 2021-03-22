@@ -27,9 +27,6 @@ const DataViewButtons = () => {
     const { map } = useLeaflet();
 
     function setGlobal() {
-        if (map.getZoom() >= stateMarker.cityZoom) {
-            map.setZoom(3);
-        }
         batch(() => {
             dispatch(setViewStatus("global"));
             dispatch(setDrawMode(NONE));
@@ -37,9 +34,6 @@ const DataViewButtons = () => {
     }
 
     function setCity() {
-        if (map.getZoom() < stateMarker.cityZoom) {
-            map.setZoom(stateMarker.cityZoom);
-        }
         batch(() => {
             dispatch(setViewStatus("city"));
             dispatch(setDrawMode(NONE));

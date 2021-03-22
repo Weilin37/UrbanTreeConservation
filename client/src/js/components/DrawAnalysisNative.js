@@ -24,13 +24,11 @@ const DrawAnalysisNative = () => {
     const classes = useStyles();
     let freedata;
     let freetotal;
-    let countFreeNonNative;
     let countFreeNative;
     let freespeciescount = [];
 
     let citydata;
     let citytotal;
-    let countCityNonNative;
     let countCityNative;
     let cityspeciescount = [];
 
@@ -44,7 +42,7 @@ const DrawAnalysisNative = () => {
             freedata = stateMarker.freedraw;
             freetotal = freedata.length;
             let tmpfreespeciescount = freedata.reduce((p,c) => {
-                var species = c.scientific_name;
+                let species = c.scientific_name;
                 if (!p.hasOwnProperty(species)) {
                     p[species] = 0;
                 }
@@ -62,15 +60,6 @@ const DrawAnalysisNative = () => {
 
             freespeciescount = freespeciescount.slice(0,5);
 
-
-            countFreeNonNative = freedata.reduce((cnt, row) => {
-                if (row.native === "FALSE") {
-                    return cnt = cnt+1;
-                } else {
-                    return cnt;
-                }
-            }, 0);
-
             countFreeNative = freedata.reduce((cnt, row) => {
                 if (row.native === "TRUE") {
                     return cnt = cnt+1;
@@ -86,7 +75,7 @@ const DrawAnalysisNative = () => {
             });
 
             let tmpcityspeciescount = stateMarker.city.reduce((p,c) => {
-                var species = c.scientific_name;
+                let species = c.scientific_name;
                 if (!p.hasOwnProperty(species)) {
                     p[species] = 0;
                 }
@@ -94,8 +83,8 @@ const DrawAnalysisNative = () => {
                 return p;
             }, {});
 
-            for (var species in tmpcityspeciescount) {
-                cityspeciescount.push([species, tmpcityspeciescount[species]])
+            for (var tmpspecies in tmpcityspeciescount) {
+                cityspeciescount.push([tmpspecies, tmpcityspeciescount[tmpspecies]])
             }
 
             cityspeciescount.sort(function(a,b) {
@@ -105,7 +94,6 @@ const DrawAnalysisNative = () => {
             cityspeciescount = cityspeciescount.slice(0,5);
 
             citytotal = citydata[0].total_species;
-            countCityNonNative = citydata[0].count_non_native;
             countCityNative = citydata[0].count_native;
         }
 
@@ -162,7 +150,7 @@ const DrawAnalysisNative = () => {
                 </Grid>
             </Paper>
          )
-    } else if (stateMarker.freedraw.length == 0 && stateMarker.city.length > 0) {
+    } else if (stateMarker.freedraw.length === 0 && stateMarker.city.length > 0) {
         return(
             <Paper className={classes.analysisMargin}>
                 <Grid container justify="center" alignItems="center" spacing={2}>

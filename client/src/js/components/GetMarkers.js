@@ -1,22 +1,16 @@
-import React, {useRef, useState} from "react";
+import React, { useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector, batch } from "react-redux";
 import { Circle } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-import { renderToString } from 'react-dom/server';
 import PixiOverlay from 'react-leaflet-pixi-overlay';
-import Slider from '@material-ui/core/Slider';
 import { setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilarityState2 } from "../features/analysisSlice";
-import Backdrop from '@material-ui/core/Backdrop';
-import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { useLeaflet } from "react-leaflet";
 import Fab from '@material-ui/core/Fab';
 import AdjustIcon from '@material-ui/icons/Adjust';
-import { setEndpoint, getCity, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom, setViewStatus } from "../features/markerSlice";
-import { setDrawMode, setSearch } from "../features/mapSlice";
+import { getCity } from "../features/markerSlice";
 
 const useStyles = makeStyles((theme) => ({
   scanMargin: {
@@ -38,11 +32,9 @@ const GetMarkers = () => {
     const classes = useStyles();
     const { map } = useLeaflet();
 
-    const [endpoint, setEndpoint] = useState();
-    const [scan_lat, setScanLat] = useState();
-    const [scan_lng, setScanLng] = useState();
-    const [scan_radius, setScanRadius] = useState();
-    const [loading, setLoading] = useState(0);
+    const [scan_lat, setScanLat] = useState(0);
+    const [scan_lng, setScanLng] = useState(0);
+    const [scan_radius, setScanRadius] = useState(0);
 
     function handleSimilarityClick(city, state) {
         if (stateAnalysis.similarityCity1 === "") {
@@ -83,7 +75,6 @@ const GetMarkers = () => {
             if (map.getZoom() < stateMarker.cityZoom) {
                 map.setZoom(stateMarker.cityZoom);
             }
-            const zoom = map.getZoom();
             const center = map.getCenter();
             const lat = center.lat;
             const lng = center.lng;
@@ -95,14 +86,15 @@ const GetMarkers = () => {
             setScanLng(lng);
             setScanRadius(radius);
 
-            dispatch(getCity("/api/get/city?lat="+lat+"&lng="+lng+"&radius="+radius));
-            setLoading(1);
+            batch(() => {
+                dispatch(getCity("/api/get/city?lat="+lat+"&lng="+lng+"&radius="+radius));
+                //dispatch(setLoading(true));
+            });
         }
 
     }
 
     if (stateMarker.view_status === "global"){
-        console.log("Draw global");
 
         return stateMarker.global.map((el, i) => (
           <Marker
@@ -112,36 +104,21 @@ const GetMarkers = () => {
             <Popup>
                 <p>{el.city}, {el.state}</p>
                 <p>Number of Trees: {el.total_species}</p>
+                <p>Number of Native Trees: {el.count_native}</p>
                 <p>Number of Species: {el.total_unique_species}</p>
-                <Box pb={4} />
-                <Slider
-                    defaultValue={el.count_native}
-                    step={null}
-                    min={0}
-                    max={el.total_species}
-                    valueLabelDisplay="on"
-                    marks={
-                        [
-                          {value: el.count_native,label: 'Native'},
-                          {value: el.total_species, label: (el.total_species/1000).toFixed()+"K"}
-                        ]
-                    }
-                />
+                <p>Percent Native: {100*(el.count_native/el.total_species).toFixed()+"%"}</p>
                 <Button onClick={() => handleSimilarityClick(el.city, el.state)} value={el.city} variant="outlined" size="small" color="primary">
                   Compare
                 </Button>
             </Popup>
           </Marker>
         ));
-    } else if (stateMarker.view_status === "city" && stateMarker.city.length == 0)  {
+    } else if (stateMarker.view_status === "city" && stateMarker.city.length === 0)  {
         return (
             <div>
                 <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
                     <AdjustIcon />
                 </Fab>
-                <Backdrop open={loading} className={classes.backdrop}>
-                    <CircularProgress color="inherit" />
-                </Backdrop>
             </div>
         )
     } else if (stateMarker.view_status === "city" && stateMarker.city.length > 0) {

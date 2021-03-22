@@ -3,10 +3,8 @@ import Fab from '@material-ui/core/Fab';
 import AdjustIcon from '@material-ui/icons/Adjust';
 import { useDispatch, useSelector, batch } from "react-redux";
 import { useLeaflet } from "react-leaflet";
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
 import { setEndpoint, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom, setViewStatus } from "../features/markerSlice";
-import { setDrawMode, setSearch } from "../features/mapSlice";
+import { setSearch } from "../features/mapSlice";
 
 const useStyles = makeStyles((theme) => ({
   scanMargin: {

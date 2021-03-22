@@ -2,7 +2,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { getSearch } from "../features/mapSlice";
-import { clearCity, setViewStatus } from "../features/markerSlice";
+import { setViewStatus } from "../features/markerSlice";
 import { useDispatch, batch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({

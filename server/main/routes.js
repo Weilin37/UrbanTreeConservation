@@ -19,6 +19,7 @@ router.get('/api/get/city', (req,res,next) => {
 	    latitude_coordinate as latitude,
 	    longitude_coordinate as longitude,
 	    scientific_name,
+	    '<div><p>' || scientific_name || '</p><p></p></div>' as tooltip,
 	    native,
 	    case
 	        when native='TRUE' then 1

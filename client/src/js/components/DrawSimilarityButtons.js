@@ -1,10 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { setDrawMode } from "../features/mapSlice";
 import { useDispatch, useSelector, batch } from "react-redux";
-import Fab from '@material-ui/core/Fab';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
-import { setViewStatus } from "../features/markerSlice";
-import { useLeaflet } from "react-leaflet";
 import Chip from '@material-ui/core/Chip';
 import Paper from '@material-ui/core/Paper';
 import DrawAnalysisSimilarity from "./DrawAnalysisSimilarity";
@@ -27,7 +22,6 @@ const DrawSimilarityButtons = () => {
     const dispatch = useDispatch();
     const stateMarker = useSelector(state => state.marker);
     const stateAnalysis = useSelector(state => state.analysis);
-    const { map } = useLeaflet();
 
     function handleDelete(e) {
         if (e === 1) {

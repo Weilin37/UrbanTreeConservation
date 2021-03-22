@@ -1,17 +1,14 @@
 import React, { useEffect } from "react";
-import RescanMarkers from "./RescanMarkers";
-import DrawBounds from "./DrawBounds";
 import FreeDrawCustom from "./FreeDrawCustom";
-import FreeDrawButtons from "./FreeDrawButtons";
 import DrawAnalysisNative from "./DrawAnalysisNative";
 import DrawSimilarityButtons from "./DrawSimilarityButtons";
 import GetMarkers from "./GetMarkers";
+import Loading from "./Loading";
 import DataViewButtons from "./DataViewButtons";
 import { Map, TileLayer } from "react-leaflet";
 import "../../css/app.css";
-import { useSelector, useDispatch, batch } from "react-redux";
-import { getGlobal, getCity, getFreeDraw, setEndpoint, setViewStatus, clearCity, setScanStatus, setScanRadius, setScanCenter, setScanZoom } from "../features/markerSlice";
-import { setSearch } from "../features/mapSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { getGlobal } from "../features/markerSlice";
 
 export const LeafMap = () => {
     const dispatch = useDispatch();
@@ -19,8 +16,6 @@ export const LeafMap = () => {
     // state
     const stateMarker = useSelector(state => state.marker);
     const stateMap = useSelector(state => state.map);
-
-    const cityZoom = stateMarker.cityZoom;
 
     // Effects
     useEffect(() => {
@@ -35,7 +30,7 @@ export const LeafMap = () => {
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
               />
-
+              <Loading />
               <GetMarkers />
               <FreeDrawCustom />
               <DataViewButtons />

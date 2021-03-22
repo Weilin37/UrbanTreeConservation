@@ -46,6 +46,7 @@ const markerSlice = createSlice({
     treeZoom: 16,
     view_status: "global",
     previous_view_status: "global",
+    loading: false,
   },
   reducers: {
     setEndpoint: (state, action) => {
@@ -58,6 +59,7 @@ const markerSlice = createSlice({
         }
     },
     clearCity: (state) => {state.city = [];},
+    setLoading: (state, action) => {state.loading = action.payload;},
     clearFreeDraw: (state) => {state.freedraw = [];},
     setScanStatus: (state, action) => {state.scan_status = action.payload;},
     setViewStatus: (state, action) => {
@@ -81,18 +83,17 @@ const markerSlice = createSlice({
         state.global = payload;
     });
     builder.addCase(getGlobal.rejected,(state, action) => {
-        state.loading = "error";
+        state.loading = false;
     });
     // city
     builder.addCase(getCity.pending, (state) => {
-        //state.city = [];
+        state.loading = true;
     });
     builder.addCase(getCity.fulfilled, (state, { payload }) => {
         payload = payload.map(function(o) {
           o.position = [o.latitude, o.longitude];
           o.markerSpriteAnchor = [0.5,0.5];
-          o.tooltip = '<div><p>'+o.scientific_name+'</p><p></p></div>';
-          if (o.native == "TRUE") {
+          if (o.native === "TRUE") {
             o.iconId = "icon_green";
             o.customIcon = '<svg xmlns="http://www.w3.org/2000/svg" overflow="visible" fill="green" preserveAspectRatio="xMinYMin meet" width="10" height="10" viewBox="0 0 10 10"><circle r="50%" cx="50%" cy="50%" /></svg>'
           } else {
@@ -101,26 +102,26 @@ const markerSlice = createSlice({
           }
           return o;
         });
-
         state.city = payload;
+        state.loading = false;
     });
     builder.addCase(getCity.rejected,(state, action) => {
-        state.loading = "error";
+        state.loading = false;
     });
     // free draw
     builder.addCase(getFreeDraw.pending, (state) => {
-        //state.freedraw = [];
+        state.loading = true;
     });
     builder.addCase(getFreeDraw.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.freedraw = payload;
+        state.loading = false;
     });
     builder.addCase(getFreeDraw.rejected,(state, action) => {
-        state.loading = "error";
+        state.loading = false;
     });
   }
 });
 
-export const { setEndpoint, setViewStatus, clearCity, clearFreeDraw, setScanStatus, setScanRadius, setScanCenter, setScanZoom } = markerSlice.actions;
+export const { setEndpoint, setViewStatus, clearCity, clearFreeDraw, setScanStatus, setScanRadius, setScanCenter, setScanZoom, setLoading } = markerSlice.actions;
 
 export default markerSlice
