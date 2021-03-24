@@ -16,7 +16,7 @@ const Loading = () => {
 
     return (
         <Backdrop open={stateMarker.loading} className={classes.backdrop}>
-            <CircularProgress color="inherit" />
+            <CircularProgress color="inherit" size={120} />
         </Backdrop>
     );
 }

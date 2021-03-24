@@ -13,21 +13,21 @@ const useStyles = makeStyles((theme) => ({
   freeDrawMargin: {
     margin: theme.spacing(1),
     top: theme.spacing(16),
-    left: theme.spacing(1),
+    left: theme.spacing(7),
     position: 'fixed',
     zIndex: 1000,
   },
   selectMargin: {
     margin: theme.spacing(1),
     top: theme.spacing(22),
-    left: theme.spacing(1),
+    left: theme.spacing(7),
     position: 'fixed',
     zIndex: 1000,
   },
   deleteMargin: {
     margin: theme.spacing(1),
     top: theme.spacing(28),
-    left: theme.spacing(1),
+    left: theme.spacing(7),
     position: 'fixed',
     zIndex: 1000,
   }

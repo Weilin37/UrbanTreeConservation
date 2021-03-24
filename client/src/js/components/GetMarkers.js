@@ -9,14 +9,13 @@ import { setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilar
 
 import { useLeaflet } from "react-leaflet";
 import Fab from '@material-ui/core/Fab';
-import AdjustIcon from '@material-ui/icons/Adjust';
 import { getCity } from "../features/markerSlice";
 
 const useStyles = makeStyles((theme) => ({
   scanMargin: {
     margin: theme.spacing(1),
-    top: theme.spacing(34),
-    left: theme.spacing(1),
+    top: theme.spacing(7),
+    left: theme.spacing(7),
     position: 'fixed',
     zIndex: 1000,
   },
@@ -116,8 +115,8 @@ const GetMarkers = () => {
     } else if (stateMarker.view_status === "city" && stateMarker.city.length === 0)  {
         return (
             <div>
-                <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
-                    <AdjustIcon />
+                <Fab variant="extended" onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
+                    Scan Area for Trees
                 </Fab>
             </div>
         )
@@ -132,8 +131,8 @@ const GetMarkers = () => {
                     fill={false}
                     center={[scan_lat, scan_lng]}
                     radius={1.5*scan_radius} />
-                <Fab onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
-                    <AdjustIcon />
+                <Fab variant="extended" onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
+                    Scan Area for Trees
                 </Fab>
             </div>
         )

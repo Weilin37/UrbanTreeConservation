@@ -109,7 +109,7 @@ const DrawAnalysisNative = () => {
 
     }
 
-    if (stateMarker.freedraw.length > 0 && stateMarker.city.length > 0) {
+    if (stateMarker.freedraw.length > 0 && stateMarker.city.length > 0 && stateMarker.view_status === "city") {
          return(
             <Paper className={classes.analysisMargin}>
                 <Grid container justify="center" alignItems="center" spacing={2}>
@@ -150,7 +150,7 @@ const DrawAnalysisNative = () => {
                 </Grid>
             </Paper>
          )
-    } else if (stateMarker.freedraw.length === 0 && stateMarker.city.length > 0) {
+    } else if (stateMarker.freedraw.length === 0 && stateMarker.city.length > 0  && stateMarker.view_status === "city") {
         return(
             <Paper className={classes.analysisMargin}>
                 <Grid container justify="center" alignItems="center" spacing={2}>

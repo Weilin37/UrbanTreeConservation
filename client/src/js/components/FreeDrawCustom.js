@@ -1,36 +1,33 @@
 import React, {useRef, useState} from "react";
 import Freedraw from 'react-leaflet-freedraw';
 import "../../css/freedraw.css";
-import { useSelector, useDispatch, batch } from "react-redux";
-import { clearFreeDraw, getFreeDraw, setLoading } from "../features/markerSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { clearFreeDraw, getFreeDraw } from "../features/markerSlice";
 import { useLeaflet } from "react-leaflet";
 
 import { makeStyles } from '@material-ui/core/styles';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';
-import FilterCenterFocusIcon from '@material-ui/icons/FilterCenterFocus';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { ALL, DELETE, NONE } from 'react-leaflet-freedraw';
 
 const useStyles = makeStyles((theme) => ({
   freeDrawMargin: {
     margin: theme.spacing(1),
-    top: theme.spacing(16),
-    left: theme.spacing(1),
+    top: theme.spacing(7),
+    left: theme.spacing(30),
     position: 'fixed',
     zIndex: 1000,
   },
   selectMargin: {
     margin: theme.spacing(1),
-    top: theme.spacing(22),
-    left: theme.spacing(1),
+    top: theme.spacing(7),
+    left: theme.spacing(43),
     position: 'fixed',
     zIndex: 1000,
   },
   deleteMargin: {
     margin: theme.spacing(1),
-    top: theme.spacing(28),
-    left: theme.spacing(1),
+    top: theme.spacing(7),
+    left: theme.spacing(59),
     position: 'fixed',
     zIndex: 1000,
   },
@@ -130,14 +127,14 @@ const FreeDrawCustom = () => {
     if (stateMarker.view_status === "city")  {
         return (
             <div>
-                <Fab onClick={handleSwitchClick} className={classes.freeDrawMargin} size="small" color="primary" aria-label="add">
-                    <BorderColorIcon />
+                <Fab variant="extended" onClick={handleSwitchClick} className={classes.freeDrawMargin} size="small" color="primary" aria-label="add">
+                    Draw Area
                 </Fab>
-                <Fab onClick={getMarkers} className={classes.selectMargin} size="small" color="primary" aria-label="add">
-                    <FilterCenterFocusIcon />
+                <Fab variant="extended" onClick={getMarkers} className={classes.selectMargin} size="small" color="primary" aria-label="add">
+                    Analyze Area
                 </Fab>
-                <Fab onClick={handleDeleteClick} className={classes.deleteMargin} size="small" color="secondary" aria-label="add">
-                    <DeleteIcon />
+                <Fab variant="extended" onClick={handleDeleteClick} className={classes.deleteMargin} size="small" color="secondary" aria-label="add">
+                    Delete Area
                 </Fab>
                 <Freedraw
                   mode={drawMode}

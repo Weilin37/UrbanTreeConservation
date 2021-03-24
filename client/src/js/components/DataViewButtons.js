@@ -5,7 +5,6 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Paper from '@material-ui/core/Paper';
-import { useLeaflet } from "react-leaflet";
 import { setDrawMode } from "../features/mapSlice";
 import { NONE } from 'react-leaflet-freedraw';
 
@@ -24,7 +23,6 @@ const DataViewButtons = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const stateMarker = useSelector(state => state.marker);
-    const { map } = useLeaflet();
 
     function setGlobal() {
         batch(() => {
