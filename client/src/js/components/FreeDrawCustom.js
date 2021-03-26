@@ -9,6 +9,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import { ALL, DELETE, NONE } from 'react-leaflet-freedraw';
 
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
 const useStyles = makeStyles((theme) => ({
   freeDrawMargin: {
     margin: theme.spacing(1),
@@ -27,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   deleteMargin: {
     margin: theme.spacing(1),
     top: theme.spacing(7),
-    left: theme.spacing(59),
+    left: theme.spacing(64),
     position: 'fixed',
     zIndex: 1000,
   },
@@ -39,7 +43,9 @@ const useStyles = makeStyles((theme) => ({
 // Custom map components
 const FreeDrawCustom = () => {
     const [drawMode, setDrawMode] = useState(NONE);
-    const [endpoint, setEndpoint] = useState();
+    const [endpoint, setEndpoint] = useState('');
+    const [analyzeClicked, setAnalyzeClicked] = useState(false);
+    const [deleteClicked, setDeleteClicked] = useState(false);
 
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -110,19 +116,37 @@ const FreeDrawCustom = () => {
     }
 
     function getMarkers(e) {
+        console.log(endpoint.length)
         if (endpoint.length > 0) {
             dispatch(getFreeDraw(endpoint));
             setDrawMode(NONE);
+        } else {
+            setAnalyzeClicked(true);
         }
     }
 
     function handleDeleteClick(e) {
         var polygon = document.getElementsByClassName('leaflet-polygon');
+        setDeleteClicked(true);
         for (var i = 0; i < polygon.length; i++) {
             polygon[i].setAttribute('style','pointer-events: auto !important');
         }
         setDrawMode(DELETE);
     }
+
+    const handleAnalyzeClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setAnalyzeClicked(false);
+    };
+
+    const handleDeleteClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setDeleteClicked(false);
+    };
 
     if (stateMarker.view_status === "city")  {
         return (
@@ -131,10 +155,10 @@ const FreeDrawCustom = () => {
                     Draw Area
                 </Fab>
                 <Fab variant="extended" onClick={getMarkers} className={classes.selectMargin} size="small" color="primary" aria-label="add">
-                    Analyze Area
+                    Analyze Draw Area
                 </Fab>
                 <Fab variant="extended" onClick={handleDeleteClick} className={classes.deleteMargin} size="small" color="secondary" aria-label="add">
-                    Delete Area
+                    Delete Draw Area
                 </Fab>
                 <Freedraw
                   mode={drawMode}
@@ -144,6 +168,40 @@ const FreeDrawCustom = () => {
                   ref={freeDrawRef}
                   leaveModeAfterCreate={true}
                   maximumPolygons={1}
+                />
+                <Snackbar
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'right',
+                    }}
+                    onClose={handleAnalyzeClose}
+                    open={analyzeClicked}
+                    autoHideDuration={6000}
+                    message="Please Use Draw Area First"
+                    action={
+                      <React.Fragment>
+                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleAnalyzeClose}>
+                          <CloseIcon fontSize="small" />
+                        </IconButton>
+                      </React.Fragment>
+                    }
+                />
+                <Snackbar
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'right',
+                    }}
+                    onClose={handleDeleteClose}
+                    open={deleteClicked}
+                    autoHideDuration={3000}
+                    message="Now Click Area to Delete it"
+                    action={
+                      <React.Fragment>
+                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleDeleteClose}>
+                          <CloseIcon fontSize="small" />
+                        </IconButton>
+                      </React.Fragment>
+                    }
                 />
             </div>
         )
