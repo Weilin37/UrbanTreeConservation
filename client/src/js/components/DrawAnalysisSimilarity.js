@@ -9,7 +9,7 @@ const DrawAnalysisSimilarity = () => {
     const stateAnalysis = useSelector(state => state.analysis);
 
     if (stateMarker.view_status === "global" && stateAnalysis.similarityData['ds_similarity'] !== "") {
-        let ds_label = stateAnalysis.similarityData['city1']+", "+stateAnalysis.similarityData['state1']+" vs. "+stateAnalysis.similarityData['city2']+", "+stateAnalysis.similarityData['state2'];
+        let ds_label = stateAnalysis.similarityData['greater_metro1']+" vs. "+stateAnalysis.similarityData['greater_metro2'];
         return(
             <Box>
                 <VictoryChart

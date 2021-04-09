@@ -4,7 +4,7 @@ var pool = require('./db')
 
 // Get global level data
 router.get('/api/get/global', (req,res,next) => {
-	pool.query(`select * from public.city_stats`,
+	pool.query(`select * from public.city_stats_new`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
     })
@@ -16,6 +16,7 @@ router.get('/api/get/city', (req,res,next) => {
 	    row_number() OVER () as id,
 	    city,
 	    state,
+	    greater_metro,
 	    latitude_coordinate as latitude,
 	    longitude_coordinate as longitude,
 	    scientific_name,
@@ -25,7 +26,7 @@ router.get('/api/get/city', (req,res,next) => {
 	        when native='TRUE' then 1
 	        else 0
 	    end as native_flag
-	    from public.standard_dataset
+	    from public.standard_dataset_new
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),(${req.query.radius})) @> ll_to_earth(latitude_coordinate, longitude_coordinate)`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
@@ -34,7 +35,7 @@ router.get('/api/get/city', (req,res,next) => {
 
 // Get trees in polygon
 router.get('/api/get/freedraw', (req,res,next) => {
-    console.log(`select * from public.standard_dataset
+    console.log(`select * from public.standard_dataset_new
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})
 	    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
@@ -47,7 +48,7 @@ router.get('/api/get/freedraw', (req,res,next) => {
 	    condition,
 	    latitude_coordinate as latitude,
 	    longitude_coordinate as longitude
-	    from public.standard_dataset
+	    from public.standard_dataset_new
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})
 	    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
@@ -60,13 +61,13 @@ router.get('/api/get/freedraw', (req,res,next) => {
 // Get similarity between two cities
 router.get('/api/get/citysimilarity', (req,res,next) => {
 	pool.query(
-        `select city1, state1, city2, state2, ds_similarity
-        from public.dice_similarity
+        `select greater_metro1, greater_metro2, ds_similarity
+        from public.dice_similarity_new
         where (
-        		state1 in ('${req.query.state1}','${req.query.state2}') and city1 in ('${req.query.city1}','${req.query.city2}')
+        		greater_metro1 in ('${req.query.greater_metro1}','${req.query.greater_metro2}')
         	)
         and (
-        	state2 in ('${req.query.state1}','${req.query.state2}') and city2 in ('${req.query.city1}','${req.query.city2}')
+        	greater_metro2 in ('${req.query.greater_metro1}','${req.query.greater_metro2}')
       	)`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
@@ -76,7 +77,7 @@ router.get('/api/get/citysimilarity', (req,res,next) => {
 // Get similarity histogram
 router.get('/api/get/similarityhistogram', (req,res,next) => {
 	pool.query(
-        `select ds_similarity as x from public.dice_similarity`,
+        `select ds_similarity as x from public.dice_similarity_new`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})

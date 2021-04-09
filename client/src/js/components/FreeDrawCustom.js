@@ -46,6 +46,7 @@ const FreeDrawCustom = () => {
     const [endpoint, setEndpoint] = useState('');
     const [analyzeClicked, setAnalyzeClicked] = useState(false);
     const [deleteClicked, setDeleteClicked] = useState(false);
+    const [DrawClicked, setDrawClicked] = useState(false);
 
     const classes = useStyles();
     const dispatch = useDispatch();

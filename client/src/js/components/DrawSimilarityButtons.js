@@ -3,7 +3,7 @@ import { useDispatch, useSelector, batch } from "react-redux";
 import Chip from '@material-ui/core/Chip';
 import Paper from '@material-ui/core/Paper';
 import DrawAnalysisSimilarity from "./DrawAnalysisSimilarity";
-import { getSimilarity, getSimilarityHistogram, setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilarityState2 } from "../features/analysisSlice";
+import { getSimilarity, getSimilarityHistogram, setSimilarityGreaterMetro1, setSimilarityGreaterMetro2 } from "../features/analysisSlice";
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,22 +25,15 @@ const DrawSimilarityButtons = () => {
 
     function handleDelete(e) {
         if (e === 1) {
-            batch(() => {
-                dispatch(setSimilarityCity1(""));
-                dispatch(setSimilarityState1(""));
-            });
+            dispatch(setSimilarityGreaterMetro1(""));
         } else if (e === 2) {
-            batch(() => {
-                dispatch(setSimilarityCity2(""));
-                dispatch(setSimilarityState2(""));
-            });
+            dispatch(setSimilarityGreaterMetro2(""));
         }
     }
 
     function handleSimilarityClick() {
-        if (stateAnalysis.similarityCity1 !== "" && stateAnalysis.similarityCity2 !== "") {
-            let endpoint = '/api/get/citysimilarity?city1='+stateAnalysis.similarityCity1+'&city2='+stateAnalysis.similarityCity2+
-            '&state1='+stateAnalysis.similarityState1+'&state2='+stateAnalysis.similarityState2;
+        if (stateAnalysis.similarityGreaterMetro1 !== "" && stateAnalysis.similarityGreaterMetro2 !== "") {
+            let endpoint = '/api/get/citysimilarity?greater_metro1='+stateAnalysis.similarityGreaterMetro1+'&greater_metro2='+stateAnalysis.similarityGreaterMetro2;
             batch(() => {
                 dispatch(getSimilarity(endpoint));
                 dispatch(getSimilarityHistogram());
@@ -48,27 +41,27 @@ const DrawSimilarityButtons = () => {
         }
     }
 
-    if (stateMarker.view_status === "global" && (stateAnalysis.similarityCity1 !== "" || stateAnalysis.similarityCity2 !== "")) {
+    if (stateMarker.view_status === "global" && (stateAnalysis.similarityGreaterMetro1 !== "" || stateAnalysis.similarityGreaterMetro2 !== "")) {
 
-        if (stateAnalysis.similarityCity1 !== "" && stateAnalysis.similarityCity2 === "") {
+        if (stateAnalysis.similarityGreaterMetro1 !== "" && stateAnalysis.similarityGreaterMetro2 === "") {
             return (
                 <Paper className={classes.chipMargin}>
                     <DrawAnalysisSimilarity />
                     <Chip
                       size="small"
-                      label={stateAnalysis.similarityCity1+", "+stateAnalysis.similarityState1}
+                      label={stateAnalysis.similarityGreaterMetro1}
                       onDelete={() => handleDelete(1)}
                     />
                     <Button size="small" variant="outlined" onClick={handleSimilarityClick} color="primary">calculate</Button>
                 </Paper>
             );
-        } else if (stateAnalysis.similarityCity2 !== "" && stateAnalysis.similarityCity1 === "") {
+        } else if (stateAnalysis.similarityGreaterMetro2 !== "" && stateAnalysis.similarityGreaterMetro1 === "") {
             return (
                 <Paper className={classes.chipMargin}>
                     <DrawAnalysisSimilarity />
                     <Chip
                       size="small"
-                      label={stateAnalysis.similarityCity2+", "+stateAnalysis.similarityState2}
+                      label={stateAnalysis.similarityGreaterMetro2}
                       onDelete={() => handleDelete(2)}
                     />
                     <Button size="small" variant="outlined" onClick={handleSimilarityClick} color="primary">calculate</Button>
@@ -80,12 +73,12 @@ const DrawSimilarityButtons = () => {
                     <DrawAnalysisSimilarity />
                     <Chip
                       size="small"
-                      label={stateAnalysis.similarityCity1+", "+stateAnalysis.similarityState1}
+                      label={stateAnalysis.similarityGreaterMetro1}
                       onDelete={() => handleDelete(1)}
                     />
                     <Chip
                       size="small"
-                      label={stateAnalysis.similarityCity2+", "+stateAnalysis.similarityState2}
+                      label={stateAnalysis.similarityGreaterMetro2}
                       onDelete={() => handleDelete(2)}
                     />
                     <Button size="small" variant="outlined" onClick={handleSimilarityClick} color="primary">calculate</Button>

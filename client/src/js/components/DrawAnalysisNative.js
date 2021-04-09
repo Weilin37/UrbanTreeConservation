@@ -71,7 +71,7 @@ const DrawAnalysisNative = () => {
 
         if (stateMarker.city.length > 0) {
             citydata = stateMarker.global.filter(function (el) {
-              return el.city === stateMarker.city[0].city && el.state === stateMarker.city[0].state
+              return el.greater_metro === stateMarker.city[0].greater_metro
             });
 
             let tmpcityspeciescount = stateMarker.city.reduce((p,c) => {

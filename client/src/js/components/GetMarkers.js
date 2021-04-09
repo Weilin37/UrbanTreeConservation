@@ -5,7 +5,7 @@ import { Circle } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import Button from '@material-ui/core/Button';
 import PixiOverlay from 'react-leaflet-pixi-overlay';
-import { setSimilarityCity1, setSimilarityCity2, setSimilarityState1, setSimilarityState2 } from "../features/analysisSlice";
+import { setSimilarityGreaterMetro1, setSimilarityGreaterMetro2 } from "../features/analysisSlice";
 
 import { useLeaflet } from "react-leaflet";
 import Fab from '@material-ui/core/Fab';
@@ -35,21 +35,16 @@ const GetMarkers = () => {
     const [scan_lng, setScanLng] = useState(0);
     const [scan_radius, setScanRadius] = useState(0);
 
-    function handleSimilarityClick(city, state) {
-        if (stateAnalysis.similarityCity1 === "") {
-            batch(() => {
-                dispatch(setSimilarityCity1(city));
-                dispatch(setSimilarityState1(state));
-            });
-        } else if (stateAnalysis.similarityCity2 === "") {
-            batch(() => {
-                dispatch(setSimilarityCity2(city));
-                dispatch(setSimilarityState2(state));
-            });
-        }
+    function handleSimilarityClick(greater_metro) {
+        /*if (stateAnalysis.similarityGreaterMetro1 === "") {
+            dispatch(setSimilarityGreaterMetro1(greater_metro));
+        } else if (stateAnalysis.similarityGreaterMetro2 === "") {
+            dispatch(setSimilarityGreaterMetro2(greater_metro));
+        }*/
+        return
     }
 
-        function toRadian(degree) {
+    function toRadian(degree) {
         return degree*Math.PI/180;
     }
 
@@ -101,12 +96,12 @@ const GetMarkers = () => {
             position={[el.latitude, el.longitude]}
           >
             <Popup>
-                <p>{el.city}, {el.state}</p>
+                <p>{el.greater_metro}</p>
                 <p>Number of Trees: {el.total_species}</p>
                 <p>Number of Native Trees: {el.count_native}</p>
                 <p>Number of Species: {el.total_unique_species}</p>
                 <p>Percent Native: {100*(el.count_native/el.total_species).toFixed()+"%"}</p>
-                <Button onClick={() => handleSimilarityClick(el.city, el.state)} value={el.city} variant="outlined" size="small" color="primary">
+                <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
                   Compare
                 </Button>
             </Popup>
