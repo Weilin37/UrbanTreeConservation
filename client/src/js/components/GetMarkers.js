@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector, batch } from "react-redux";
-import { Circle } from "react-leaflet";
+import { Circle, CircleMarker } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import Button from '@material-ui/core/Button';
 import PixiOverlay from 'react-leaflet-pixi-overlay';
@@ -35,12 +35,48 @@ const GetMarkers = () => {
     const [scan_lng, setScanLng] = useState(0);
     const [scan_radius, setScanRadius] = useState(0);
 
+    var percentColors = [
+    { pct: 0.0, color: { r: 128, g: 128, b: 128 } },
+    { pct: 1.0, color: { r: 0, g: 200, b: 0 } } ];
+
+    var max_num_trees;
+    var min_num_trees;
+
+    for (var row of stateMarker.global) {
+        var num_trees = parseInt(row.total_species)
+        if (!max_num_trees || num_trees > max_num_trees) {max_num_trees = num_trees}
+        if (!min_num_trees || num_trees < min_num_trees) {min_num_trees = num_trees}
+    }
+
+    console.log(max_num_trees);
+    console.log(min_num_trees);
+
+    var getColorForPercentage = function(pct) {
+        for (var i = 1; i < percentColors.length - 1; i++) {
+            if (pct < percentColors[i].pct) {
+                break;
+            }
+        }
+        var lower = percentColors[i - 1];
+        var upper = percentColors[i];
+        var range = upper.pct - lower.pct;
+        var rangePct = (pct - lower.pct) / range;
+        var pctLower = 1 - rangePct;
+        var pctUpper = rangePct;
+        var color = {
+            r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
+            g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
+            b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
+        };
+        return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
+    }
+
     function handleSimilarityClick(greater_metro) {
-        /*if (stateAnalysis.similarityGreaterMetro1 === "") {
+        if (stateAnalysis.similarityGreaterMetro1 === "") {
             dispatch(setSimilarityGreaterMetro1(greater_metro));
         } else if (stateAnalysis.similarityGreaterMetro2 === "") {
             dispatch(setSimilarityGreaterMetro2(greater_metro));
-        }*/
+        }
         return
     }
 
@@ -91,21 +127,27 @@ const GetMarkers = () => {
     if (stateMarker.view_status === "global"){
 
         return stateMarker.global.map((el, i) => (
-          <Marker
+          <CircleMarker
             key={i}
-            position={[el.latitude, el.longitude]}
+            center={[el.latitude, el.longitude]}
+            radius={Math.log(parseInt(el.total_species))}
+            fillColor={getColorForPercentage(parseInt(el.count_native)/parseInt(el.total_species))}
+            fillOpacity={1}
+            stroke={true}
+            color={'black'}
+            weight={1}
           >
             <Popup>
                 <p>{el.greater_metro}</p>
                 <p>Number of Trees: {el.total_species}</p>
                 <p>Number of Native Trees: {el.count_native}</p>
                 <p>Number of Species: {el.total_unique_species}</p>
-                <p>Percent Native: {100*(el.count_native/el.total_species).toFixed()+"%"}</p>
+                <p>Percent Native: {100*(parseInt(el.count_native)/parseInt(el.total_species)).toFixed(3)+"%"}</p>
                 <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
                   Compare
                 </Button>
             </Popup>
-          </Marker>
+          </CircleMarker>
         ));
     } else if (stateMarker.view_status === "city" && stateMarker.city.length === 0)  {
         return (

@@ -27,7 +27,12 @@ router.get('/api/get/city', (req,res,next) => {
 	        else 0
 	    end as native_flag
 	    from public.standard_dataset_new
-	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),(${req.query.radius})) @> ll_to_earth(latitude_coordinate, longitude_coordinate)`,
+	    where greater_metro = (
+	        select greater_metro
+	        from public.standard_dataset_new
+	        where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),(${req.query.radius})) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
+	        limit 1
+	    )`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
