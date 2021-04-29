@@ -20,7 +20,7 @@ router.get('/api/get/city', (req,res,next) => {
 	    latitude_coordinate as latitude,
 	    longitude_coordinate as longitude,
 	    scientific_name,
-	    '<div><p>' || scientific_name || '</p><p></p></div>' as tooltip,
+	    '<div><p>Scientific Name: ' || scientific_name || '</p><p>Common Name: '|| common_name ||'</p></div>' as tooltip,
 	    native,
 	    case
 	        when native='TRUE' then 1
@@ -40,12 +40,6 @@ router.get('/api/get/city', (req,res,next) => {
 
 // Get trees in polygon
 router.get('/api/get/freedraw', (req,res,next) => {
-    console.log(`select * from public.standard_dataset_new
-	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
-	    (${req.query.radius})
-	    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
-	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)`);
-
 	pool.query(`select city,
 	    state,
 	    native,

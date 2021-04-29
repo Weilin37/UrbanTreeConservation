@@ -36,6 +36,8 @@ const markerSlice = createSlice({
     global: [],
     city: [],
     freedraw: [],
+    globalfilter: 'Native Trees',
+    cityfilter: 'Native Trees',
     endpoint: "/api/get/global",
     scan_status: "waiting",
     scan_radius: 0,
@@ -73,6 +75,8 @@ const markerSlice = createSlice({
         state.scan_lng = action.payload.lng;
     },
     setScanLng: (state, action) => {state.scan_lng = action.payload;},
+    setGlobalFilter: (state, action) => {state.globalfilter = action.payload;},
+    setCityFilter: (state, action) => {state.cityfilter = action.payload;},
   },
   extraReducers: (builder) => {
     // global
@@ -122,6 +126,18 @@ const markerSlice = createSlice({
   }
 });
 
-export const { setEndpoint, setViewStatus, clearCity, clearFreeDraw, setScanStatus, setScanRadius, setScanCenter, setScanZoom, setLoading } = markerSlice.actions;
+export const {
+        setEndpoint,
+        setViewStatus,
+        clearCity,
+        clearFreeDraw,
+        setScanStatus,
+        setScanRadius,
+        setScanCenter,
+        setScanZoom,
+        setLoading,
+        setGlobalFilter,
+        setCityFilter,
+    } = markerSlice.actions;
 
 export default markerSlice

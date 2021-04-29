@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector, batch } from "react-redux";
-import { Circle, CircleMarker } from "react-leaflet";
+import { CircleMarker } from "react-leaflet";
 import { Marker, Popup } from "react-leaflet";
 import Button from '@material-ui/core/Button';
 import PixiOverlay from 'react-leaflet-pixi-overlay';
@@ -31,9 +31,6 @@ const GetMarkers = () => {
     const classes = useStyles();
     const { map } = useLeaflet();
 
-    const [scan_lat, setScanLat] = useState(0);
-    const [scan_lng, setScanLng] = useState(0);
-    const [scan_radius, setScanRadius] = useState(0);
 
     var percentColors = [
     { pct: 0.0, color: { r: 128, g: 128, b: 128 } },
@@ -47,9 +44,6 @@ const GetMarkers = () => {
         if (!max_num_trees || num_trees > max_num_trees) {max_num_trees = num_trees}
         if (!min_num_trees || num_trees < min_num_trees) {min_num_trees = num_trees}
     }
-
-    console.log(max_num_trees);
-    console.log(min_num_trees);
 
     var getColorForPercentage = function(pct) {
         for (var i = 1; i < percentColors.length - 1; i++) {
@@ -112,43 +106,66 @@ const GetMarkers = () => {
             const latNE = bounds['_northEast'].lat
             const lngNE = bounds['_northEast'].lng
             const radius = Math.round(0.5*getDistance([latNE, lngNE],[lat, lng]));
-            setScanLat(lat);
-            setScanLng(lng);
-            setScanRadius(radius);
 
             batch(() => {
                 dispatch(getCity("/api/get/city?lat="+lat+"&lng="+lng+"&radius="+radius));
                 //dispatch(setLoading(true));
             });
         }
-
     }
 
     if (stateMarker.view_status === "global"){
 
-        return stateMarker.global.map((el, i) => (
-          <CircleMarker
-            key={i}
-            center={[el.latitude, el.longitude]}
-            radius={Math.log(parseInt(el.total_species))}
-            fillColor={getColorForPercentage(parseInt(el.count_native)/parseInt(el.total_species))}
-            fillOpacity={1}
-            stroke={true}
-            color={'black'}
-            weight={1}
-          >
-            <Popup>
-                <p>{el.greater_metro}</p>
-                <p>Number of Trees: {el.total_species}</p>
-                <p>Number of Native Trees: {el.count_native}</p>
-                <p>Number of Species: {el.total_unique_species}</p>
-                <p>Percent Native: {100*(parseInt(el.count_native)/parseInt(el.total_species)).toFixed(3)+"%"}</p>
-                <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
-                  Compare
-                </Button>
-            </Popup>
-          </CircleMarker>
-        ));
+        if (stateMarker.globalfilter === 'Native Trees') {
+            return stateMarker.global.map((el, i) => (
+              <CircleMarker
+                key={i}
+                center={[el.latitude, el.longitude]}
+                radius={Math.log(parseInt(el.total_species))}
+                fillColor={getColorForPercentage(parseInt(el.count_native)/parseInt(el.total_species))}
+                fillOpacity={1}
+                stroke={true}
+                color={'black'}
+                weight={1}
+              >
+                <Popup>
+                    <p>{el.greater_metro}</p>
+                    <p>Number of Trees: {el.total_species}</p>
+                    <p>Number of Native Trees: {el.count_native}</p>
+                    <p>Number of Species: {el.total_unique_species}</p>
+                    <p>Percent Native: {100*(parseInt(el.count_native)/parseInt(el.total_species)).toFixed(3)+"%"}</p>
+                    <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
+                      Compare
+                    </Button>
+                </Popup>
+              </CircleMarker>
+            ));
+        } else if (stateMarker.globalfilter === 'Unique Species') {
+            return stateMarker.global.map((el, i) => (
+              <CircleMarker
+                key={i}
+                center={[el.latitude, el.longitude]}
+                radius={Math.log(parseInt(el.total_species))}
+                fillColor={getColorForPercentage(parseInt(el.total_unique_species)/parseInt(el.total_species))}
+                fillOpacity={1}
+                stroke={true}
+                color={'black'}
+                weight={1}
+              >
+                <Popup>
+                    <p>{el.greater_metro}</p>
+                    <p>Number of Trees: {el.total_species}</p>
+                    <p>Number of Native Trees: {el.count_native}</p>
+                    <p>Number of Species: {el.total_unique_species}</p>
+                    <p>Percent Native: {100*(parseInt(el.count_native)/parseInt(el.total_species)).toFixed(3)+"%"}</p>
+                    <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
+                      Compare
+                    </Button>
+                </Popup>
+              </CircleMarker>
+            ));
+        }
+
     } else if (stateMarker.view_status === "city" && stateMarker.city.length === 0)  {
         return (
             <div>
@@ -158,16 +175,9 @@ const GetMarkers = () => {
             </div>
         )
     } else if (stateMarker.view_status === "city" && stateMarker.city.length > 0) {
-        console.log("Draw PixiOverlay");
         return (
             <div>
                 <PixiOverlay markers={stateMarker.city} />
-                <Circle
-                    weight={1}
-                    opacity={0.5}
-                    fill={false}
-                    center={[scan_lat, scan_lng]}
-                    radius={1.5*scan_radius} />
                 <Fab variant="extended" onClick={handleclick} size="small" color="primary" aria-label="add" className={classes.scanMargin}>
                     Scan Area for Trees
                 </Fab>
