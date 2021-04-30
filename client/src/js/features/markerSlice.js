@@ -92,6 +92,7 @@ const markerSlice = createSlice({
     // city
     builder.addCase(getCity.pending, (state) => {
         state.loading = true;
+        state.city = [];
     });
     builder.addCase(getCity.fulfilled, (state, { payload }) => {
         payload = payload.map(function(o) {
