@@ -27,12 +27,16 @@ router.get('/api/get/city', (req,res,next) => {
 	        else 0
 	    end as native_flag
 	    from public.standard_dataset_new
-	    where greater_metro = (
+	    where latitude_coordinate is not null
+	    and longitude_coordinate is not null
+	    and greater_metro = (
 	        select greater_metro
 	        from public.standard_dataset_new
 	        where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),(${req.query.radius})) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
 	        limit 1
-	    )`,
+	    )
+	    order by random()
+	    limit 200000`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
@@ -51,7 +55,8 @@ router.get('/api/get/freedraw', (req,res,next) => {
 	    where earth_box(ll_to_earth(${req.query.lat}, ${req.query.lng}),
 	    (${req.query.radius})
 	    ) @> ll_to_earth(latitude_coordinate, longitude_coordinate)
-	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)`,
+	    AND ST_CONTAINS(ST_GeomFromEWKT('SRID=4326; POLYGON((${req.query.polygons}))'),geom)
+	    limit 100000`,
 		(q_err, q_res) => {
 			res.json(q_res.rows)
 		})
