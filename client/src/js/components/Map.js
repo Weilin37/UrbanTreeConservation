@@ -10,6 +10,8 @@ import "../../css/app.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getGlobal } from "../features/markerSlice";
 
+import Filters from "./Filters";
+
 export const LeafMap = () => {
     const dispatch = useDispatch();
 
@@ -25,7 +27,7 @@ export const LeafMap = () => {
     // render component
     if (stateMarker.global.length > 0) {
         return (
-            <Map doubleClickZoom={false} preferCanvas={true} center={[stateMap.lat, stateMap.lng]}
+            <Map doubleClickZoom={false} preferCanvas={false} center={[stateMap.lat, stateMap.lng]}
             zoom={stateMap.zoom} scrollWheelZoom={true}>
               <TileLayer
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
@@ -35,6 +37,7 @@ export const LeafMap = () => {
               <FreeDrawCustom />
               <DataViewButtons />
               <DrawAnalysisNative />
+              <Filters />
               <DrawSimilarityButtons />
             </Map>
         );

@@ -17,21 +17,21 @@ const useStyles = makeStyles((theme) => ({
   freeDrawMargin: {
     margin: theme.spacing(1),
     top: theme.spacing(7),
-    left: theme.spacing(30),
+    left: theme.spacing(31),
     position: 'fixed',
     zIndex: 1000,
   },
   selectMargin: {
     margin: theme.spacing(1),
     top: theme.spacing(7),
-    left: theme.spacing(43),
+    left: theme.spacing(45),
     position: 'fixed',
     zIndex: 1000,
   },
   deleteMargin: {
     margin: theme.spacing(1),
     top: theme.spacing(7),
-    left: theme.spacing(64),
+    left: theme.spacing(68),
     position: 'fixed',
     zIndex: 1000,
   },
@@ -46,7 +46,6 @@ const FreeDrawCustom = () => {
     const [endpoint, setEndpoint] = useState('');
     const [analyzeClicked, setAnalyzeClicked] = useState(false);
     const [deleteClicked, setDeleteClicked] = useState(false);
-    const [DrawClicked, setDrawClicked] = useState(false);
 
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -85,23 +84,27 @@ const FreeDrawCustom = () => {
 
     // Listen for any markers added, removed or edited, and then output the lat lng boundaries.
     function handleOnMarkers(e) {
-        if (e.latLngs.length > 0){
-            const coordinates = e.latLngs[0];
-            let polygonArray = [];
-            for (var i = 0; i<coordinates.length; i++) {
-                let lng = coordinates[i].lng;
-                let lat = coordinates[i].lat;
-                let string = lng+' '+lat;
-                polygonArray.push(string);
-            }
-            polygonArray.push(coordinates[0].lng+' '+coordinates[0].lat);
+        try {
+            if (e.latLngs.length > 0){
+                const coordinates = e.latLngs[0];
+                let polygonArray = [];
+                for (var i = 0; i<coordinates.length; i++) {
+                    let lng = coordinates[i].lng;
+                    let lat = coordinates[i].lat;
+                    let string = lng+' '+lat;
+                    polygonArray.push(string);
+                }
+                polygonArray.push(coordinates[0].lng+' '+coordinates[0].lat);
 
-            let polygonString = polygonArray.join(',');
-            setEndpoint("/api/get/freedraw?lat="+lat+"&lng="+lng+"&radius="+radius+"&polygons="+polygonString);
-        }
-        else if (e.latLngs.length === 0) {
-            console.log("clearing free draw");
-            dispatch(clearFreeDraw());
+                let polygonString = polygonArray.join(',');
+                setEndpoint("/api/get/freedraw?lat="+lat+"&lng="+lng+"&radius="+radius+"&polygons="+polygonString);
+            }
+            else if (e.latLngs.length === 0) {
+                console.log("clearing free draw");
+                dispatch(clearFreeDraw());
+            }
+        } catch {
+            return
         }
     };
 
@@ -113,6 +116,11 @@ const FreeDrawCustom = () => {
     };
 
     function handleSwitchClick(e) {
+        console.log(freeDrawRef);
+        map.eachLayer(function(layer) {
+            console.log(layer.options.maximumPolygons);
+            console.log(layer.options.icon);
+        });
         setDrawMode(ALL ^ DELETE);
     }
 

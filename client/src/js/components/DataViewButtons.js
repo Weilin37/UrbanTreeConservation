@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector, batch } from "react-redux";
 import { setViewStatus } from "../features/markerSlice";
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Switch from '@material-ui/core/Switch';
 import Paper from '@material-ui/core/Paper';
 import { setDrawMode } from "../features/mapSlice";
 import { NONE } from 'react-leaflet-freedraw';
@@ -15,6 +15,8 @@ const useStyles = makeStyles((theme) => ({
     left: theme.spacing(1),
     position: 'fixed',
     zIndex: 1000,
+    paddingRight: 10,
+    paddingLeft: 10
   }
 }));
 
@@ -38,26 +40,45 @@ const DataViewButtons = () => {
         })
     }
 
+    function handleChange(event) {
+        if (!event.target.checked) {
+            setCity()
+            document.querySelectorAll('.leaflet-polygon').forEach(function(a){
+                a.setAttribute("style","opacity:1");
+            })
+            document.querySelectorAll('.leaflet-marker-pane').forEach(function(a){
+                a.setAttribute("style","opacity:1");
+            });
+        } else {
+            document.querySelectorAll('.leaflet-pixi-overlay').forEach(function(a){
+                a.remove()
+            });
+            document.querySelectorAll('.leaflet-marker-pane').forEach(function(a){
+                a.setAttribute("style","opacity:0");
+            });
+            document.querySelectorAll('.leaflet-polygon').forEach(function(a){
+                a.setAttribute("style","opacity:0");
+            });
+            setGlobal();
+        }
+    }
+
     return (
         <Paper className={classes.dataViewMargin} elevation={3}>
-        <RadioGroup row aria-label="position" name="position" defaultValue="top">
-            <FormControlLabel
-              value="top"
-              control={<Radio color="primary" />}
-              label="Global"
-              checked={stateMarker.view_status === "global"}
-              labelPlacement="top"
-              onClick={setGlobal}
-            />
-            <FormControlLabel
-              value="start"
-              control={<Radio color="primary" />}
-              label="City"
-              checked={stateMarker.view_status === "city"}
-              labelPlacement="top"
-              onClick={setCity}
-            />
-        </RadioGroup>
+            <Typography component="div">
+                <Grid component="label" container alignItems="center" spacing={1}>
+                    <Grid item>City</Grid>
+                    <Grid item>
+                        <Switch
+                            checked={stateMarker.view_status === "global"}
+                            onClick={handleChange}
+                            color="primary"
+                            name="checked"
+                        />
+                    </Grid>
+                    <Grid item>Global</Grid>
+                </Grid>
+            </Typography>
         </Paper>
     );
 }
