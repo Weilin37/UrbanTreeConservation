@@ -13,24 +13,24 @@ UPDATE public.standard_dataset SET geom = ST_SetSRID(ST_MakePoint(longitude_coor
 
 CREATE INDEX ON standard_dataset USING gist (ll_to_earth(latitude_coordinate, longitude_coordinate));
 
-CREATE INDEX metro_index ON public.standard_dataset_new (greater_metro);
+CREATE INDEX metro_index ON public.standard_dataset (greater_metro);
 
-CREATE INDEX metro_index_lower ON public.standard_dataset_new (lower(greater_metro));
+CREATE INDEX metro_index_lower ON public.standard_dataset (lower(greater_metro));
 
 create table metro_species_count
 as
 select greater_metro, scientific_name, count(scientific_name)
-from public.standard_dataset_new
+from public.standard_dataset
 group by greater_metro,scientific_name
 
 create table city_stats
 as
 select a.greater_metro, b.latitude, b.longitude,
-count(scientific_name) as total_sp ecies,
+count(scientific_name) as total_species,
 count(distinct scientific_name) as total_unique_species,
 count(CASE WHEN native = 'TRUE' THEN 1 END) as count_native,
 count(CASE WHEN native = 'FALSE' THEN 1 END) as count_non_native
-from public.standard_dataset_new a
+from public.standard_dataset a
 left join public.metro_coordinates b
 on a.greater_metro = b.greater_metro
 group by a.greater_metro, b.latitude, b.longitude
