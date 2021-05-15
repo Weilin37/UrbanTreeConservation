@@ -38,11 +38,14 @@ const GetMarkers = () => {
 
     var max_num_trees;
     var min_num_trees;
+    var max_unique_species;
 
     for (var row of stateMarker.global) {
         var num_trees = parseInt(row.total_species)
+        var num_unique = parseInt(row.total_unique_species)
         if (!max_num_trees || num_trees > max_num_trees) {max_num_trees = num_trees}
         if (!min_num_trees || num_trees < min_num_trees) {min_num_trees = num_trees}
+        if (!max_unique_species || num_unique > max_unique_species) {max_unique_species = num_unique}
     }
 
     var getColorForPercentage = function(pct) {
@@ -146,7 +149,7 @@ const GetMarkers = () => {
                 key={i}
                 center={[el.latitude, el.longitude]}
                 radius={Math.log(parseInt(el.total_species))}
-                fillColor={getColorForPercentage(parseInt(el.total_unique_species)/parseInt(el.total_species))}
+                fillColor={getColorForPercentage(parseInt(el.total_unique_species)/parseInt(max_unique_species))}
                 fillOpacity={1}
                 stroke={true}
                 color={'black'}
@@ -157,7 +160,7 @@ const GetMarkers = () => {
                     <p>Number of Trees: {el.total_species}</p>
                     <p>Number of Native Trees: {el.count_native}</p>
                     <p>Number of Species: {el.total_unique_species}</p>
-                    <p>Percent Native: {100*(parseInt(el.count_native)/parseInt(el.total_species)).toFixed(3)+"%"}</p>
+                    <p>Percent Native: {(100*parseInt(el.count_native)/parseInt(el.total_species)).toFixed(1)+"%"}</p>
                     <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
                       Compare
                     </Button>
