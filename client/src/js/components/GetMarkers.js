@@ -133,7 +133,7 @@ const GetMarkers = () => {
                     <p>Number of Trees: {el.total_species}</p>
                     <p>Number of Native Trees: {el.count_native}</p>
                     <p>Number of Species: {el.total_unique_species}</p>
-                    <p>Percent Native: {(100*parseInt(el.count_native)/parseInt(el.total_species)).toFixed(3)+"%"}</p>
+                    <p>Percent Native: {(100*parseInt(el.count_native)/parseInt(el.total_species)).toFixed(1)+"%"}</p>
                     <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
                       Compare
                     </Button>
