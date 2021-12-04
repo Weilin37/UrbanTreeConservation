@@ -46,6 +46,7 @@ const Filters = () => {
                 >
                     <MenuItem value="Native Trees">Native Trees</MenuItem>
                     <MenuItem value="Unique Species">Unique Species</MenuItem>
+                    <MenuItem value="Number Trees">Number Trees</MenuItem>
                 </Select>
             </FormControl>
         );
@@ -61,6 +62,7 @@ const Filters = () => {
                     label="Select Filter Type"
                 >
                     <MenuItem value="Native Trees">Native Trees</MenuItem>
+                    <MenuItem value="Top Species">Top Species</MenuItem>
                 </Select>
             </FormControl>
         );

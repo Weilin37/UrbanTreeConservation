@@ -33,8 +33,26 @@ const GetMarkers = () => {
 
 
     var percentColors = [
-    { pct: 0.0, color: { r: 128, g: 128, b: 128 } },
-    { pct: 1.0, color: { r: 0, g: 200, b: 0 } } ];
+        { pct: 0.0, color: { r: 128, g: 128, b: 128 } },
+        { pct: 1.0, color: { r: 0, g: 200, b: 0 } }
+    ];
+
+    if (stateMarker.globalfilter === 'Native Trees') {
+        percentColors = [
+            { pct: 0.0, color: { r: 255, g: 247, b: 188 } },
+            { pct: 1.0, color: { r: 217, g: 95 , b: 14 } }
+        ];
+    } else if (stateMarker.globalfilter === 'Unique Species') {
+        percentColors = [
+            { pct: 0.0, color: { r: 224, g: 236, b: 244 } },
+            { pct: 1.0, color: { r: 136, g: 86 , b: 167 } }
+        ];
+    } else if (stateMarker.globalfilter === 'Number Trees') {
+        percentColors = [
+            { pct: 0.0, color: { r: 205, g: 247, b: 220 } },
+            { pct: 1.0, color: { r: 3, g: 148 , b: 55 } }
+        ];
+    }
 
     var max_num_trees;
     var min_num_trees;
@@ -150,6 +168,30 @@ const GetMarkers = () => {
                 center={[el.latitude, el.longitude]}
                 radius={Math.log(parseInt(el.total_species))}
                 fillColor={getColorForPercentage(parseInt(el.total_unique_species)/parseInt(max_unique_species))}
+                fillOpacity={1}
+                stroke={true}
+                color={'black'}
+                weight={1}
+              >
+                <Popup>
+                    <p>{el.greater_metro}</p>
+                    <p>Number of Trees: {el.total_species}</p>
+                    <p>Number of Native Trees: {el.count_native}</p>
+                    <p>Number of Species: {el.total_unique_species}</p>
+                    <p>Percent Native: {(100*parseInt(el.count_native)/parseInt(el.total_species)).toFixed(1)+"%"}</p>
+                    <Button onClick={() => handleSimilarityClick(el.greater_metro)} value={el.greater_metro} variant="outlined" size="small" color="primary">
+                      Compare
+                    </Button>
+                </Popup>
+              </CircleMarker>
+            ));
+        } else if (stateMarker.globalfilter === 'Number Trees') {
+            return stateMarker.global.map((el, i) => (
+              <CircleMarker
+                key={i}
+                center={[el.latitude, el.longitude]}
+                radius={Math.log(parseInt(el.total_species))}
+                fillColor={getColorForPercentage(parseInt(el.total_species)/parseInt(max_num_trees))}
                 fillOpacity={1}
                 stroke={true}
                 color={'black'}
