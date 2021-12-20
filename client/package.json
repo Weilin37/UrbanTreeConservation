@@ -23,6 +23,7 @@
     "react-leaflet-heatmap-layer": "^2.0.0",
     "react-leaflet-markercluster": "^2.0.0",
     "react-leaflet-pixi-overlay": "^1.0.9",
+    "react-papaparse": "^3.18.1",
     "react-scripts": "4.0.1",
     "react-simple-maps": "^2.3.0",
     "react-toolkit": "^2.0.0-alpha.3",

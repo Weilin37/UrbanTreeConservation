@@ -1,6 +1,18 @@
 var express = require('express')
 var router = express.Router()
 var pool = require('./db')
+var jsonSql = require('json-sql')()
+var knex = require('knex')({client: 'pg'});
+
+// Get global level data
+router.post('/api/post/data', (req,res,next) => {
+    var query = knex('upload_data').insert(req.body).returning('*').toString();
+
+	pool.query(query, (q_err, q_res) => {
+        res.json(q_res.rows)
+    })
+})
+
 
 // Get global level data
 router.get('/api/get/global', (req,res,next) => {
