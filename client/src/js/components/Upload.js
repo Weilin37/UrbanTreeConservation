@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/app.css";
 import { makeStyles } from '@material-ui/core/styles';
 import { uploadData } from "../features/uploadSlice";
@@ -6,40 +6,63 @@ import { useSelector, useDispatch } from "react-redux";
 
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
+import template from '../../assets/template.csv';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 import { CSVReader } from 'react-papaparse';
 
 const buttonRef = React.createRef();
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-  input: {
-    display: 'none',
-  },
-}));
+function createData(name, description, required) {
+  return { name,description,required };
+}
 
+const rows = [
+    createData('city_ID','test','yes'),
+    createData('planted_date','test','yes'),
+    createData('most_recent_observation','test','yes'),
+    createData('retired_date','test','yes'),
+    createData('most_recent_observation_type','test','yes'),
+    createData('common_name','test','yes'),
+    createData('scientific_name','test','yes'),
+    createData('greater_metro','test','yes'),
+    createData('city','test','yes'),
+    createData('state','test','yes'),
+    createData('longitude_coordinate','test','yes'),
+    createData('latitude_coordinate','test','yes'),
+    createData('location_type','test','yes'),
+    createData('zipcode','test','yes'),
+    createData('address','test','yes'),
+    createData('neighborhood','test','yes'),
+    createData('location_name','test','yes'),
+    createData('ward','test','yes'),
+    createData('district','test','yes'),
+    createData('overhead_utility','test','yes'),
+    createData('diameter_breast_height_CM','test','yes'),
+    createData('condition','test','yes'),
+    createData('height_M','test','yes'),
+    createData('native','test','yes'),
+    createData('height_binned_M','test','yes'),
+    createData('diameter_breast_height_binned_CM','test','yes')
+];
 
 export const Upload = () => {
     const dispatch = useDispatch();
-    const classes = useStyles();
 
     // state
     const stateMarker = useSelector(state => state.marker);
     const stateMap = useSelector(state => state.map);
-
-
-    // Note that the ref is set async, so it might be null at some point
-        function handleOpenDialog(e) {
-            // Note that the ref is set async, so it might be null at some point
-            if (buttonRef.current) {
-              buttonRef.current.open(e);
-            }
-        };
-
+    const [uploadData, setUploadData] = useState([]);
 
       function handleOnFileLoad(data) {
         var arrayData = []
@@ -76,7 +99,7 @@ export const Upload = () => {
             }
             arrayData.push(row);
         }
-        dispatch(uploadData(arrayData));
+        setUploadData(arrayData);
         console.log('---------------------------');
       }
 
@@ -92,79 +115,77 @@ export const Upload = () => {
         console.log('---------------------------');
       }
 
-      function handleRemoveFile(e) {
-        // Note that the ref is set async, so it might be null at some point
-        if (buttonRef.current) {
-          buttonRef.current.removeFile(e);
+      function upload() {
+        if (validateEmail(document.getElementById('email').value)) {
+            console.log(uploadData);
+            //dispatch(uploadData(arrayData));
+        } else {
+            alert("You have entered an invalid email address. Please try again")
         }
+      }
+
+      function validateEmail(email) {
+         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            return(true)
+         } else {
+            return(false)
+         }
       }
 
     // render component
     return (
-         <>
-        <h5>Basic Upload</h5>
-        <CSVReader
-          ref={buttonRef}
-          onFileLoad={handleOnFileLoad}
-          onError={handleOnError}
-          noClick
-          noDrag
-          onRemoveFile={handleOnRemoveFile}
-        >
-          {({ file }) => (
-            <aside
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                marginBottom: 10,
-              }}
-            >
-              <button
-                type="button"
-                onClick={handleOpenDialog}
-                style={{
-                  borderRadius: 0,
-                  marginLeft: 0,
-                  marginRight: 0,
-                  width: '40%',
-                  paddingLeft: 0,
-                  paddingRight: 0,
-                }}
-              >
-                Browse file
-              </button>
-              <div
-                style={{
-                  borderWidth: 1,
-                  borderStyle: 'solid',
-                  borderColor: '#ccc',
-                  height: 45,
-                  lineHeight: 2.5,
-                  marginTop: 5,
-                  marginBottom: 5,
-                  paddingLeft: 13,
-                  paddingTop: 3,
-                  width: '60%',
-                }}
-              >
-                {file && file.name}
-              </div>
-              <button
-                style={{
-                  borderRadius: 0,
-                  marginLeft: 0,
-                  marginRight: 0,
-                  paddingLeft: 20,
-                  paddingRight: 20,
-                }}
-                onClick={handleRemoveFile}
-              >
-                Remove
-              </button>
-            </aside>
-          )}
-        </CSVReader>
-      </>
+        <>
+            <Grid style={{ marginTop:25 }} container justify="center" align="center" alignItems="center" spacing={2}>
+                <Grid style={{ paddingLeft:100, paddingRight:100 }} item align="center" xs={12}>
+                    <Typography variant="h5" gutterBottom>Instructions to Upload</Typography>
+                    <Typography variant="body1" gutterBottom>
+                        We have provided a template CSV structure (<a href={template} download="template.csv">Download CSV Template</a>) to follow.
+                        Inputting your data in accordance to this template, keeping the header names unchanged will provide a valid file to upload to the server.
+                        Some of the columns are required. See below for description:
+                    </Typography>
+                    <div style={{paddingLeft:200,paddingRight:200}}>
+                        <TableContainer style={{maxHeight:300}} component={Paper}>
+                          <Table stickyHeader size="small">
+                            <TableHead>
+                              <TableRow>
+                                <TableCell>Column Name</TableCell>
+                                <TableCell align="right">Description</TableCell>
+                                <TableCell align="right">Required</TableCell>
+                              </TableRow>
+                            </TableHead>
+                            <TableBody>
+                              {rows.map((row) => (
+                                <TableRow key={row.name}>
+                                  <TableCell component="th" scope="row">
+                                    {row.name}
+                                  </TableCell>
+                                  <TableCell align="right">{row.description}</TableCell>
+                                  <TableCell align="right">{row.required}</TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </TableContainer>
+                    </div>
+                </Grid>
+                <Grid item align="center" xs={12}>
+                    <TextField id="email" label="Email (required)" variant="outlined" />
+                </Grid>
+                <Grid item style={{ paddingLeft:200, paddingRight:200 }} align="center" xs={12}>
+                    <CSVReader
+                      onDrop={handleOnFileLoad}
+                      onError={handleOnError}
+                      addRemoveButton
+                      onRemoveFile={handleOnRemoveFile}
+                    >
+                    <span>Drop CSV file here or click to upload.</span>
+                </CSVReader>
+                </Grid>
+                <Grid item align="center" xs={12}>
+                    <Button variant="contained" color="primary" onClick={upload}>Submit Data</Button>
+                </Grid>
+            </Grid>
+        </>
     );
 
 

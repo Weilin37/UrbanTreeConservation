@@ -1,0 +1,2 @@
+﻿city_ID,planted_date,most_recent_observation,retired_date,most_recent_observation_type,common_name,scientific_name,greater_metro,city,state,longitude_coordinate,latitude_coordinate,location_type,zipcode,address,neighborhood,location_name,ward,district,overhead_utility,diameter_breast_height_CM,condition,height_M,native,height_binned_M,diameter_breast_height_binned_CM,percent_population
+ab1,1/1/2020,12/1/2020,,,tree,treeus,boston,boston,ma,12.31321313,23.41232155,outside,2135,300 allston st,allston,allston,,,no,12,good,24,yes,20,20,15%
