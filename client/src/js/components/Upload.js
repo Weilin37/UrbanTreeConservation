@@ -22,6 +22,33 @@ import Paper from '@material-ui/core/Paper';
 import { CSVReader } from 'react-papaparse';
 
 const buttonRef = React.createRef();
+const dataColumns = ['city_ID',
+                    'planted_date',
+                    'most_recent_observation',
+                    'retired_date',
+                    'most_recent_observation_type',
+                    'common_name',
+                    'scientific_name',
+                    'greater_metro',
+                    'city',
+                    'state',
+                    'longitude_coordinate',
+                    'latitude_coordinate',
+                    'location_type',
+                    'zipcode',
+                    'address',
+                    'neighborhood',
+                    'location_name',
+                    'ward',
+                    'district',
+                    'overhead_utility',
+                    'diameter_breast_height_CM',
+                    'condition',
+                    'height_M',
+                    'native',
+                    'height_binned_M',
+                    'diameter_breast_height_binned_CM',
+                    'percent_population']
 
 function createData(name, description, required) {
   return { name,description,required };
@@ -62,9 +89,17 @@ export const Upload = () => {
     // state
     const stateMarker = useSelector(state => state.marker);
     const stateMap = useSelector(state => state.map);
-    const [uploadData, setUploadData] = useState([]);
+    const [uploadArray, setUploadArray] = useState([]);
 
       function handleOnFileLoad(data) {
+        // Check template validity
+        for (let i = 0; i<data[0].data.length; i++) {
+            if (!dataColumns.includes(data[0].data[i])) {
+                alert("Error Detected: Column "+data[0].data[i]+" does not adhere to the template in either name or column position");
+                return
+            }
+        }
+
         var arrayData = []
         console.log('---------------------------');
         for (let i = 1; i < data.length; i++) {
@@ -99,7 +134,8 @@ export const Upload = () => {
             }
             arrayData.push(row);
         }
-        setUploadData(arrayData);
+        setUploadArray(arrayData);
+        console.log(arrayData)
         console.log('---------------------------');
       }
 
@@ -116,11 +152,12 @@ export const Upload = () => {
       }
 
       function upload() {
-        if (validateEmail(document.getElementById('email').value)) {
-            console.log(uploadData);
-            //dispatch(uploadData(arrayData));
-        } else {
+        if (validateEmail(document.getElementById('email').value) && uploadArray.length > 0) {
+            //dispatch(uploadData(uploadArray));
+        } else if (!validateEmail(document.getElementById('email').value)) {
             alert("You have entered an invalid email address. Please try again")
+        } else if (uploadArray.length === 0) {
+            alert("There is no dataset present to upload. Either no data was uploaded or there was an error in the data")
         }
       }
 
@@ -173,7 +210,9 @@ export const Upload = () => {
                 </Grid>
                 <Grid item style={{ paddingLeft:200, paddingRight:200 }} align="center" xs={12}>
                     <CSVReader
+                      ref={buttonRef}
                       onDrop={handleOnFileLoad}
+                      isReset={true}
                       onError={handleOnError}
                       addRemoveButton
                       onRemoveFile={handleOnRemoveFile}
