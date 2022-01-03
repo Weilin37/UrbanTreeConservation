@@ -50,6 +50,8 @@ const dataColumns = ['city_ID',
                     'diameter_breast_height_binned_CM',
                     'percent_population']
 
+const requiredColumns = ['scientific_name']
+
 function createData(name, description, required) {
   return { name,description,required };
 }
@@ -90,47 +92,20 @@ export const Upload = () => {
     const stateMarker = useSelector(state => state.marker);
     const stateMap = useSelector(state => state.map);
     const [uploadArray, setUploadArray] = useState([]);
+    const [uploadErrors, setUploadErrors] = useState([]);
+    const errorList = uploadErrors.map((e) =>
+        <p>{e}</p>
+    );
 
       function handleOnFileLoad(data) {
-        // Check template validity
-        for (let i = 0; i<data[0].data.length; i++) {
-            if (!dataColumns.includes(data[0].data[i])) {
-                alert("Error Detected: Column "+data[0].data[i]+" does not adhere to the template in either name or column position");
-                return
-            }
-        }
-
+        setUploadErrors([]);
         var arrayData = []
+        let keys = Object.keys(data[0].data);
         console.log('---------------------------');
-        for (let i = 1; i < data.length; i++) {
-            let row = {
-                city_ID:data[i].data[0],
-                planted_date:data[i].data[1],
-                most_recent_observation:data[i].data[2],
-                retired_date:data[i].data[3],
-                most_recent_observation_type:data[i].data[4],
-                common_name:data[i].data[5],
-                scientific_name:data[i].data[6],
-                greater_metro:data[i].data[7],
-                city:data[i].data[8],
-                state:data[i].data[9],
-                longitude_coordinate:data[i].data[10],
-                latitude_coordinate:data[i].data[11],
-                location_type:data[i].data[12],
-                zipcode:data[i].data[13],
-                address:data[i].data[14],
-                neighborhood:data[i].data[15],
-                location_name:data[i].data[16],
-                ward:data[i].data[17],
-                district:data[i].data[18],
-                overhead_utility:data[i].data[19],
-                diameter_breast_height_CM:data[i].data[20],
-                condition:data[i].data[21],
-                height_M:data[i].data[22],
-                native:data[i].data[23],
-                height_binned_M:data[i].data[24],
-                diameter_breast_height_binned_CM:data[i].data[25],
-                percent_population:data[i].data[26]
+        for (let i = 0; i < data.length; i++) {
+            let row = {}
+            for (let j=0; j<keys.length; j++) {
+                row[keys[j]] = data[i].data[keys[j]];
             }
             arrayData.push(row);
         }
@@ -152,12 +127,53 @@ export const Upload = () => {
       }
 
       function upload() {
-        if (validateEmail(document.getElementById('email').value) && uploadArray.length > 0) {
+        setUploadErrors([]);
+        var isError = false;
+
+        // Check if there are any data
+        if (uploadArray.length === 0){
+            setUploadErrors((uploadErrors) => [...uploadErrors, "Error: There is no data uploaded"]);
+            isError = true;
+            return
+        }
+
+        let keys = Object.keys(uploadArray[0]);
+
+        // Check if there are the right number of columns
+        if (keys.length !== dataColumns.length) {
+            setUploadErrors((uploadErrors) => [...uploadErrors, "Error: The number of columns uploaded does not match the template."]);
+            isError = true;
+        }
+
+        // Check if location and column name matches
+        for (let i = 0; i<keys.length; i++) {
+            if (!dataColumns.includes(keys[i])) {
+                setUploadErrors((uploadErrors) => [...uploadErrors, "Error: Column '"+keys[i]+"' does not adhere to the template in name"]);
+                isError = true;
+            }
+        }
+
+        // Check if the required columns are all filled
+        for (let i = 0; i<uploadArray.length; i++) {
+            for (let j = 0; j<requiredColumns.length; j++) {
+                console.log(uploadArray[i])
+                console.log(requiredColumns[j])
+                if (typeof uploadArray[i][requiredColumns[j]] === 'undefined') {
+                    setUploadErrors((uploadErrors) => [...uploadErrors, "Error: Required column "+requiredColumns[j]+" has an empty row in position "+(i+2)]);
+                    isError = true;
+                }
+            }
+        }
+
+        // Check if email is valid
+        if (!validateEmail(document.getElementById('email').value)) {
+            setUploadErrors((uploadErrors) => [...uploadErrors, "Error: Email address is in an invalid format"]);
+            isError = true;
+        }
+
+        if (!isError) {
             //dispatch(uploadData(uploadArray));
-        } else if (!validateEmail(document.getElementById('email').value)) {
-            alert("You have entered an invalid email address. Please try again")
-        } else if (uploadArray.length === 0) {
-            alert("There is no dataset present to upload. Either no data was uploaded or there was an error in the data")
+            alert("good")
         }
       }
 
@@ -180,6 +196,7 @@ export const Upload = () => {
                         Inputting your data in accordance to this template, keeping the header names unchanged will provide a valid file to upload to the server.
                         Some of the columns are required. See below for description:
                     </Typography>
+                    <br/>
                     <div style={{paddingLeft:200,paddingRight:200}}>
                         <TableContainer style={{maxHeight:300}} component={Paper}>
                           <Table stickyHeader size="small">
@@ -216,6 +233,7 @@ export const Upload = () => {
                       onError={handleOnError}
                       addRemoveButton
                       onRemoveFile={handleOnRemoveFile}
+                      config={{header:true,skipEmptyLines:true}}
                     >
                     <span>Drop CSV file here or click to upload.</span>
                 </CSVReader>
@@ -223,6 +241,9 @@ export const Upload = () => {
                 <Grid item align="center" xs={12}>
                     <Button variant="contained" color="primary" onClick={upload}>Submit Data</Button>
                 </Grid>
+                <div>
+                    {errorList}
+                </div>
             </Grid>
         </>
     );
